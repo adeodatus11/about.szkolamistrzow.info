@@ -6,21 +6,24 @@
     <title>ZSZ nr 5 we Wrocławiu | Szkoła Mistrzów</title>
     <meta
       name="description"
-      content="Dwujęzyczna, krótka prezentacja Zespołu Szkół Zawodowych nr 5 we Wrocławiu: tradycja, praktyka, pracownie i projekty."
+      content="Slajdowa, dwujęzyczna prezentacja Zespołu Szkół Zawodowych nr 5 we Wrocławiu: szkoła, pracownie, projekty, jubileusz i lokalizacja."
     />
     <meta property="og:title" content="ZSZ nr 5 we Wrocławiu | Szkoła Mistrzów" />
-    <meta property="og:description" content="Poznaj szkołę, w której zawód staje się przyszłością." />
+    <meta property="og:description" content="Szkoła zawodowa w centrum Wrocławia, gdzie fachu uczy się przez działanie." />
     <meta property="og:image" content="public/photos/hero-mural.webp" />
     <style>
       :root {
-        --bg: #f7f8f3;
+        --paper: #f7f4ea;
+        --paper-2: #fffaf0;
         --ink: #172019;
-        --muted: #465148;
+        --muted: #4f5a51;
         --green: #1f5b3a;
-        --green-dark: #183a2a;
-        --gold: #d7b15d;
-        --line: rgb(23 32 25 / 0.12);
-        --white: #fff;
+        --green-2: #183a2a;
+        --honey: #d7b15d;
+        --coral: #c75d48;
+        --blue: #315f7d;
+        --line: rgb(23 32 25 / 0.14);
+        --shadow: 0 24px 90px rgb(23 32 25 / 0.13);
       }
 
       * {
@@ -29,12 +32,16 @@
 
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 64px;
+        scroll-padding-top: 72px;
       }
 
       body {
         margin: 0;
-        background: var(--bg);
+        background:
+          linear-gradient(90deg, rgb(31 91 58 / 0.045) 1px, transparent 1px),
+          linear-gradient(180deg, rgb(31 91 58 / 0.04) 1px, transparent 1px),
+          var(--paper);
+        background-size: 44px 44px;
         color: var(--ink);
         font-family:
           ui-sans-serif,
@@ -45,9 +52,15 @@
           sans-serif;
       }
 
-      img {
-        display: block;
-        max-width: 100%;
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        background-image: radial-gradient(rgb(23 32 25 / 0.08) 0.6px, transparent 0.7px);
+        background-size: 5px 5px;
+        opacity: 0.45;
       }
 
       a {
@@ -55,140 +68,13 @@
         text-decoration: none;
       }
 
-      .shell {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 32px;
-      }
-
-      .topbar {
-        position: fixed;
-        inset: 0 0 auto;
-        z-index: 30;
-        height: 64px;
-        border-bottom: 1px solid var(--line);
-        background: rgb(247 248 243 / 0.9);
-        backdrop-filter: blur(20px);
-      }
-
-      .topbar-inner {
-        display: flex;
-        height: 64px;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .brand {
-        display: flex;
-        min-width: 0;
-        align-items: center;
-        gap: 12px;
-        font-size: 14px;
-        font-weight: 800;
-      }
-
-      .brand img {
-        width: 42px;
-        height: 32px;
-        border-radius: 4px;
-        object-fit: contain;
-      }
-
-      .nav {
-        display: flex;
-        gap: 4px;
-      }
-
-      .nav a {
-        border-radius: 8px;
-        padding: 10px 12px;
-        color: rgb(23 32 25 / 0.76);
-        font-size: 14px;
-        font-weight: 650;
-      }
-
-      .nav a:hover {
-        background: rgb(23 32 25 / 0.08);
-        color: var(--ink);
-      }
-
-      .lang {
-        display: flex;
-        gap: 4px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgb(255 255 255 / 0.72);
-        padding: 4px;
-      }
-
-      .lang button {
-        border: 0;
-        border-radius: 6px;
-        background: transparent;
-        color: rgb(23 32 25 / 0.72);
-        cursor: pointer;
+      button {
         font: inherit;
-        font-size: 14px;
-        font-weight: 800;
-        padding: 7px 12px;
       }
 
-      .lang button.active {
-        background: var(--green);
-        color: white;
-      }
-
-      .hero {
-        position: relative;
-        isolation: isolate;
-        display: flex;
-        min-height: 100dvh;
-        align-items: center;
-        overflow: hidden;
-        padding: 96px 0 56px;
-      }
-
-      .hero-bg,
-      .media-card img,
-      .gallery-card img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .hero-bg {
-        z-index: -2;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background: linear-gradient(90deg, var(--bg), rgb(247 248 243 / 0.86), rgb(247 248 243 / 0.26));
-      }
-
-      .hero-grid {
-        display: grid;
-        align-items: end;
-        gap: 40px;
-        grid-template-columns: minmax(0, 1fr) 360px;
-      }
-
-      .kicker {
-        display: inline-flex;
+      img {
+        display: block;
         max-width: 100%;
-        border-radius: 8px;
-        background: rgb(255 255 255 / 0.78);
-        box-shadow: 0 8px 24px rgb(23 32 25 / 0.1);
-        color: var(--green);
-        font-size: 14px;
-        font-weight: 800;
-        margin: 0 0 28px;
-        padding: 10px 16px;
       }
 
       h1,
@@ -198,269 +84,552 @@
         margin: 0;
       }
 
-      h1 {
-        max-width: 900px;
-        font-size: clamp(48px, 6vw, 72px);
-        font-weight: 950;
-        letter-spacing: 0;
-        line-height: 1.02;
+      .shell {
+        width: min(100% - 64px, 1320px);
+        margin: 0 auto;
       }
 
-      h2 {
-        font-size: clamp(40px, 5vw, 64px);
-        font-weight: 950;
-        letter-spacing: 0;
-        line-height: 1.08;
+      .topbar {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 40;
+        border-bottom: 1px solid var(--line);
+        background: rgb(247 244 234 / 0.88);
+        backdrop-filter: blur(18px);
       }
 
-      h3 {
+      .topbar-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        align-items: center;
+        gap: 18px;
+        min-height: 68px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .brand img,
+      .logo-clean {
+        width: 46px;
+        height: auto;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+      }
+
+      .brand span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .nav a {
+        border-radius: 8px;
+        padding: 9px 10px;
+        color: rgb(23 32 25 / 0.74);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: rgb(31 91 58 / 0.1);
         color: var(--green);
-        font-size: 26px;
-        font-weight: 950;
-        line-height: 1.15;
+        outline: 0;
       }
 
-      .lead {
-        max-width: 680px;
-        color: #334038;
-        font-size: 20px;
+      .lang {
+        display: flex;
+        gap: 4px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.78);
+        padding: 4px;
+      }
+
+      .lang button {
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: rgb(23 32 25 / 0.68);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 900;
+        padding: 7px 11px;
+      }
+
+      .lang button.active {
+        background: var(--green);
+        color: white;
+      }
+
+      .slide {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        min-height: 100dvh;
+        align-items: center;
+        overflow: hidden;
+        padding: 104px 0 72px;
+      }
+
+      .slide.tight {
+        min-height: auto;
+      }
+
+      .slide.white {
+        background: rgb(255 250 240 / 0.82);
+      }
+
+      .slide.green {
+        background: var(--green-2);
+        color: white;
+      }
+
+      .slide-title {
+        max-width: 940px;
+        font-size: clamp(42px, 7vw, 96px);
+        font-weight: 1000;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      .slide-lead {
+        max-width: 780px;
+        margin-top: 26px;
+        color: var(--muted);
+        font-size: clamp(18px, 2vw, 24px);
         font-weight: 650;
-        line-height: 1.6;
-        margin-top: 24px;
+        line-height: 1.52;
+      }
+
+      .green .slide-lead,
+      .green .body,
+      .green .caption {
+        color: rgb(255 255 255 / 0.78);
+      }
+
+      .body {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.72;
+      }
+
+      .label {
+        display: inline-flex;
+        align-items: center;
+        max-width: 100%;
+        border: 1px solid rgb(31 91 58 / 0.18);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.82);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        margin-bottom: 22px;
+        padding: 9px 13px;
+      }
+
+      .green .label {
+        border-color: rgb(255 255 255 / 0.16);
+        background: rgb(255 255 255 / 0.08);
+        color: #f0cb77;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 32px;
+        margin-top: 34px;
       }
 
       .btn {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgb(255 255 255 / 0.82);
-        color: var(--ink);
         display: inline-flex;
-        min-height: 50px;
         align-items: center;
         justify-content: center;
-        padding: 0 20px;
+        min-height: 50px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.86);
+        color: var(--ink);
         font-size: 16px;
-        font-weight: 850;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-        background: white;
+        font-weight: 900;
+        padding: 0 20px;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       }
 
       .btn.primary {
         border-color: transparent;
         background: var(--green);
         color: white;
-        box-shadow: 0 18px 40px rgb(31 91 58 / 0.22);
+        box-shadow: 0 16px 36px rgb(31 91 58 / 0.24);
       }
 
-      .stats {
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-2px);
+        outline: 0;
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .hero {
+        padding-top: 92px;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(90deg, rgb(247 244 234 / 0.96), rgb(247 244 234 / 0.78), rgb(247 244 234 / 0.2)),
+          linear-gradient(180deg, transparent 64%, var(--paper));
+      }
+
+      .hero-grid {
         display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+        align-items: end;
+        gap: 54px;
+      }
+
+      .hero .slide-title {
+        max-width: 820px;
+        font-size: clamp(46px, 6.4vw, 86px);
+      }
+
+      .poster-stack {
+        display: grid;
+        gap: 14px;
+        align-items: end;
+      }
+
+      .poster {
+        position: relative;
+        min-height: 174px;
+        overflow: hidden;
+        border: 1px solid rgb(255 255 255 / 0.72);
+        border-radius: 8px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .poster:nth-child(1) {
+        transform: rotate(-2deg);
+      }
+
+      .poster:nth-child(2) {
+        margin-left: 56px;
+        transform: rotate(2deg);
+      }
+
+      .poster:nth-child(3) {
+        margin-right: 42px;
+        transform: rotate(-1deg);
+      }
+
+      .poster img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .poster::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgb(23 32 25 / 0.62), transparent 56%);
+      }
+
+      .poster strong {
+        position: absolute;
+        inset: auto 16px 14px;
+        z-index: 2;
+        color: white;
+        font-size: 15px;
+        font-weight: 950;
+      }
+
+      .stat-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
+        margin-top: 36px;
+        max-width: 760px;
       }
 
       .stat {
-        border: 1px solid rgb(255 255 255 / 0.72);
+        border: 1px solid rgb(31 91 58 / 0.16);
         border-radius: 8px;
-        background: rgb(255 255 255 / 0.8);
-        box-shadow: 0 24px 80px rgb(23 32 25 / 0.12);
-        padding: 24px;
+        background: rgb(255 250 240 / 0.82);
+        padding: 20px;
       }
 
       .stat strong {
         display: block;
         color: var(--green);
-        font-size: 42px;
-        font-weight: 950;
+        font-size: clamp(30px, 4vw, 48px);
+        font-weight: 1000;
         line-height: 1;
       }
 
       .stat span {
         display: block;
-        color: #334038;
-        font-size: 14px;
-        font-weight: 800;
-        margin-top: 8px;
-      }
-
-      .section {
-        padding: 104px 0;
-      }
-
-      .white {
-        background: white;
-      }
-
-      .manifest-grid,
-      .projects-grid,
-      .final-grid {
-        display: grid;
-        gap: 56px;
-        grid-template-columns: 0.9fr 1.1fr;
-      }
-
-      .copy {
         color: var(--muted);
-        font-size: 18px;
-        line-height: 1.75;
-        margin-top: 24px;
-        max-width: 720px;
+        font-size: 14px;
+        font-weight: 850;
+        margin-top: 7px;
       }
 
-      .value-grid {
+      .story-grid {
         display: grid;
-        gap: 16px;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 56px;
+        align-items: center;
       }
 
-      .value,
+      .story-photo {
+        position: relative;
+        min-height: 660px;
+      }
+
+      .story-photo figure {
+        position: absolute;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--ink);
+        box-shadow: var(--shadow);
+      }
+
+      .story-photo figure:nth-child(1) {
+        inset: 0 18% 24% 0;
+      }
+
+      .story-photo figure:nth-child(2) {
+        inset: 38% 0 0 28%;
+      }
+
+      .story-photo figure:nth-child(3) {
+        inset: 12% 4% auto auto;
+        width: 34%;
+        height: 28%;
+      }
+
+      .story-photo img,
+      .tile img,
+      .gallery figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .beats {
+        display: grid;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .beat,
       .path,
-      .project {
+      .project,
+      .fact,
+      .address-panel {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: white;
-        box-shadow: 0 18px 60px rgb(23 32 25 / 0.07);
-        padding: 28px;
+        background: rgb(255 250 240 / 0.9);
       }
 
-      .value p,
+      .beat {
+        padding: 22px;
+      }
+
+      .beat h3,
+      .path h3,
+      .project h3,
+      .fact h3 {
+        color: var(--green);
+        font-size: 24px;
+        font-weight: 1000;
+        line-height: 1.12;
+      }
+
+      .beat p,
       .path p,
-      .project p {
+      .project p,
+      .fact p {
+        margin-top: 10px;
         color: var(--muted);
         font-size: 16px;
-        line-height: 1.65;
-        margin-top: 12px;
+        line-height: 1.62;
+      }
+
+      .paths-layout {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 44px;
+        align-items: stretch;
+      }
+
+      .paths-photo {
+        position: relative;
+        min-height: 620px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--ink);
+        box-shadow: var(--shadow);
+      }
+
+      .paths-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .paths-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgb(23 32 25 / 0.74), transparent 58%);
+      }
+
+      .paths-photo p {
+        position: absolute;
+        inset: auto 24px 24px;
+        z-index: 2;
+        color: white;
+        font-size: 24px;
+        font-weight: 950;
+        line-height: 1.18;
       }
 
       .paths-grid {
         display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-top: 48px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 32px;
       }
 
       .path {
-        background: var(--bg);
-        min-height: 250px;
-        transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        min-height: 210px;
+        padding: 24px;
       }
 
-      .path:hover {
-        border-color: rgb(31 91 58 / 0.36);
-        box-shadow: 0 22px 70px rgb(23 32 25 / 0.1);
-        transform: translateY(-4px);
+      .path:nth-child(2) {
+        background: rgb(31 91 58 / 0.1);
       }
 
-      .path::before {
-        content: "";
-        display: block;
-        width: 64px;
-        height: 6px;
-        border-radius: 999px;
-        background: var(--gold);
-        margin-bottom: 32px;
-        transition: width 0.2s ease;
+      .path:nth-child(3) {
+        background: rgb(215 177 93 / 0.18);
       }
 
-      .path:hover::before {
-        width: 96px;
+      .path:nth-child(4) {
+        background: rgb(49 95 125 / 0.11);
       }
 
-      .practice-grid {
+      .practice-layout {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-auto-rows: minmax(320px, auto);
-        gap: 20px;
-        margin-top: 48px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 46px;
+        align-items: center;
       }
 
-      .media-card {
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-auto-rows: 150px;
+        gap: 12px;
+      }
+
+      .tile {
         position: relative;
-        min-height: 320px;
         overflow: hidden;
         border-radius: 8px;
         background: var(--ink);
-        color: white;
+        box-shadow: 0 20px 70px rgb(23 32 25 / 0.12);
       }
 
-      .media-card.large {
+      .tile.big {
+        grid-column: span 3;
+        grid-row: span 3;
+      }
+
+      .tile.tall {
         grid-column: span 2;
         grid-row: span 2;
       }
 
-      .media-card.wide {
+      .tile.wide {
         grid-column: span 2;
+        grid-row: span 1;
       }
 
-      .media-card::after {
+      .tile::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(0deg, rgb(16 32 23 / 0.9), rgb(16 32 23 / 0.2), transparent);
+        background: linear-gradient(0deg, rgb(16 32 23 / 0.78), transparent 60%);
       }
 
-      .media-card img {
-        transition: transform 0.7s ease;
-      }
-
-      .media-card:hover img {
-        transform: scale(1.05);
-      }
-
-      .media-copy {
+      .tile span {
         position: absolute;
-        inset: auto 0 0;
+        inset: auto 14px 13px;
         z-index: 2;
+        color: white;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .quote-panel {
+        border-radius: 8px;
+        background: var(--green);
+        color: white;
+        margin-top: 30px;
         padding: 28px;
       }
 
-      .media-copy h3 {
-        color: white;
-      }
-
-      .media-copy p {
+      .quote-panel p {
         color: rgb(255 255 255 / 0.88);
-        font-size: 16px;
-        line-height: 1.65;
-        margin-top: 12px;
-        max-width: 520px;
+        font-size: 24px;
+        font-weight: 850;
+        line-height: 1.35;
       }
 
-      .projects {
-        background: var(--green-dark);
-        color: white;
-      }
-
-      .projects .copy {
-        color: rgb(255 255 255 / 0.78);
-      }
-
-      .projects h3 {
-        color: #f0cb77;
-      }
-
-      .project {
-        border-color: rgb(255 255 255 / 0.14);
-        background: rgb(255 255 255 / 0.08);
-        box-shadow: none;
-      }
-
-      .project p {
-        color: rgb(255 255 255 / 0.8);
+      .projects-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+        gap: 48px;
+        align-items: start;
       }
 
       .project-photo {
         overflow: hidden;
         border-radius: 8px;
-        margin-top: 32px;
+        box-shadow: 0 28px 90px rgb(0 0 0 / 0.22);
       }
 
       .project-photo img {
@@ -469,80 +638,175 @@
         object-fit: cover;
       }
 
-      .gallery {
-        display: flex;
-        gap: 16px;
-        margin-top: 48px;
-        overflow-x: auto;
-        padding-bottom: 16px;
+      .project-list {
+        display: grid;
+        gap: 14px;
       }
 
-      .gallery-card {
+      .project {
+        border-color: rgb(255 255 255 / 0.14);
+        background: rgb(255 255 255 / 0.08);
+        padding: 24px;
+      }
+
+      .project h3 {
+        color: #f0cb77;
+      }
+
+      .project p {
+        color: rgb(255 255 255 / 0.78);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-auto-rows: 150px;
+        gap: 12px;
+        margin-top: 40px;
+      }
+
+      .gallery figure {
         position: relative;
-        flex: 0 0 330px;
-        height: 420px;
         overflow: hidden;
         border-radius: 8px;
         background: var(--ink);
+        margin: 0;
+        box-shadow: 0 16px 50px rgb(23 32 25 / 0.1);
       }
 
-      .gallery-card.wide {
-        flex-basis: 620px;
+      .gallery figure:nth-child(1) {
+        grid-column: span 5;
+        grid-row: span 3;
+      }
+
+      .gallery figure:nth-child(2) {
+        grid-column: span 3;
+        grid-row: span 2;
+      }
+
+      .gallery figure:nth-child(3) {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+
+      .gallery figure:nth-child(4) {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+
+      .gallery figure:nth-child(5) {
+        grid-column: span 3;
+        grid-row: span 2;
+      }
+
+      .gallery figure:nth-child(6) {
+        grid-column: span 5;
+        grid-row: span 2;
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+        gap: 42px;
+        align-items: stretch;
+      }
+
+      .address-panel {
+        display: grid;
+        align-content: space-between;
+        padding: 30px;
+      }
+
+      .address {
+        font-size: clamp(34px, 5vw, 60px);
+        font-weight: 1000;
+        line-height: 1;
+      }
+
+      .fact-grid {
+        display: grid;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .fact {
+        padding: 18px;
+      }
+
+      .map-frame {
+        min-height: 620px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .map-frame iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 620px;
+        border: 0;
       }
 
       .final-card {
-        border-radius: 8px;
-        background: var(--ink);
-        color: white;
-        padding: 48px;
-      }
-
-      .final-grid {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: 48px;
         align-items: end;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper-2);
+        padding: 46px;
       }
 
-      .final-card img {
-        width: 96px;
-        height: auto;
-        border-radius: 6px;
-        margin-bottom: 32px;
+      .final-brand {
+        display: grid;
+        gap: 22px;
       }
 
-      .final-card .copy {
-        color: rgb(255 255 255 / 0.78);
+      .final-brand img {
+        width: 160px;
+        max-width: 100%;
       }
 
       .links {
         display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
+        margin-top: 34px;
       }
 
       .links a {
-        border: 1px solid rgb(255 255 255 / 0.14);
+        border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgb(255 255 255 / 0.08);
-        color: white;
-        font-size: 18px;
-        font-weight: 850;
+        background: white;
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 950;
+        min-height: 82px;
         padding: 20px;
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
 
-      .links a:hover {
-        background: rgb(255 255 255 / 0.14);
+      .links a:hover,
+      .links a:focus-visible {
+        border-color: rgb(31 91 58 / 0.38);
         transform: translateY(-2px);
+        outline: 0;
       }
 
       .year {
-        color: rgb(255 255 255 / 0.54);
+        color: var(--muted);
         font-size: 14px;
-        margin-top: 20px;
+        margin-top: 28px;
       }
 
       .reveal {
         opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(26px);
+        transition: opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1), transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .reveal.visible {
@@ -550,81 +814,153 @@
         transform: translateY(0);
       }
 
-      @media (max-width: 1023px) {
+      @media (min-width: 900px) {
+        html {
+          scroll-snap-type: y proximity;
+        }
+
+        .slide {
+          scroll-snap-align: start;
+        }
+      }
+
+      @media (max-width: 1180px) {
         .nav {
           display: none;
         }
 
+        .topbar-inner {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+
         .hero-grid,
-        .manifest-grid,
-        .projects-grid,
-        .final-grid {
+        .story-grid,
+        .paths-layout,
+        .practice-layout,
+        .projects-layout,
+        .location-grid,
+        .final-card {
           grid-template-columns: 1fr;
         }
 
-        .stats {
+        .poster-stack {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .paths-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        .poster:nth-child(n) {
+          margin: 0;
+          transform: none;
         }
 
-        .practice-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        .story-photo,
+        .paths-photo,
+        .map-frame {
+          min-height: 520px;
         }
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 760px) {
+        html {
+          scroll-padding-top: 64px;
+        }
+
         .shell {
-          padding: 0 16px;
+          width: min(100% - 32px, 1320px);
+        }
+
+        .topbar-inner {
+          min-height: 64px;
         }
 
         .brand span {
           display: none;
         }
 
+        .slide {
+          min-height: auto;
+          padding: 88px 0 56px;
+        }
+
         .hero {
-          align-items: flex-start;
-          padding: 96px 0 40px;
+          min-height: 100dvh;
         }
 
-        .hero::after {
-          background: linear-gradient(90deg, rgb(247 248 243 / 0.94), rgb(247 248 243 / 0.78));
+        .hero::before {
+          background:
+            linear-gradient(90deg, rgb(247 244 234 / 0.96), rgb(247 244 234 / 0.84)),
+            linear-gradient(180deg, transparent 70%, var(--paper));
         }
 
-        h1 {
-          font-size: 48px;
+        .hero .slide-title,
+        .slide-title {
+          font-size: 43px;
+          line-height: 1.02;
         }
 
-        h2 {
-          font-size: 40px;
-        }
-
-        .lead {
+        .slide-lead {
           font-size: 18px;
+          line-height: 1.55;
         }
 
-        .stats,
+        .poster-stack,
+        .stat-strip,
         .paths-grid,
-        .practice-grid {
+        .links {
           grid-template-columns: 1fr;
         }
 
-        .media-card.large,
-        .media-card.wide {
+        .poster {
+          min-height: 156px;
+        }
+
+        .story-photo {
+          min-height: 440px;
+        }
+
+        .story-photo figure:nth-child(1) {
+          inset: 0 16% 30% 0;
+        }
+
+        .story-photo figure:nth-child(2) {
+          inset: 44% 0 0 20%;
+        }
+
+        .story-photo figure:nth-child(3) {
+          display: none;
+        }
+
+        .paths-photo,
+        .map-frame,
+        .map-frame iframe {
+          min-height: 430px;
+        }
+
+        .tile-grid {
+          grid-template-columns: 1fr;
+          grid-auto-rows: 230px;
+        }
+
+        .tile.big,
+        .tile.tall,
+        .tile.wide {
           grid-column: auto;
           grid-row: auto;
         }
 
-        .gallery-card,
-        .gallery-card.wide {
-          flex-basis: 82vw;
+        .gallery {
+          display: flex;
+          gap: 12px;
+          overflow-x: auto;
+          padding-bottom: 10px;
+        }
+
+        .gallery figure:nth-child(n) {
+          flex: 0 0 82vw;
           height: 360px;
         }
 
         .final-card {
-          padding: 32px;
+          padding: 26px;
         }
       }
 
@@ -638,6 +974,10 @@
           transition-duration: 0.01ms !important;
         }
 
+        html {
+          scroll-snap-type: none;
+        }
+
         .reveal {
           opacity: 1;
           transform: none;
@@ -649,15 +989,15 @@
     <header class="topbar">
       <div class="shell topbar-inner">
         <a class="brand" href="#start" aria-label="ZSZ nr 5 Wrocław">
-          <img src="public/photos/zsz5-logo.webp" alt="" width="42" height="32" />
+          <img src="public/photos/zsz5-logo.webp" alt="" width="46" height="35" />
           <span>ZSZ nr 5 Wrocław</span>
         </a>
         <nav class="nav" aria-label="Główna nawigacja">
-          <a href="#manifest" data-i18n="nav.0">Idea</a>
-          <a href="#paths" data-i18n="nav.1">Ścieżki</a>
-          <a href="#practice" data-i18n="nav.2">Praktyka</a>
+          <a href="#story" data-i18n="nav.0">Kim jesteśmy</a>
+          <a href="#paths" data-i18n="nav.1">Drogi</a>
+          <a href="#practice" data-i18n="nav.2">Pracownie</a>
           <a href="#projects" data-i18n="nav.3">Projekty</a>
-          <a href="#jubilee" data-i18n="nav.4">80-lecie</a>
+          <a href="#location" data-i18n="nav.4">Mapa</a>
         </nav>
         <div class="lang" aria-label="Wybór języka">
           <button type="button" data-lang="pl" class="active">PL</button>
@@ -667,100 +1007,138 @@
     </header>
 
     <main>
-      <section id="start" class="hero">
+      <section id="start" class="slide hero">
         <img class="hero-bg" src="public/photos/hero-mural.webp" alt="Mural przy budynku szkoły" data-i18n-alt="heroAlt" />
         <div class="shell hero-grid">
           <div class="reveal">
-            <p class="kicker" data-i18n="heroKicker">Zespół Szkół Zawodowych nr 5 we Wrocławiu</p>
-            <h1 data-i18n="heroTitle">Szkoła, w której zawód staje się przyszłością</h1>
-            <p class="lead" data-i18n="heroLead">
-              Łączymy tradycję rzemiosła, nowoczesne pracownie i naukę blisko prawdziwego rynku pracy.
+            <p class="label" data-i18n="heroKicker">Zespół Szkół Zawodowych nr 5 we Wrocławiu</p>
+            <h1 class="slide-title" data-i18n="heroTitle">Tu zawód zaczyna się od działania</h1>
+            <p class="slide-lead" data-i18n="heroLead">
+              Szkoła Mistrzów to pracownie, ludzie i projekty. Fachu uczymy nie z plakatu, tylko przy stanowisku.
             </p>
             <div class="actions">
-              <a class="btn primary" href="#manifest" data-i18n="primaryCta">Poznaj szkołę</a>
-              <a class="btn" href="https://www.szkolamistrzow.info/" data-i18n="secondaryCta">Rekrutacja</a>
+              <a class="btn primary" href="#story" data-i18n="primaryCta">Zobacz opowieść</a>
+              <a class="btn" href="#location" data-i18n="secondaryCta">Gdzie jesteśmy</a>
             </div>
+            <div class="stat-strip" data-render="stats"></div>
           </div>
-          <div class="stats reveal">
-            <article class="stat"><strong data-i18n="stats.0.0">80+</strong><span data-i18n="stats.0.1">lat tradycji</span></article>
-            <article class="stat"><strong data-i18n="stats.1.0">4</strong><span data-i18n="stats.1.1">ścieżki kształcenia</span></article>
-            <article class="stat"><strong data-i18n="stats.2.0">PL/EN</strong><span data-i18n="stats.2.1">gotowe do prezentacji</span></article>
-          </div>
+          <div class="poster-stack reveal" data-render="heroPhotos"></div>
         </div>
       </section>
 
-      <section id="manifest" class="section">
-        <div class="shell manifest-grid">
+      <section id="story" class="slide">
+        <div class="shell story-grid">
+          <div class="story-photo reveal" data-render="storyPhotos"></div>
           <div class="reveal">
-            <h2 data-i18n="manifestTitle">To miejsce ma tempo warsztatu i pamięć szkoły z historią.</h2>
-            <p class="copy" data-i18n="manifestLead">
-              ZSZ nr 5 pokazuje, że edukacja zawodowa może być konkretna, ambitna i bliska ludziom. Uczeń widzi efekt pracy, poznaje standardy branży i uczy się odpowiedzialności za własny rozwój.
+            <p class="label" data-i18n="storyKicker">Szkoła z pamięcią i tempem warsztatu</p>
+            <h2 class="slide-title" data-i18n="storyTitle">Nie udajemy rynku pracy. Wpuszczamy go do szkoły.</h2>
+            <p class="slide-lead" data-i18n="storyLead">
+              Uczeń widzi narzędzia, klienta, termin, zespół i efekt. Tak buduje się pewność, której nie da się dopisać na końcu lekcji.
             </p>
+            <div class="beats" data-render="beats"></div>
           </div>
-          <div class="value-grid reveal" data-render="values"></div>
         </div>
       </section>
 
-      <section id="paths" class="section white">
-        <div class="shell">
+      <section id="paths" class="slide white">
+        <div class="shell paths-layout">
           <div class="reveal">
-            <h2 data-i18n="pathsTitle">Jedna szkoła, kilka dróg do zawodu</h2>
-            <p class="copy" data-i18n="pathsLead">
-              Strona nie zastępuje rekrutacji. Pokazuje logikę szkoły: różne tempo nauki, wspólny cel i praktyczne przygotowanie.
+            <p class="label" data-i18n="pathsKicker">Drogi do zawodu</p>
+            <h2 class="slide-title" data-i18n="pathsTitle">Każdy może wejść innym rytmem</h2>
+            <p class="slide-lead" data-i18n="pathsLead">
+              Technikum, szkoła branżowa, kontynuacja nauki i kursy zawodowe prowadzą do jednego celu: realnych umiejętności.
             </p>
+            <div class="paths-grid" data-render="paths"></div>
           </div>
-          <div class="paths-grid" data-render="paths"></div>
+          <figure class="paths-photo reveal">
+            <img src="public/photos/school-building.webp" alt="Budynek ZSZ nr 5 we Wrocławiu" data-i18n-alt="pathsPhotoAlt" />
+            <p data-i18n="pathsPhotoText">Szkoła mieści się przy ulicy Jana Władysława Dawida, w miejscu dobrze skomunikowanym z miastem.</p>
+          </figure>
         </div>
       </section>
 
-      <section id="practice" class="section">
-        <div class="shell">
+      <section id="practice" class="slide">
+        <div class="shell practice-layout">
           <div class="reveal">
-            <h2 data-i18n="practiceTitle">Uczymy w praktyce</h2>
-            <p class="copy" data-i18n="practiceLead">
-              Najlepsza opowieść o szkole jest w pracowniach. Tam widać narzędzia, rytm zajęć i wymagania zawodu.
+            <p class="label" data-i18n="practiceKicker">Uczymy w praktyce</p>
+            <h2 class="slide-title" data-i18n="practiceTitle">Najlepszy slajd to zdjęcie z pracowni</h2>
+            <p class="slide-lead" data-i18n="practiceLead">
+              W gastronomii, fryzjerstwie, handlu i sporcie widać, czy wiedza działa. Dlatego pokazujemy sprzęt, ręce i tempo pracy.
             </p>
+            <div class="quote-panel"><p data-i18n="practiceQuote">Zawód nie zaczyna się po szkole. Zaczyna się wtedy, kiedy uczeń pierwszy raz robi coś naprawdę.</p></div>
           </div>
-          <div class="practice-grid" data-render="practice"></div>
+          <div class="tile-grid reveal" data-render="practiceTiles"></div>
         </div>
       </section>
 
-      <section id="projects" class="section projects">
-        <div class="shell projects-grid">
+      <section id="projects" class="slide green">
+        <div class="shell projects-layout">
           <div class="reveal">
-            <h2 data-i18n="projectsTitle">Projekty otwierają szkołę na zewnątrz</h2>
-            <p class="copy" data-i18n="projectsLead">
-              W projektach szkoła spotyka pracodawców, partnerów edukacyjnych i międzynarodowe środowisko kształcenia zawodowego.
+            <p class="label" data-i18n="projectsKicker">Projekty i partnerstwa</p>
+            <h2 class="slide-title" data-i18n="projectsTitle">Szkoła działa poza własnymi murami</h2>
+            <p class="slide-lead" data-i18n="projectsLead">
+              Projekty porządkują współpracę z pracodawcami, miastem i partnerami międzynarodowymi. To nie dodatek do szkoły, tylko sposób jej rozwoju.
             </p>
             <div class="project-photo">
-              <img src="public/photos/gastronomy-team.webp" alt="Praca zespołu podczas wydarzenia szkolnego" data-i18n-alt="projectAlt" />
+              <img src="public/photos/gastronomy-team.webp" alt="Zespół podczas pracy przy stanowisku konkursowym" data-i18n-alt="projectAlt" />
             </div>
           </div>
-          <div class="value-grid" data-render="projects"></div>
+          <div class="project-list reveal" data-render="projects"></div>
         </div>
       </section>
 
-      <section id="jubilee" class="section white">
+      <section id="jubilee" class="slide white">
         <div class="shell">
           <div class="reveal">
-            <h2 data-i18n="jubileeTitle">80 lat szkoły to nie archiwum. To punkt startu.</h2>
-            <p class="copy" data-i18n="jubileeLead">
-              Jubileusz pokazuje ciągłość: ludzie, miejsca, zawody i wspólnota, która potrafi zmieniać się razem z Wrocławiem.
+            <p class="label" data-i18n="jubileeKicker">80-lecie</p>
+            <h2 class="slide-title" data-i18n="jubileeTitle">Historia nie stoi w gablocie</h2>
+            <p class="slide-lead" data-i18n="jubileeLead">
+              Jubileusz jest dobrą ramą dla tej opowieści: były pokolenia uczniów, są nowe pracownie i jest miasto, które cały czas potrzebuje fachowców.
             </p>
           </div>
-          <div class="gallery" data-render="gallery"></div>
+          <div class="gallery reveal" data-render="gallery"></div>
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="shell">
-          <div class="final-card final-grid">
-            <div class="reveal">
-              <img src="public/photos/zsz5-logo.webp" alt="" width="96" height="73" />
-              <h2 data-i18n="finaleTitle">Dalej: szczegóły, rekrutacja i aktualności</h2>
-              <p class="copy" data-i18n="finaleLead">Ta strona jest krótką prezentacją. Pełne informacje są w serwisach szkoły.</p>
+      <section id="location" class="slide">
+        <div class="shell location-grid">
+          <div class="address-panel reveal">
+            <div>
+              <p class="label" data-i18n="locationKicker">Gdzie jesteśmy</p>
+              <h2 class="address" data-i18n="locationTitle">ul. Jana Władysława Dawida 5</h2>
+              <p class="slide-lead" data-i18n="locationLead">
+                Wrocław, Huby, Krzyki. Blisko centrum i głównych punktów komunikacyjnych miasta.
+              </p>
             </div>
-            <div class="links reveal" data-render="links"></div>
+            <div class="fact-grid" data-render="locationFacts"></div>
+          </div>
+          <div class="map-frame reveal">
+            <iframe
+              title="Mapa lokalizacji ZSZ nr 5 we Wrocławiu"
+              loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=17.0280%2C51.0888%2C17.0482%2C51.0998&layer=mapnik&marker=51.0941234%2C17.0380551"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="slide tight">
+        <div class="shell">
+          <div class="final-card">
+            <div class="final-brand reveal">
+              <img class="logo-clean" src="public/photos/zsz5-logo.webp" alt="" width="160" height="122" />
+              <p class="body" data-i18n="finalBrand">
+                Krótka prezentacja szkoły. Szczegóły zostają w serwisach rekrutacyjnych i oficjalnych.
+              </p>
+            </div>
+            <div class="reveal">
+              <h2 class="slide-title" data-i18n="finaleTitle">Dalej: rekrutacja, aktualności, projekty</h2>
+              <p class="slide-lead" data-i18n="finaleLead">
+                Ta strona ma opowiedzieć o charakterze szkoły. Pełne informacje, terminy i dokumenty są pod linkami.
+              </p>
+              <div class="links" data-render="links"></div>
+              <p class="year">ZSZ nr 5 Wrocław, <span data-year></span></p>
+            </div>
           </div>
         </div>
       </section>
@@ -769,113 +1147,191 @@
     <script>
       const content = {
         pl: {
-          nav: ["Idea", "Ścieżki", "Praktyka", "Projekty", "80-lecie"],
+          nav: ["Kim jesteśmy", "Drogi", "Pracownie", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
           heroKicker: "Zespół Szkół Zawodowych nr 5 we Wrocławiu",
-          heroTitle: "Szkoła, w której zawód staje się przyszłością",
-          heroLead: "Łączymy tradycję rzemiosła, nowoczesne pracownie i naukę blisko prawdziwego rynku pracy.",
-          primaryCta: "Poznaj szkołę",
-          secondaryCta: "Rekrutacja",
-          stats: [["80+", "lat tradycji"], ["4", "ścieżki kształcenia"], ["PL/EN", "gotowe do prezentacji"]],
-          manifestTitle: "To miejsce ma tempo warsztatu i pamięć szkoły z historią.",
-          manifestLead: "ZSZ nr 5 pokazuje, że edukacja zawodowa może być konkretna, ambitna i bliska ludziom. Uczeń widzi efekt pracy, poznaje standardy branży i uczy się odpowiedzialności za własny rozwój.",
-          values: [
-            ["Tradycja", "Szkoła wyrasta z historii Wrocławia i codziennej pracy wielu pokoleń nauczycieli, uczniów oraz mistrzów zawodu."],
-            ["Rzemiosło", "Najważniejsze są umiejętności: dobrze wykonane zadanie, dokładność, kultura pracy i kontakt z klientem."],
-            ["Nowoczesność", "Pracownie, projekty i współpraca z otoczeniem pomagają łączyć szkolną naukę z realnymi oczekiwaniami rynku."]
+          heroTitle: "Tu zawód zaczyna się od działania",
+          heroLead: "Szkoła Mistrzów to pracownie, ludzie i projekty. Fachu uczymy nie z plakatu, tylko przy stanowisku.",
+          primaryCta: "Zobacz opowieść",
+          secondaryCta: "Gdzie jesteśmy",
+          stats: [["80+", "lat tradycji"], ["4", "drogi kształcenia"], ["Dawida 5", "Wrocław, Huby"]],
+          heroPhotos: [
+            ["public/photos/gastronomy-tools.webp", "Gastronomia i cukiernictwo"],
+            ["public/photos/hair-lab.webp", "Pracownia fryzjerska"],
+            ["public/photos/trade-lab.webp", "Pracownia handlowa"]
           ],
-          pathsTitle: "Jedna szkoła, kilka dróg do zawodu",
-          pathsLead: "Strona nie zastępuje rekrutacji. Pokazuje logikę szkoły: różne tempo nauki, wspólny cel i praktyczne przygotowanie.",
+          storyKicker: "Szkoła z pamięcią i tempem warsztatu",
+          storyTitle: "Nie udajemy rynku pracy. Wpuszczamy go do szkoły.",
+          storyLead: "Uczeń widzi narzędzia, klienta, termin, zespół i efekt. Tak buduje się pewność, której nie da się dopisać na końcu lekcji.",
+          storyPhotos: [
+            ["public/photos/library.webp", "Biblioteka szkolna"],
+            ["public/photos/contest.webp", "Praca konkursowa"],
+            ["public/photos/jubilee-award.webp", "Jubileusz szkoły"]
+          ],
+          beats: [
+            ["Tradycja", "Szkoła ma za sobą wiele dekad historii, ale nie opowiada o sobie przez daty. Widać ją w rytmie dnia, w nazwiskach absolwentów i w szacunku do rzemiosła."],
+            ["Praktyka", "Zajęcia mają sens wtedy, kiedy uczeń dotyka narzędzi, pracuje na stanowisku i rozumie, po co wykonuje zadanie."],
+            ["Nowoczesność", "Nowoczesna szkoła zawodowa nie musi mówić wielkimi hasłami. Wystarczy, że daje uczniom sprzęt, projekty i kontakt z realnymi oczekiwaniami branży."]
+          ],
+          pathsKicker: "Drogi do zawodu",
+          pathsTitle: "Każdy może wejść innym rytmem",
+          pathsLead: "Technikum, szkoła branżowa, kontynuacja nauki i kursy zawodowe prowadzą do jednego celu: realnych umiejętności.",
+          pathsPhotoAlt: "Budynek ZSZ nr 5 we Wrocławiu",
+          pathsPhotoText: "Szkoła mieści się przy ulicy Jana Władysława Dawida, w miejscu dobrze skomunikowanym z miastem.",
           paths: [
-            ["Technikum", "Dłuższa ścieżka z maturą, kwalifikacjami zawodowymi i przygotowaniem do dalszej nauki lub pracy."],
-            ["Branżowa I stopnia", "Praktyczna droga do zawodu z dużym naciskiem na naukę w realnym środowisku pracy."],
-            ["Branżowa II stopnia", "Kontynuacja edukacji dla osób, które chcą rozwijać kwalifikacje i otworzyć drogę do matury."],
-            ["KKZ", "Kwalifikacyjne kursy zawodowe dla osób, które chcą zdobyć lub uzupełnić konkretne kwalifikacje."]
+            ["Technikum", "Dla uczniów, którzy chcą łączyć zawód, maturę i dalszą naukę."],
+            ["Branżowa I stopnia", "Dla tych, którzy chcą szybko wejść w praktykę i uczyć się zawodu od podstaw."],
+            ["Branżowa II stopnia", "Dalsza droga dla absolwentów, którzy chcą rozwinąć kwalifikacje i wrócić do matury."],
+            ["KKZ", "Kursy dla osób, które potrzebują konkretnej kwalifikacji zawodowej bez zaczynania szkoły od początku."]
           ],
-          practiceTitle: "Uczymy w praktyce",
-          practiceLead: "Najlepsza opowieść o szkole jest w pracowniach. Tam widać narzędzia, rytm zajęć i wymagania zawodu.",
-          practice: [
-            ["Gastronomia i cukiernictwo", "Technika, smak, organizacja pracy i konkursowa precyzja.", "public/photos/gastronomy-tools.webp", "Narzędzia i produkty w pracowni gastronomiczno-cukierniczej", "large"],
-            ["Fryzjerstwo", "Estetyka, kontakt z człowiekiem i praca na realnym stanowisku.", "public/photos/hair-lab.webp", "Pracownia fryzjerska z lustrami i stanowiskami", ""],
-            ["Handel", "Obsługa klienta, ekspozycja, sprzedaż i codzienna organizacja sklepu.", "public/photos/trade-lab.webp", "Kasa i wyposażenie pracowni handlowej", ""],
-            ["Aktywność", "Ruch, zespół i szkolna codzienność poza samą salą lekcyjną.", "public/photos/gym.webp", "Uczniowie ćwiczący na sali gimnastycznej", "wide"]
+          practiceKicker: "Uczymy w praktyce",
+          practiceTitle: "Najlepszy slajd to zdjęcie z pracowni",
+          practiceLead: "W gastronomii, fryzjerstwie, handlu i sporcie widać, czy wiedza działa. Dlatego pokazujemy sprzęt, ręce i tempo pracy.",
+          practiceQuote: "Zawód nie zaczyna się po szkole. Zaczyna się wtedy, kiedy uczeń pierwszy raz robi coś naprawdę.",
+          practiceTiles: [
+            ["public/photos/gastronomy-tools.webp", "Gastronomia i cukiernictwo", "big"],
+            ["public/photos/hair-lab.webp", "Fryzjerstwo", "tall"],
+            ["public/photos/trade-lab.webp", "Handel", "wide"],
+            ["public/photos/gym.webp", "Sala gimnastyczna", "wide"],
+            ["public/photos/hair-contest.webp", "Konkursy", "wide"]
           ],
-          projectsTitle: "Projekty otwierają szkołę na zewnątrz",
-          projectsLead: "W projektach szkoła spotyka pracodawców, partnerów edukacyjnych i międzynarodowe środowisko kształcenia zawodowego.",
-          projectAlt: "Praca zespołu podczas wydarzenia szkolnego",
+          projectsKicker: "Projekty i partnerstwa",
+          projectsTitle: "Szkoła działa poza własnymi murami",
+          projectsLead: "Projekty porządkują współpracę z pracodawcami, miastem i partnerami międzynarodowymi. To nie dodatek do szkoły, tylko sposób jej rozwoju.",
+          projectAlt: "Zespół podczas pracy przy stanowisku konkursowym",
           projects: [
-            ["COVE", "Współpraca wokół centrów doskonałości zawodowej i jakości nowoczesnego VET."],
-            ["WIN4SMEs", "Międzynarodowe działania wzmacniające kompetencje potrzebne w małych i średnich przedsiębiorstwach."],
-            ["Zawodowo w przyszłość", "Rozwój umiejętności uczniów i kadry we współpracy z lokalnym rynkiem pracy."],
-            ["Modernizacja", "Inwestycje miejskie i energetyczne, które wzmacniają warunki nauki w zabytkowych budynkach oświatowych."]
+            ["COVE", "Współpraca wokół centrów doskonałości zawodowej i jakości nowoczesnego kształcenia branżowego."],
+            ["WIN4SMEs", "Międzynarodowa praca nad kompetencjami potrzebnymi małym i średnim przedsiębiorstwom."],
+            ["Projekty miejskie i UE", "Szansa na nowe doświadczenia, sprzęt, szkolenia i wymianę perspektyw."],
+            ["Rozwój kompetencji", "Uczniowie i kadra pracują nad tym, co przyda się poza szkołą: komunikacją, odpowiedzialnością i standardem pracy."]
           ],
-          jubileeTitle: "80 lat szkoły to nie archiwum. To punkt startu.",
-          jubileeLead: "Jubileusz pokazuje ciągłość: ludzie, miejsca, zawody i wspólnota, która potrafi zmieniać się razem z Wrocławiem.",
-          finaleTitle: "Dalej: szczegóły, rekrutacja i aktualności",
-          finaleLead: "Ta strona jest krótką prezentacją. Pełne informacje są w serwisach szkoły.",
-          links: [["Strona rekrutacyjna", "https://www.szkolamistrzow.info/"], ["Strona główna szkoły", "https://zsz5.edupage.org/"], ["Projekty", "https://zsz5.edupage.org/a/projekty"]]
+          jubileeKicker: "80-lecie",
+          jubileeTitle: "Historia nie stoi w gablocie",
+          jubileeLead: "Jubileusz jest dobrą ramą dla tej opowieści: były pokolenia uczniów, są nowe pracownie i jest miasto, które cały czas potrzebuje fachowców.",
+          gallery: [
+            ["public/photos/jubilee-stage.webp", "Uroczystość jubileuszowa"],
+            ["public/photos/jubilee-award.webp", "Wręczenie wyróżnienia"],
+            ["public/photos/school-building.webp", "Budynek szkoły"],
+            ["public/photos/gastronomy-team.webp", "Praca zespołowa"],
+            ["public/photos/hair-contest.webp", "Konkurs fryzjerski"],
+            ["public/photos/contest.webp", "Turniej cukierniczy"]
+          ],
+          locationKicker: "Gdzie jesteśmy",
+          locationTitle: "ul. Jana Władysława Dawida 5",
+          locationLead: "Wrocław, Huby, Krzyki. Blisko centrum i głównych punktów komunikacyjnych miasta.",
+          locationFacts: [
+            ["Adres", "Jana Władysława Dawida 5, 50-527 Wrocław"],
+            ["Dzielnica", "Huby, obszar Krzyków"],
+            ["Dojazd", "Wygodny punkt dla uczniów z Wrocławia i okolic, w pobliżu Dworca Głównego i autobusowego"]
+          ],
+          finalBrand: "Krótka prezentacja szkoły. Szczegóły zostają w serwisach rekrutacyjnych i oficjalnych.",
+          finaleTitle: "Dalej: rekrutacja, aktualności, projekty",
+          finaleLead: "Ta strona ma opowiedzieć o charakterze szkoły. Pełne informacje, terminy i dokumenty są pod linkami.",
+          links: [
+            ["Rekrutacja", "https://www.szkolamistrzow.info/"],
+            ["Strona szkoły", "https://zsz5.edupage.org/"],
+            ["Projekty", "https://zsz5.edupage.org/a/projekty"]
+          ]
         },
         en: {
-          nav: ["Idea", "Paths", "Practice", "Projects", "80 years"],
+          nav: ["Who we are", "Paths", "Workshops", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
-          heroKicker: "Vocational School Complex No. 5 in Wroclaw",
-          heroTitle: "A school where skills become a future",
-          heroLead: "We connect craft tradition, modern workshops and learning close to the real labour market.",
-          primaryCta: "Explore the school",
-          secondaryCta: "Admissions",
-          stats: [["80+", "years of tradition"], ["4", "learning paths"], ["PL/EN", "presentation ready"]],
-          manifestTitle: "This place has the pace of a workshop and the memory of a school with history.",
-          manifestLead: "ZSZ No. 5 shows that vocational education can be practical, ambitious and close to people. Students see the result of their work, learn industry standards and take responsibility for their growth.",
-          values: [
-            ["Tradition", "The school grows from Wroclaw's history and the daily work of generations of teachers, students and vocational masters."],
-            ["Craft", "Skills come first: a well completed task, precision, work culture and contact with customers."],
-            ["Modernity", "Workshops, projects and cooperation with the environment connect school learning with real market expectations."]
+          heroKicker: "Vocational School Complex No. 5 in Wrocław",
+          heroTitle: "Skills start with doing",
+          heroLead: "Szkoła Mistrzów is workshops, people and projects. Students learn the craft at real workstations, not from a poster.",
+          primaryCta: "Follow the story",
+          secondaryCta: "Find us",
+          stats: [["80+", "years of tradition"], ["4", "learning routes"], ["Dawida 5", "Wrocław, Huby"]],
+          heroPhotos: [
+            ["public/photos/gastronomy-tools.webp", "Gastronomy and confectionery"],
+            ["public/photos/hair-lab.webp", "Hairdressing workshop"],
+            ["public/photos/trade-lab.webp", "Retail and trade workshop"]
           ],
-          pathsTitle: "One school, several paths to a profession",
-          pathsLead: "This page does not replace admissions. It explains the school: different learning rhythms, one shared goal and practical preparation.",
+          storyKicker: "A school with memory and workshop pace",
+          storyTitle: "We do not imitate the labour market. We bring it into school.",
+          storyLead: "Students meet tools, customers, deadlines, teams and results. That builds confidence no final lesson can simply add.",
+          storyPhotos: [
+            ["public/photos/library.webp", "School library"],
+            ["public/photos/contest.webp", "Competition work"],
+            ["public/photos/jubilee-award.webp", "School jubilee"]
+          ],
+          beats: [
+            ["Tradition", "The school has many decades behind it, but its story is not just dates. It lives in the daily rhythm, its graduates and the respect for craft."],
+            ["Practice", "Learning makes sense when students use tools, work at a station and understand why a task needs to be done well."],
+            ["Modernity", "A modern vocational school does not need loud slogans. It needs equipment, projects and contact with what the industry really expects."]
+          ],
+          pathsKicker: "Routes into a profession",
+          pathsTitle: "Different routes, one practical goal",
+          pathsLead: "Technical school, sectoral school, continuation paths and vocational courses all lead toward usable skills.",
+          pathsPhotoAlt: "The school building in Wrocław",
+          pathsPhotoText: "The school is located on Jana Władysława Dawida Street, with convenient access across the city.",
           paths: [
-            ["Technical school", "A longer path with final exams, vocational qualifications and preparation for further education or work."],
-            ["Stage I sectoral school", "A practical route to a profession with strong focus on learning in a real workplace."],
-            ["Stage II sectoral school", "A continuation path for students who want to develop qualifications and open the way to final exams."],
-            ["Vocational courses", "Qualification courses for people who want to gain or complete specific professional skills."]
+            ["Technical school", "For students who want vocational training, final exams and further education options."],
+            ["Stage I sectoral school", "For students who want to enter practice quickly and learn a profession from the ground up."],
+            ["Stage II sectoral school", "A continuation route for graduates who want to develop qualifications and return to final exams."],
+            ["Vocational courses", "Courses for people who need a specific professional qualification without starting school again."]
           ],
-          practiceTitle: "We teach through practice",
-          practiceLead: "The strongest story about the school is inside the workshops. You can see the tools, the rhythm of classes and the standards of work.",
-          practice: [
-            ["Gastronomy and confectionery", "Technique, taste, work organisation and competition-level precision.", "public/photos/gastronomy-tools.webp", "Tools and ingredients in the gastronomy and confectionery workshop", "large"],
-            ["Hairdressing", "Aesthetics, contact with people and learning at a real workstation.", "public/photos/hair-lab.webp", "Hairdressing classroom with mirrors and workstations", ""],
-            ["Retail and trade", "Customer service, display, sales and the everyday organisation of a store.", "public/photos/trade-lab.webp", "Cash register and equipment in the trade workshop", ""],
-            ["Activity", "Movement, teamwork and school life beyond the classroom.", "public/photos/gym.webp", "Students exercising in the school gym", "wide"]
+          practiceKicker: "Learning by doing",
+          practiceTitle: "The best slide is a workshop photo",
+          practiceLead: "In gastronomy, hairdressing, retail and sport, you can see whether knowledge works. That is why the page shows tools, hands and pace.",
+          practiceQuote: "A profession does not begin after school. It begins when a student does something real for the first time.",
+          practiceTiles: [
+            ["public/photos/gastronomy-tools.webp", "Gastronomy and confectionery", "big"],
+            ["public/photos/hair-lab.webp", "Hairdressing", "tall"],
+            ["public/photos/trade-lab.webp", "Retail and trade", "wide"],
+            ["public/photos/gym.webp", "Gym", "wide"],
+            ["public/photos/hair-contest.webp", "Competitions", "wide"]
           ],
-          projectsTitle: "Projects open the school to the world",
-          projectsLead: "Through projects, the school meets employers, education partners and the international vocational education community.",
-          projectAlt: "Team work during a school event",
+          projectsKicker: "Projects and partners",
+          projectsTitle: "The school works beyond its own walls",
+          projectsLead: "Projects organise cooperation with employers, the city and international partners. They are not an extra layer. They are how the school develops.",
+          projectAlt: "Students working together at a competition station",
           projects: [
-            ["COVE", "Cooperation around centres of vocational excellence and the quality of modern VET."],
-            ["WIN4SMEs", "International activities strengthening skills needed in small and medium-sized enterprises."],
-            ["Professionally into the future", "Development of student and teacher skills in cooperation with the local labour market."],
-            ["Modernisation", "Municipal and energy investments improving learning conditions in historic education buildings."]
+            ["COVE", "Cooperation around centres of vocational excellence and the quality of modern vocational education."],
+            ["WIN4SMEs", "International work on skills needed by small and medium-sized enterprises."],
+            ["City and EU projects", "Opportunities for new experience, equipment, training and exchange of perspectives."],
+            ["Competence development", "Students and staff work on what matters beyond school: communication, responsibility and professional standards."]
           ],
-          jubileeTitle: "80 years of school is not an archive. It is a starting point.",
-          jubileeLead: "The jubilee shows continuity: people, places, professions and a community that can change together with Wroclaw.",
-          finaleTitle: "Next: details, admissions and news",
-          finaleLead: "This page is a short presentation. Full information is available on the school's websites.",
-          links: [["Admissions website", "https://www.szkolamistrzow.info/"], ["Main school website", "https://zsz5.edupage.org/"], ["Projects", "https://zsz5.edupage.org/a/projekty"]]
+          jubileeKicker: "80 years",
+          jubileeTitle: "History is not kept behind glass",
+          jubileeLead: "The jubilee frames the story well: generations of students, new workshops and a city that still needs skilled people.",
+          gallery: [
+            ["public/photos/jubilee-stage.webp", "Jubilee ceremony"],
+            ["public/photos/jubilee-award.webp", "Award presentation"],
+            ["public/photos/school-building.webp", "School building"],
+            ["public/photos/gastronomy-team.webp", "Teamwork"],
+            ["public/photos/hair-contest.webp", "Hairdressing competition"],
+            ["public/photos/contest.webp", "Confectionery tournament"]
+          ],
+          locationKicker: "Where we are",
+          locationTitle: "Jana Władysława Dawida 5",
+          locationLead: "Wrocław, Huby, Krzyki. Close to the city centre and main transport points.",
+          locationFacts: [
+            ["Address", "Jana Władysława Dawida 5, 50-527 Wrocław"],
+            ["Area", "Huby, within the Krzyki district"],
+            ["Access", "A convenient point for students from Wrocław and the region, near the main railway and bus stations"]
+          ],
+          finalBrand: "A short presentation of the school. Detailed information stays on the admissions and official websites.",
+          finaleTitle: "Next: admissions, news, projects",
+          finaleLead: "This page tells the school story. Full information, dates and documents are available through the links.",
+          links: [
+            ["Admissions", "https://www.szkolamistrzow.info/"],
+            ["School website", "https://zsz5.edupage.org/"],
+            ["Projects", "https://zsz5.edupage.org/a/projekty"]
+          ]
         }
       };
 
-      const gallery = [
-        ["public/photos/school-building.webp", "Główne wejście do szkoły", "wide"],
-        ["public/photos/library.webp", "Biblioteka szkolna", ""],
-        ["public/photos/gastronomy-team.webp", "Zespół przy stanowisku konkursowym", ""],
-        ["public/photos/hair-contest.webp", "Uczestnicy konkursu fryzjerskiego", "wide"],
-        ["public/photos/contest.webp", "Praca konkursowa w turnieju cukierniczym", ""],
-        ["public/photos/jubilee-stage.webp", "Uroczystość jubileuszowa szkoły", ""],
-        ["public/photos/jubilee-award.webp", "Wręczenie wyróżnienia podczas jubileuszu", "wide"]
-      ];
-
       const get = (obj, path) => path.split(".").reduce((acc, key) => acc?.[key], obj);
       let activeLang = localStorage.getItem("zsz5-lang") === "en" ? "en" : "pl";
+
+      function htmlEscape(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
 
       function render(lang) {
         activeLang = lang;
@@ -897,41 +1353,54 @@
           button.classList.toggle("active", button.dataset.lang === lang);
         });
 
-        document.querySelector('[data-render="values"]').innerHTML = t.values
-          .map(([title, body]) => `<article class="value reveal visible"><h3>${title}</h3><p>${body}</p></article>`)
+        document.querySelector('[data-render="stats"]').innerHTML = t.stats
+          .map(([number, label]) => `<article class="stat"><strong>${htmlEscape(number)}</strong><span>${htmlEscape(label)}</span></article>`)
+          .join("");
+
+        document.querySelector('[data-render="heroPhotos"]').innerHTML = t.heroPhotos
+          .map(([src, label]) => `<figure class="poster"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><strong>${htmlEscape(label)}</strong></figure>`)
+          .join("");
+
+        document.querySelector('[data-render="storyPhotos"]').innerHTML = t.storyPhotos
+          .map(([src, alt]) => `<figure><img src="${htmlEscape(src)}" alt="${htmlEscape(alt)}" /></figure>`)
+          .join("");
+
+        document.querySelector('[data-render="beats"]').innerHTML = t.beats
+          .map(([title, body]) => `<article class="beat"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
           .join("");
 
         document.querySelector('[data-render="paths"]').innerHTML = t.paths
-          .map(([title, body]) => `<article class="path reveal visible"><h3>${title}</h3><p>${body}</p></article>`)
+          .map(([title, body]) => `<article class="path"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
           .join("");
 
-        document.querySelector('[data-render="practice"]').innerHTML = t.practice
-          .map(([title, body, src, alt, size]) => `
-            <article class="media-card ${size} reveal visible">
-              <img src="${src}" alt="${alt}" />
-              <div class="media-copy"><h3>${title}</h3><p>${body}</p></div>
-            </article>
-          `)
+        document.querySelector('[data-render="practiceTiles"]').innerHTML = t.practiceTiles
+          .map(([src, label, size]) => `<figure class="tile ${htmlEscape(size)}"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><span>${htmlEscape(label)}</span></figure>`)
           .join("");
 
         document.querySelector('[data-render="projects"]').innerHTML = t.projects
-          .map(([title, body]) => `<article class="project reveal visible"><h3>${title}</h3><p>${body}</p></article>`)
+          .map(([title, body]) => `<article class="project"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
           .join("");
 
-        document.querySelector('[data-render="gallery"]').innerHTML = gallery
-          .map(([src, alt, size]) => `<figure class="gallery-card ${size} reveal visible"><img src="${src}" alt="${alt}" /></figure>`)
+        document.querySelector('[data-render="gallery"]').innerHTML = t.gallery
+          .map(([src, alt]) => `<figure><img src="${htmlEscape(src)}" alt="${htmlEscape(alt)}" /></figure>`)
           .join("");
 
-        document.querySelector('[data-render="links"]').innerHTML =
-          t.links.map(([label, href]) => `<a href="${href}">${label}</a>`).join("") +
-          `<p class="year">ZSZ nr 5 Wrocław, ${new Date().getFullYear()}</p>`;
+        document.querySelector('[data-render="locationFacts"]').innerHTML = t.locationFacts
+          .map(([title, body]) => `<article class="fact"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
+          .join("");
+
+        document.querySelector('[data-render="links"]').innerHTML = t.links
+          .map(([label, href]) => `<a href="${htmlEscape(href)}">${htmlEscape(label)}</a>`)
+          .join("");
+
+        document.querySelector("[data-year]").textContent = new Date().getFullYear();
       }
 
       document.querySelectorAll("[data-lang]").forEach((button) => {
         button.addEventListener("click", () => render(button.dataset.lang));
       });
 
-      const sectionIds = ["start", "manifest", "paths", "practice", "projects", "jubilee", "contact"];
+      const sectionIds = ["start", "story", "paths", "practice", "projects", "jubilee", "location", "contact"];
       document.addEventListener("keydown", (event) => {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
         const keys = ["ArrowDown", "PageDown", "ArrowUp", "PageUp", "Home", "End"];
@@ -945,7 +1414,7 @@
         if (event.key === "ArrowUp" || event.key === "PageUp") index -= 1;
         if (event.key === "Home") index = 0;
         if (event.key === "End") index = sectionIds.length - 1;
-        document.getElementById(sectionIds[Math.max(0, Math.min(sectionIds.length - 1, index))]).scrollIntoView({ behavior: "smooth" });
+        document.getElementById(sectionIds[Math.max(0, Math.min(sectionIds.length - 1, index))]).scrollIntoView({ behavior: "smooth", block: "start" });
       });
 
       const observer = new IntersectionObserver(
