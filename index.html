@@ -311,9 +311,9 @@
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+        grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.58fr) 178px;
         align-items: end;
-        gap: 54px;
+        gap: 28px;
       }
 
       .hero .slide-title {
@@ -404,6 +404,41 @@
         font-size: 14px;
         font-weight: 850;
         margin-top: 7px;
+      }
+
+      .qr-card {
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        align-self: end;
+        border: 1px solid rgb(31 91 58 / 0.16);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.92);
+        box-shadow: var(--shadow);
+        padding: 14px;
+      }
+
+      .qr-card img {
+        width: 142px;
+        height: 142px;
+        border-radius: 6px;
+      }
+
+      .qr-card p {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 950;
+        line-height: 1.18;
+        text-align: center;
+      }
+
+      .qr-card span {
+        display: block;
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 900;
+        margin-top: 4px;
+        overflow-wrap: anywhere;
       }
 
       .story-grid {
@@ -847,6 +882,10 @@
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
+        .qr-card {
+          display: none;
+        }
+
         .poster:nth-child(n) {
           margin: 0;
           transform: none;
@@ -1023,6 +1062,13 @@
             <div class="stat-strip" data-render="stats"></div>
           </div>
           <div class="poster-stack reveal" data-render="heroPhotos"></div>
+          <aside class="qr-card reveal" aria-label="Kod QR do strony about.szkolamistrzow.info">
+            <img src="public/photos/about-qr.png" alt="Kod QR prowadzący do strony about.szkolamistrzow.info" width="142" height="142" />
+            <p>
+              <span data-i18n="qrLabel">Zeskanuj stronę</span>
+              <span>about.szkolamistrzow.info</span>
+            </p>
+          </aside>
         </div>
       </section>
 
@@ -1154,6 +1200,7 @@
           heroLead: "Szkoła Mistrzów to pracownie, ludzie i projekty. Fachu uczymy nie z plakatu, tylko przy stanowisku.",
           primaryCta: "Zobacz opowieść",
           secondaryCta: "Gdzie jesteśmy",
+          qrLabel: "Zeskanuj stronę",
           stats: [["80+", "lat tradycji"], ["4", "drogi kształcenia"], ["Dawida 5", "Wrocław, Huby"]],
           heroPhotos: [
             ["public/photos/gastronomy-tools.webp", "Gastronomia i cukiernictwo"],
@@ -1241,6 +1288,7 @@
           heroLead: "Szkoła Mistrzów is workshops, people and projects. Students learn the craft at real workstations, not from a poster.",
           primaryCta: "Follow the story",
           secondaryCta: "Find us",
+          qrLabel: "Scan the page",
           stats: [["80+", "years of tradition"], ["4", "learning routes"], ["Dawida 5", "Wrocław, Huby"]],
           heroPhotos: [
             ["public/photos/gastronomy-tools.webp", "Gastronomy and confectionery"],
