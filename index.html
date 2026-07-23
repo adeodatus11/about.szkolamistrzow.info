@@ -393,9 +393,10 @@
       .stat strong {
         display: block;
         color: var(--green);
-        font-size: clamp(30px, 4vw, 48px);
+        font-size: clamp(27px, 3vw, 42px);
         font-weight: 1000;
-        line-height: 1;
+        line-height: 0.98;
+        overflow-wrap: anywhere;
       }
 
       .stat span {
@@ -435,8 +436,9 @@
       .qr-card span {
         display: block;
         color: var(--green);
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 900;
+        line-height: 1.12;
         margin-top: 4px;
         overflow-wrap: anywhere;
       }
@@ -1193,48 +1195,48 @@
     <script>
       const content = {
         pl: {
-          nav: ["Kim jesteśmy", "Drogi", "Pracownie", "Projekty", "Mapa"],
+          nav: ["Czym jesteśmy", "Dualność", "Pracownie", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
-          heroKicker: "Zespół Szkół Zawodowych nr 5 we Wrocławiu",
-          heroTitle: "Tu zawód zaczyna się od działania",
-          heroLead: "Szkoła Mistrzów to pracownie, ludzie i projekty. Fachu uczymy nie z plakatu, tylko przy stanowisku.",
+          heroKicker: "Academy of Excellence",
+          heroTitle: "Zespół Szkół Zawodowych nr 5",
+          heroLead: "Szkoła Mistrzów we Wrocławiu. Tu młody człowiek wybiera zawód, uczy się go w pracowni i sprawdza u pracodawcy.",
           primaryCta: "Zobacz opowieść",
           secondaryCta: "Gdzie jesteśmy",
           qrLabel: "Zeskanuj stronę",
-          stats: [["80+", "lat tradycji"], ["4", "drogi kształcenia"], ["Dawida 5", "Wrocław, Huby"]],
+          stats: [["T5", "technikum: zawód i matura"], ["BS I", "szkoła plus pracodawca"], ["70+", "nauczycieli"]],
           heroPhotos: [
-            ["public/photos/gastronomy-tools.webp", "Gastronomia i cukiernictwo"],
-            ["public/photos/hair-lab.webp", "Pracownia fryzjerska"],
-            ["public/photos/trade-lab.webp", "Pracownia handlowa"]
+            ["public/photos/school-building.webp", "Budynek szkoły"],
+            ["public/photos/hero-mural.webp", "Mural Cierplikowskiego"],
+            ["public/photos/gastronomy-tools.webp", "Pracownia gastronomiczna"]
           ],
-          storyKicker: "Szkoła z pamięcią i tempem warsztatu",
-          storyTitle: "Nie udajemy rynku pracy. Wpuszczamy go do szkoły.",
-          storyLead: "Uczeń widzi narzędzia, klienta, termin, zespół i efekt. Tak buduje się pewność, której nie da się dopisać na końcu lekcji.",
+          storyKicker: "Najpierw: co to za szkoła?",
+          storyTitle: "To nie jest jedna ścieżka. To kilka dróg do fachu.",
+          storyLead: "ZSZ nr 5 łączy technikum, szkołę branżową I i II stopnia oraz kursy kwalifikacyjne. Wspólny mianownik jest prosty: uczeń ma wyjść ze szkoły z umiejętnością, którą potrafi pokazać.",
           storyPhotos: [
+            ["public/photos/school-building.webp", "Budynek szkoły"],
             ["public/photos/library.webp", "Biblioteka szkolna"],
-            ["public/photos/contest.webp", "Praca konkursowa"],
-            ["public/photos/jubilee-award.webp", "Jubileusz szkoły"]
+            ["public/photos/jubilee-stage.webp", "Wrocławska uroczystość szkolna"]
           ],
           beats: [
-            ["Tradycja", "Szkoła ma za sobą wiele dekad historii, ale nie opowiada o sobie przez daty. Widać ją w rytmie dnia, w nazwiskach absolwentów i w szacunku do rzemiosła."],
-            ["Praktyka", "Zajęcia mają sens wtedy, kiedy uczeń dotyka narzędzi, pracuje na stanowisku i rozumie, po co wykonuje zadanie."],
-            ["Nowoczesność", "Nowoczesna szkoła zawodowa nie musi mówić wielkimi hasłami. Wystarczy, że daje uczniom sprzęt, projekty i kontakt z realnymi oczekiwaniami branży."]
+            ["Technikum", "Dla uczniów, którzy chcą mieć zawód, maturę i otwartą drogę na studia albo do pracy."],
+            ["Szkoła branżowa", "Dla tych, którzy chcą szybciej wejść w zawód i uczyć się go w kontakcie z prawdziwym miejscem pracy."],
+            ["Nauczyciele", "Największa różnica dzieje się przy stanowisku. Dobry nauczyciel widzi błąd, pokazuje gest i pilnuje standardu."]
           ],
-          pathsKicker: "Drogi do zawodu",
-          pathsTitle: "Każdy może wejść innym rytmem",
-          pathsLead: "Technikum, szkoła branżowa, kontynuacja nauki i kursy zawodowe prowadzą do jednego celu: realnych umiejętności.",
+          pathsKicker: "Szkoła dualna bez żargonu",
+          pathsTitle: "W BS I stopnia uczeń ma dwa światy: szkołę i pracodawcę.",
+          pathsLead: "W szkole dostaje podstawy, język zawodu i opiekę nauczycieli. U pracodawcy widzi tempo, klienta, odpowiedzialność i codzienny standard pracy.",
           pathsPhotoAlt: "Budynek ZSZ nr 5 we Wrocławiu",
-          pathsPhotoText: "Szkoła mieści się przy ulicy Jana Władysława Dawida, w miejscu dobrze skomunikowanym z miastem.",
+          pathsPhotoText: "Dualność działa wtedy, gdy szkoła i pracodawca mówią jednym głosem: uczymy fachu, który naprawdę przydaje się po lekcjach.",
           paths: [
-            ["Technikum", "Dla uczniów, którzy chcą łączyć zawód, maturę i dalszą naukę."],
-            ["Branżowa I stopnia", "Dla tych, którzy chcą szybko wejść w praktykę i uczyć się zawodu od podstaw."],
-            ["Branżowa II stopnia", "Dalsza droga dla absolwentów, którzy chcą rozwinąć kwalifikacje i wrócić do matury."],
-            ["KKZ", "Kursy dla osób, które potrzebują konkretnej kwalifikacji zawodowej bez zaczynania szkoły od początku."]
+            ["Szkoła", "Uczy teorii, podstaw zawodowych, organizacji pracy, komunikacji i tego, jak rozumieć branżę."],
+            ["Pracodawca", "Daje praktykę przy realnym stanowisku. Uczeń widzi rytm firmy, wymagania klienta i konsekwencje pracy."],
+            ["Nauczyciel", "Łączy oba światy. Tłumaczy, porządkuje, wymaga i pomaga zamienić doświadczenie w umiejętność."],
+            ["Uczeń", "Nie tylko słucha o zawodzie. Stopniowo staje się osobą, która potrafi wykonać konkretne zadanie."]
           ],
-          practiceKicker: "Uczymy w praktyce",
-          practiceTitle: "Najlepszy slajd to zdjęcie z pracowni",
-          practiceLead: "W gastronomii, fryzjerstwie, handlu i sporcie widać, czy wiedza działa. Dlatego pokazujemy sprzęt, ręce i tempo pracy.",
-          practiceQuote: "Zawód nie zaczyna się po szkole. Zaczyna się wtedy, kiedy uczeń pierwszy raz robi coś naprawdę.",
+          practiceKicker: "Academic programs",
+          practiceTitle: "Pracownie są drugim językiem tej szkoły.",
+          practiceLead: "Fryzjerstwo, gastronomia, cukiernictwo, handel, zajęcia sportowe. W tych przestrzeniach widać, że nauka zawodowa ma zapach, ruch, narzędzia i tempo.",
+          practiceQuote: "Świetny nauczyciel nie tylko mówi, jak coś zrobić. Staje obok, pokazuje, poprawia i wymaga, aż uczeń sam widzi różnicę.",
           practiceTiles: [
             ["public/photos/gastronomy-tools.webp", "Gastronomia i cukiernictwo", "big"],
             ["public/photos/hair-lab.webp", "Fryzjerstwo", "tall"],
@@ -1242,26 +1244,26 @@
             ["public/photos/gym.webp", "Sala gimnastyczna", "wide"],
             ["public/photos/hair-contest.webp", "Konkursy", "wide"]
           ],
-          projectsKicker: "Projekty i partnerstwa",
-          projectsTitle: "Szkoła działa poza własnymi murami",
-          projectsLead: "Projekty porządkują współpracę z pracodawcami, miastem i partnerami międzynarodowymi. To nie dodatek do szkoły, tylko sposób jej rozwoju.",
+          projectsKicker: "International cooperation",
+          projectsTitle: "Dobra szkoła zawodowa musi mieć partnerów.",
+          projectsLead: "Tu pracodawcy, instruktorzy i projekty nie są dodatkiem do folderu. Są częścią systemu, który daje uczniom doświadczenie, a nauczycielom nowe narzędzia.",
           projectAlt: "Zespół podczas pracy przy stanowisku konkursowym",
           projects: [
-            ["COVE", "Współpraca wokół centrów doskonałości zawodowej i jakości nowoczesnego kształcenia branżowego."],
-            ["WIN4SMEs", "Międzynarodowa praca nad kompetencjami potrzebnymi małym i średnim przedsiębiorstwom."],
-            ["Projekty miejskie i UE", "Szansa na nowe doświadczenia, sprzęt, szkolenia i wymianę perspektyw."],
-            ["Rozwój kompetencji", "Uczniowie i kadra pracują nad tym, co przyda się poza szkołą: komunikacją, odpowiedzialnością i standardem pracy."]
+            ["Erasmus+", "Staże zagraniczne dla uczniów i szkolenia dla nauczycieli. Inne systemy edukacji widać wtedy z bliska."],
+            ["WIN4SMEs i COVE", "Współpraca projektowa wokół nowoczesnego kształcenia zawodowego i kompetencji potrzebnych firmom."],
+            ["ARAW i Faveo", "Partnerzy, którzy wspierają rozwój zawodowy uczniów i jakość edukacji branżowej."],
+            ["CulumNATURA", "Współpraca przy naturalnych produktach fryzjerskich, ekologii pracy i szkoleniu nauczycieli."]
           ],
-          jubileeKicker: "80-lecie",
-          jubileeTitle: "Historia nie stoi w gablocie",
-          jubileeLead: "Jubileusz jest dobrą ramą dla tej opowieści: były pokolenia uczniów, są nowe pracownie i jest miasto, które cały czas potrzebuje fachowców.",
+          jubileeKicker: "Tournaments and symbols",
+          jubileeTitle: "Ta szkoła ma swoje znaki rozpoznawcze.",
+          jubileeLead: "Patron Jan Kiliński przypomina o godności rzemiosła. Mural Antoine'a Cierplikowskiego pokazuje ambicję fryzjerstwa. Konkursy cukiernicze, piekarskie i fryzjerskie sprawdzają talent w działaniu.",
           gallery: [
-            ["public/photos/jubilee-stage.webp", "Uroczystość jubileuszowa"],
-            ["public/photos/jubilee-award.webp", "Wręczenie wyróżnienia"],
-            ["public/photos/school-building.webp", "Budynek szkoły"],
-            ["public/photos/gastronomy-team.webp", "Praca zespołowa"],
+            ["public/photos/hero-mural.webp", "Mural Antoine'a Cierplikowskiego"],
             ["public/photos/hair-contest.webp", "Konkurs fryzjerski"],
-            ["public/photos/contest.webp", "Turniej cukierniczy"]
+            ["public/photos/contest.webp", "Turniej cukierniczy"],
+            ["public/photos/gastronomy-team.webp", "Praca zespołowa"],
+            ["public/photos/jubilee-stage.webp", "Uroczystość jubileuszowa"],
+            ["public/photos/jubilee-award.webp", "Wręczenie wyróżnienia"]
           ],
           locationKicker: "Gdzie jesteśmy",
           locationTitle: "ul. Jana Władysława Dawida 5",
@@ -1271,9 +1273,9 @@
             ["Dzielnica", "Huby, obszar Krzyków"],
             ["Dojazd", "Wygodny punkt dla uczniów z Wrocławia i okolic, w pobliżu Dworca Głównego i autobusowego"]
           ],
-          finalBrand: "Krótka prezentacja szkoły. Szczegóły zostają w serwisach rekrutacyjnych i oficjalnych.",
-          finaleTitle: "Dalej: rekrutacja, aktualności, projekty",
-          finaleLead: "Ta strona ma opowiedzieć o charakterze szkoły. Pełne informacje, terminy i dokumenty są pod linkami.",
+          finalBrand: "To opowieść dla kogoś, kto dopiero poznaje ZSZ nr 5: szkołę, która łączy nauczycieli, pracownie i pracodawców.",
+          finaleTitle: "Jeśli chcesz zrozumieć szkołę, wejdź do pracowni.",
+          finaleLead: "A po szczegóły rekrutacji, aktualności, projekty i dokumenty zajrzyj na oficjalne strony.",
           links: [
             ["Rekrutacja", "https://www.szkolamistrzow.info/"],
             ["Strona szkoły", "https://zsz5.edupage.org/"],
@@ -1281,48 +1283,48 @@
           ]
         },
         en: {
-          nav: ["Who we are", "Paths", "Workshops", "Projects", "Map"],
+          nav: ["What we are", "Dual model", "Workshops", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
-          heroKicker: "Vocational School Complex No. 5 in Wrocław",
-          heroTitle: "Skills start with doing",
-          heroLead: "Szkoła Mistrzów is workshops, people and projects. Students learn the craft at real workstations, not from a poster.",
+          heroKicker: "Academy of Excellence",
+          heroTitle: "Vocational School Complex No. 5",
+          heroLead: "Szkoła Mistrzów in Wrocław. Here, students choose a profession, learn it in workshops and test it with employers.",
           primaryCta: "Follow the story",
           secondaryCta: "Find us",
           qrLabel: "Scan the page",
-          stats: [["80+", "years of tradition"], ["4", "learning routes"], ["Dawida 5", "Wrocław, Huby"]],
+          stats: [["T5", "technical school"], ["Stage I", "school plus employer"], ["70+", "educators"]],
           heroPhotos: [
-            ["public/photos/gastronomy-tools.webp", "Gastronomy and confectionery"],
-            ["public/photos/hair-lab.webp", "Hairdressing workshop"],
-            ["public/photos/trade-lab.webp", "Retail and trade workshop"]
+            ["public/photos/school-building.webp", "School building"],
+            ["public/photos/hero-mural.webp", "Cierplikowski mural"],
+            ["public/photos/gastronomy-tools.webp", "Gastronomy workshop"]
           ],
-          storyKicker: "A school with memory and workshop pace",
-          storyTitle: "We do not imitate the labour market. We bring it into school.",
-          storyLead: "Students meet tools, customers, deadlines, teams and results. That builds confidence no final lesson can simply add.",
+          storyKicker: "First: what kind of school is this?",
+          storyTitle: "It is not one route. It is several ways into a profession.",
+          storyLead: "ZSZ No. 5 brings together a technical school, stage I and II sectoral schools and vocational qualification courses. The shared goal is simple: students leave with skills they can demonstrate.",
           storyPhotos: [
+            ["public/photos/school-building.webp", "School building"],
             ["public/photos/library.webp", "School library"],
-            ["public/photos/contest.webp", "Competition work"],
-            ["public/photos/jubilee-award.webp", "School jubilee"]
+            ["public/photos/jubilee-stage.webp", "School ceremony in Wrocław"]
           ],
           beats: [
-            ["Tradition", "The school has many decades behind it, but its story is not just dates. It lives in the daily rhythm, its graduates and the respect for craft."],
-            ["Practice", "Learning makes sense when students use tools, work at a station and understand why a task needs to be done well."],
-            ["Modernity", "A modern vocational school does not need loud slogans. It needs equipment, projects and contact with what the industry really expects."]
+            ["Technical school", "For students who want a profession, the Matura exam and an open path to further study or work."],
+            ["Sectoral school", "For students who want to enter practice sooner and learn a profession in contact with a real workplace."],
+            ["Teachers", "The real difference happens at the workstation. A good teacher sees the mistake, shows the gesture and protects the standard."]
           ],
-          pathsKicker: "Routes into a profession",
-          pathsTitle: "Different routes, one practical goal",
-          pathsLead: "Technical school, sectoral school, continuation paths and vocational courses all lead toward usable skills.",
+          pathsKicker: "Dual education, without jargon",
+          pathsTitle: "In Stage I sectoral school, students have two worlds: school and employer.",
+          pathsLead: "At school, they learn foundations, vocational language and receive teacher support. With employers, they see pace, customers, responsibility and everyday work standards.",
           pathsPhotoAlt: "The school building in Wrocław",
-          pathsPhotoText: "The school is located on Jana Władysława Dawida Street, with convenient access across the city.",
+          pathsPhotoText: "Dual education works when school and employer speak with one purpose: we teach a profession that matters beyond the classroom.",
           paths: [
-            ["Technical school", "For students who want vocational training, final exams and further education options."],
-            ["Stage I sectoral school", "For students who want to enter practice quickly and learn a profession from the ground up."],
-            ["Stage II sectoral school", "A continuation route for graduates who want to develop qualifications and return to final exams."],
-            ["Vocational courses", "Courses for people who need a specific professional qualification without starting school again."]
+            ["School", "Provides theory, vocational foundations, work organisation, communication and an understanding of the industry."],
+            ["Employer", "Provides practice at a real workstation. Students see company rhythm, customer expectations and the consequences of work."],
+            ["Teacher", "Connects both worlds. Explains, structures, demands and helps turn experience into skill."],
+            ["Student", "Does not only hear about a profession. Step by step, the student becomes someone who can complete a real task."]
           ],
-          practiceKicker: "Learning by doing",
-          practiceTitle: "The best slide is a workshop photo",
-          practiceLead: "In gastronomy, hairdressing, retail and sport, you can see whether knowledge works. That is why the page shows tools, hands and pace.",
-          practiceQuote: "A profession does not begin after school. It begins when a student does something real for the first time.",
+          practiceKicker: "Academic programs",
+          practiceTitle: "Workshops are the school's second language.",
+          practiceLead: "Hairdressing, gastronomy, confectionery, retail, sport. In these spaces, vocational learning has tools, movement, smell and pace.",
+          practiceQuote: "An excellent teacher does not only explain. They stand beside the student, demonstrate, correct and keep demanding until the student sees the difference.",
           practiceTiles: [
             ["public/photos/gastronomy-tools.webp", "Gastronomy and confectionery", "big"],
             ["public/photos/hair-lab.webp", "Hairdressing", "tall"],
@@ -1330,26 +1332,26 @@
             ["public/photos/gym.webp", "Gym", "wide"],
             ["public/photos/hair-contest.webp", "Competitions", "wide"]
           ],
-          projectsKicker: "Projects and partners",
-          projectsTitle: "The school works beyond its own walls",
-          projectsLead: "Projects organise cooperation with employers, the city and international partners. They are not an extra layer. They are how the school develops.",
+          projectsKicker: "International cooperation",
+          projectsTitle: "A good vocational school needs partners.",
+          projectsLead: "Employers, trainers and projects are not brochure extras here. They are part of a system that gives students experience and teachers new tools.",
           projectAlt: "Students working together at a competition station",
           projects: [
-            ["COVE", "Cooperation around centres of vocational excellence and the quality of modern vocational education."],
-            ["WIN4SMEs", "International work on skills needed by small and medium-sized enterprises."],
-            ["City and EU projects", "Opportunities for new experience, equipment, training and exchange of perspectives."],
-            ["Competence development", "Students and staff work on what matters beyond school: communication, responsibility and professional standards."]
+            ["Erasmus+", "International internships for students and training for teachers. Other education systems become something you can actually compare."],
+            ["WIN4SMEs and COVE", "Project cooperation around modern vocational education and the skills needed by companies."],
+            ["ARAW and Faveo", "Partners supporting students' career development and the quality of vocational education."],
+            ["CulumNATURA", "Cooperation around natural hairdressing products, ecological work standards and teacher training."]
           ],
-          jubileeKicker: "80 years",
-          jubileeTitle: "History is not kept behind glass",
-          jubileeLead: "The jubilee frames the story well: generations of students, new workshops and a city that still needs skilled people.",
+          jubileeKicker: "Tournaments and symbols",
+          jubileeTitle: "The school has its own signs and symbols.",
+          jubileeLead: "Patron Jan Kiliński points to the dignity of craft. The Antoine Cierplikowski mural shows the ambition of hairdressing. Confectionery, baking and hairdressing competitions test talent in action.",
           gallery: [
-            ["public/photos/jubilee-stage.webp", "Jubilee ceremony"],
-            ["public/photos/jubilee-award.webp", "Award presentation"],
-            ["public/photos/school-building.webp", "School building"],
-            ["public/photos/gastronomy-team.webp", "Teamwork"],
+            ["public/photos/hero-mural.webp", "Antoine Cierplikowski mural"],
             ["public/photos/hair-contest.webp", "Hairdressing competition"],
-            ["public/photos/contest.webp", "Confectionery tournament"]
+            ["public/photos/contest.webp", "Confectionery tournament"],
+            ["public/photos/gastronomy-team.webp", "Teamwork"],
+            ["public/photos/jubilee-stage.webp", "Jubilee ceremony"],
+            ["public/photos/jubilee-award.webp", "Award presentation"]
           ],
           locationKicker: "Where we are",
           locationTitle: "Jana Władysława Dawida 5",
@@ -1359,9 +1361,9 @@
             ["Area", "Huby, within the Krzyki district"],
             ["Access", "A convenient point for students from Wrocław and the region, near the main railway and bus stations"]
           ],
-          finalBrand: "A short presentation of the school. Detailed information stays on the admissions and official websites.",
-          finaleTitle: "Next: admissions, news, projects",
-          finaleLead: "This page tells the school story. Full information, dates and documents are available through the links.",
+          finalBrand: "This story is for someone meeting ZSZ No. 5 for the first time: a school built around teachers, workshops and employers.",
+          finaleTitle: "To understand the school, step into the workshop.",
+          finaleLead: "For admissions, news, projects and official documents, visit the school websites.",
           links: [
             ["Admissions", "https://www.szkolamistrzow.info/"],
             ["School website", "https://zsz5.edupage.org/"],
