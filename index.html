@@ -247,6 +247,14 @@
         color: #f0cb77;
       }
 
+      .hero-lockup {
+        display: block;
+        width: min(520px, 72vw);
+        height: auto;
+        margin-bottom: 22px;
+        mix-blend-mode: multiply;
+      }
+
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -938,6 +946,11 @@
           line-height: 1.02;
         }
 
+        .hero-lockup {
+          width: min(310px, 82vw);
+          margin-bottom: 18px;
+        }
+
         .slide-lead {
           font-size: 18px;
           line-height: 1.55;
@@ -1052,8 +1065,15 @@
         <img class="hero-bg" src="public/photos/hero-mural.webp" alt="Mural przy budynku szkoły" data-i18n-alt="heroAlt" />
         <div class="shell hero-grid">
           <div class="reveal">
-            <p class="label" data-i18n="heroKicker">Academy of Excellence</p>
-            <h1 class="slide-title" data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5</h1>
+            <img
+              class="hero-lockup"
+              src="public/photos/szkola-mistrzow-lockup.png"
+              alt="Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów"
+              width="520"
+              height="110"
+              data-i18n-alt="heroLockupAlt"
+            />
+            <h1 class="slide-title" data-i18n="heroTitle">Technikum. Szkoła branżowa. Pracodawcy.</h1>
             <p class="slide-lead" data-i18n="heroLead">
               Szkoła Mistrzów we Wrocławiu. Tu młody człowiek wybiera zawód, uczy się go w pracowni i sprawdza u pracodawcy.
             </p>
@@ -1197,8 +1217,9 @@
         pl: {
           nav: ["Czym jesteśmy", "Dualność", "Pracownie", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
+          heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
-          heroTitle: "Zespół Szkół Zawodowych nr 5",
+          heroTitle: "Technikum. Szkoła branżowa. Pracodawcy.",
           heroLead: "Szkoła Mistrzów we Wrocławiu. Tu młody człowiek wybiera zawód, uczy się go w pracowni i sprawdza u pracodawcy.",
           primaryCta: "Zobacz opowieść",
           secondaryCta: "Gdzie jesteśmy",
@@ -1285,8 +1306,9 @@
         en: {
           nav: ["What we are", "Dual model", "Workshops", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
+          heroLockupAlt: "ZSZ5 in Wrocław and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
-          heroTitle: "Vocational School Complex No. 5",
+          heroTitle: "Technical school. Sectoral school. Employers.",
           heroLead: "Szkoła Mistrzów in Wrocław. Here, students choose a profession, learn it in workshops and test it with employers.",
           primaryCta: "Follow the story",
           secondaryCta: "Find us",
