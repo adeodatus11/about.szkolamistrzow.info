@@ -97,7 +97,7 @@ const content = {
   },
   en: {
     nav: ["Idea", "Paths", "Practice", "Projects", "80 years"],
-    heroKicker: "Vocational School Complex No. 5 in Wroclaw",
+    heroKicker: "VSCW5 (Vocational School Complex no.5 Wrocław)",
     heroTitle: "A school where skills become a future",
     heroLead:
       "We connect craft tradition, modern workshops and learning close to the real labour market.",
@@ -110,7 +110,7 @@ const content = {
     ],
     manifestTitle: "This place has the pace of a workshop and the memory of a school with history.",
     manifestLead:
-      "ZSZ No. 5 shows that vocational education can be practical, ambitious and close to people. Students see the result of their work, learn industry standards and take responsibility for their growth.",
+      "VSCW5 shows that vocational education can be practical, ambitious and close to people. Students see the result of their work, learn industry standards and take responsibility for their growth.",
     values: [
       ["Tradition", "The school grows from Wroclaw's history and the daily work of generations of teachers, students and vocational masters."],
       ["Craft", "Skills come first: a well completed task, precision, work culture and contact with customers."],
