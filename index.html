@@ -716,6 +716,117 @@
         color: rgb(255 255 255 / 0.78);
       }
 
+      .professions-slide {
+        background:
+          linear-gradient(180deg, rgb(255 250 240 / 0.88), rgb(247 244 234 / 0.96)),
+          radial-gradient(circle at 82% 18%, rgb(215 177 93 / 0.28), transparent 34%);
+      }
+
+      .professions-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.58fr) minmax(0, 1.42fr);
+        gap: 38px;
+        align-items: center;
+      }
+
+      .professions-copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .professions-note {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .professions-note p {
+        border-top: 2px solid var(--green);
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.4;
+        padding-top: 12px;
+      }
+
+      .profession-stage {
+        display: grid;
+        gap: 12px;
+        overflow: hidden;
+        padding: 12px 0;
+        mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+      }
+
+      .profession-row {
+        overflow: hidden;
+      }
+
+      .profession-track {
+        display: flex;
+        width: max-content;
+        gap: 12px;
+        will-change: transform;
+      }
+
+      .profession-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        width: 292px;
+        min-height: 90px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.9);
+        box-shadow: 0 16px 45px rgb(23 32 25 / 0.08);
+        padding: 14px;
+      }
+
+      .profession-card.tech {
+        border-color: rgb(31 91 58 / 0.34);
+        background: var(--green);
+        color: white;
+      }
+
+      .profession-mark {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: var(--ink);
+        color: white;
+        font-size: 13px;
+        font-weight: 1000;
+        line-height: 1;
+      }
+
+      .profession-card.tech .profession-mark {
+        background: #f0cb77;
+        color: var(--green-2);
+      }
+
+      .profession-name {
+        display: block;
+        font-size: 19px;
+        font-weight: 1000;
+        line-height: 1.08;
+      }
+
+      .profession-meta {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 850;
+        line-height: 1.22;
+      }
+
+      .profession-card.tech .profession-meta {
+        color: rgb(255 255 255 / 0.76);
+      }
+
       .gallery {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -920,6 +1031,7 @@
         .story-grid,
         .paths-layout,
         .practice-layout,
+        .professions-layout,
         .projects-layout,
         .location-grid,
         .final-card {
@@ -996,6 +1108,44 @@
 
         .project-photo img {
           aspect-ratio: 16 / 8.6;
+        }
+
+        .professions-note {
+          margin-top: 18px;
+        }
+
+        .professions-note p {
+          font-size: 13.5px;
+          line-height: 1.32;
+        }
+
+        .profession-stage {
+          gap: 10px;
+        }
+
+        .profession-track {
+          gap: 10px;
+        }
+
+        .profession-card {
+          grid-template-columns: 38px minmax(0, 1fr);
+          width: 260px;
+          min-height: 82px;
+          padding: 12px;
+        }
+
+        .profession-mark {
+          width: 38px;
+          height: 38px;
+        }
+
+        .profession-name {
+          font-size: 17px;
+        }
+
+        .profession-meta {
+          margin-top: 5px;
+          font-size: 12px;
         }
 
         .gallery {
@@ -1124,6 +1274,50 @@
           aspect-ratio: 16 / 7.2;
         }
 
+        .professions-layout {
+          gap: 24px;
+        }
+
+        .professions-note {
+          margin-top: 14px;
+        }
+
+        .professions-note p {
+          font-size: 12.5px;
+          line-height: 1.26;
+          padding-top: 9px;
+        }
+
+        .profession-stage {
+          gap: 8px;
+          padding: 8px 0;
+        }
+
+        .profession-track {
+          gap: 8px;
+        }
+
+        .profession-card {
+          grid-template-columns: 34px minmax(0, 1fr);
+          width: 232px;
+          min-height: 72px;
+          padding: 10px;
+        }
+
+        .profession-mark {
+          width: 34px;
+          height: 34px;
+          font-size: 12px;
+        }
+
+        .profession-name {
+          font-size: 15.5px;
+        }
+
+        .profession-meta {
+          font-size: 11.5px;
+        }
+
         .gallery {
           grid-auto-rows: 180px;
           margin-top: 18px;
@@ -1162,6 +1356,7 @@
         .story-grid,
         .paths-layout,
         .practice-layout,
+        .professions-layout,
         .projects-layout,
         .location-grid,
         .final-card {
@@ -1239,6 +1434,7 @@
         .poster-stack,
         .stat-strip,
         .paths-grid,
+        .professions-note,
         .links {
           grid-template-columns: 1fr;
         }
@@ -1279,6 +1475,15 @@
         .tile.wide {
           grid-column: auto;
           grid-row: auto;
+        }
+
+        .profession-stage {
+          margin-inline: -16px;
+          mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+        }
+
+        .profession-card {
+          width: 245px;
         }
 
         .gallery {
@@ -1329,8 +1534,9 @@
           <a href="#story" data-i18n="nav.0">O szkole</a>
           <a href="#paths" data-i18n="nav.1">Dualnie</a>
           <a href="#practice" data-i18n="nav.2">Pracownie</a>
-          <a href="#projects" data-i18n="nav.3">Projekty</a>
-          <a href="#location" data-i18n="nav.4">Mapa</a>
+          <a href="#professions" data-i18n="nav.3">Zawody</a>
+          <a href="#projects" data-i18n="nav.4">Projekty</a>
+          <a href="#location" data-i18n="nav.5">Mapa</a>
         </nav>
         <div class="lang" aria-label="Wybór języka">
           <button type="button" data-lang="pl" class="active">PL</button>
@@ -1412,6 +1618,23 @@
         </div>
       </section>
 
+      <section id="professions" class="slide professions-slide white">
+        <div class="shell professions-layout">
+          <div class="professions-copy reveal">
+            <p class="label" data-i18n="professionsKicker">Zawody</p>
+            <h2 class="slide-title" data-i18n="professionsTitle">Dużo dróg, jeden konkret: umieć coś zrobić.</h2>
+            <p class="slide-lead" data-i18n="professionsLead">
+              Branżowa szkoła I stopnia daje szybki start z umową i miesięcznym wynagrodzeniem. Technikum prowadzi dalej: do zawodu, egzaminów i matury.
+            </p>
+            <div class="professions-note">
+              <p data-i18n="professionsNoteA">Wybierasz warsztat, gastronomię, handel, usługi albo technikum.</p>
+              <p data-i18n="professionsNoteB">Każdy kierunek ma własny rytm pracy, narzędzia i ludzi, od których warto się uczyć.</p>
+            </div>
+          </div>
+          <div class="profession-stage reveal" data-render="professions" aria-label="Karuzela zawodów"></div>
+        </div>
+      </section>
+
       <section id="projects" class="slide green">
         <div class="shell projects-layout">
           <div class="reveal">
@@ -1434,7 +1657,7 @@
             <p class="label" data-i18n="jubileeKicker">Tradycja, konkursy, charakter</p>
             <h2 class="slide-title" data-i18n="jubileeTitle">Ta szkoła ma pamięć i ambicję.</h2>
             <p class="slide-lead" data-i18n="jubileeLead">
-              Jan Kiliński przypomina, że rzemiosło ma godność. Mural Antoine'a Cierplikowskiego mówi, że zawód może stać się sztuką. Konkursy pokazują, kto potrafi działać pod presją.
+              Od ponad 80 lat szkoła kształci kolejne pokolenia. Jan Kiliński przypomina o godności rzemiosła, mural Antoine'a Cierplikowskiego o ambicji, a konkursy o pracy pod presją.
             </p>
           </div>
           <div class="gallery reveal" data-render="gallery"></div>
@@ -1448,7 +1671,7 @@
               <p class="label" data-i18n="locationKicker">Gdzie jesteśmy</p>
               <h2 class="address" data-i18n="locationTitle">ul. Jana Władysława Dawida 5</h2>
               <p class="slide-lead" data-i18n="locationLead">
-                Szkoła jest na Hubach, przy ul. Dawida 5. To środek miejskiego ruchu: blisko centrum, Dworca Głównego i autobusowego.
+                Szkoła znajduje się w centrum Wrocławia, przy ul. Dawida 5, bardzo blisko Dworca Głównego. To ważny atut dla uczniów dojeżdżających z miasta i okolic.
               </p>
             </div>
             <div class="fact-grid" data-render="locationFacts"></div>
@@ -1488,7 +1711,7 @@
     <script>
       const content = {
         pl: {
-          nav: ["O szkole", "Dualnie", "Pracownie", "Projekty", "Mapa"],
+          nav: ["O szkole", "Dualnie", "Pracownie", "Zawody", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
           heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
@@ -1515,7 +1738,7 @@
             ["Technikum", "Pięć lat nauki dla uczniów, którzy chcą zawodu, egzaminów kwalifikacyjnych i możliwości podejścia do matury."],
             ["Branżowa szkoła I stopnia", "Trzy lata bliżej rzemiosła. Część tygodnia w szkole, część u pracodawcy, z umową i wynagrodzeniem."],
             ["Branżowa szkoła II stopnia i KKZ", "Dalsza droga dla absolwentów i dorosłych: podnoszenie kwalifikacji, tytuł technika, przygotowanie do matury."],
-            ["Nauczyciele", "Największa różnica dzieje się przy stanowisku. Dobry nauczyciel widzi błąd, pokazuje ruch dłoni i pilnuje standardu."]
+            ["Nauczyciele", "Doświadczona kadra, często praktycy swoich zawodów rzemieślniczych. Uczą z warsztatu i dobrze potrafią prowadzić młodzież."]
           ],
           pathsKicker: "Szkoła dualna bez żargonu",
           pathsTitle: "Szkoła dualna? Najprościej: zawodu uczysz się także w firmie.",
@@ -1524,9 +1747,9 @@
           pathsPhotoText: "To model dla osób, które chcą szybciej poczuć odpowiedzialność: za klienta, termin, narzędzia i efekt.",
           paths: [
             ["Szkoła", "Porządkuje wiedzę: przedmioty zawodowe, język branży, bezpieczeństwo, komunikację i ogólne wykształcenie."],
-            ["Pracodawca", "Pokazuje dzień pracy: tempo, klienta, zespół, standard usługi i decyzje, których nie da się nauczyć tylko z zeszytu."],
+            ["Pracodawca", "Pokazuje rzeczywistość faktycznej pracy: codzienne zadania, odpowiedzialność i standard, którego oczekuje prawdziwe miejsce pracy."],
             ["Nauczyciel", "Jest tłumaczem między szkołą a praktyką. Wyłapuje błędy, dopowiada sens i pilnuje poziomu."],
-            ["Uczeń", "Z klasy na klasę przechodzi od obserwowania do samodzielnego wykonania zadania. To widać w rękach."]
+            ["Uczeń", "Od początku zdobywa doświadczenie, buduje dorobek i pierwsze zawodowe nawyki. To start kariery, nie dopiero przygotowanie do niej."]
           ],
           practiceKicker: "Pracownie i nauczyciele",
           practiceTitle: "Najlepiej opowiedzieć szkołę przy stanowisku.",
@@ -1538,6 +1761,30 @@
             ["public/photos/trade-lab.webp", "Handel", "wide"],
             ["public/photos/gym.webp", "Sala gimnastyczna", "wide"],
             ["public/photos/hair-contest.webp", "Konkursy", "wide"]
+          ],
+          professionsKicker: "Zawody",
+          professionsTitle: "Dużo dróg, jeden konkret: umieć coś zrobić.",
+          professionsLead: "Branżowa szkoła I stopnia daje szybki start z umową i miesięcznym wynagrodzeniem. Technikum prowadzi dalej: do zawodu, egzaminów i matury.",
+          professionsNoteA: "Wybierasz warsztat, gastronomię, handel, usługi albo technikum.",
+          professionsNoteB: "Każdy kierunek ma własny rytm pracy, narzędzia i ludzi, od których warto się uczyć.",
+          professions: [
+            ["FR", "Fryzjer", "Branżowa szkoła I stopnia", "64 miejsca", "craft"],
+            ["CU", "Cukiernik", "Branżowa szkoła I stopnia", "64 miejsca", "craft"],
+            ["KU", "Kucharz", "Branżowa szkoła I stopnia", "32 miejsca", "craft"],
+            ["SP", "Sprzedawca", "Branżowa szkoła I stopnia", "32 miejsca", "craft"],
+            ["BL", "Blacharz samochodowy", "Branżowa szkoła I stopnia", "16 miejsc", "craft"],
+            ["LA", "Lakiernik samochodowy", "Branżowa szkoła I stopnia", "16 miejsc", "craft"],
+            ["KE", "Kelner", "Branżowa szkoła I stopnia", "7 miejsc", "craft"],
+            ["ST", "Stolarz", "Branżowa szkoła I stopnia", "6 miejsc", "craft"],
+            ["PI", "Piekarz", "Branżowa szkoła I stopnia", "6 miejsc", "craft"],
+            ["EL", "Elektryk", "Branżowa szkoła I stopnia", "4 miejsca", "craft"],
+            ["MB", "Monter zabudowy w budownictwie", "Branżowa szkoła I stopnia", "3 miejsca", "craft"],
+            ["FO", "Fotograf", "Branżowa szkoła I stopnia", "2 miejsca", "craft"],
+            ["KR", "Krawiec", "Branżowa szkoła I stopnia", "2 miejsca", "craft"],
+            ["MT", "Murarz-tynkarz", "Branżowa szkoła I stopnia", "1 miejsce", "craft"],
+            ["TA", "Tapicer", "Branżowa szkoła I stopnia", "1 miejsce", "craft"],
+            ["TF", "Technik usług fryzjerskich", "Technikum nr 5", "64 miejsca", "tech"],
+            ["TH", "Technik handlowiec", "Technikum nr 5", "32 miejsca", "tech"]
           ],
           projectsKicker: "Projekty i świat poza szkołą",
           projectsTitle: "ZSZ nr 5 działa w rytmie miasta, firm i Europy.",
@@ -1551,7 +1798,7 @@
           ],
           jubileeKicker: "Tradycja, konkursy, charakter",
           jubileeTitle: "Ta szkoła ma pamięć i ambicję.",
-          jubileeLead: "Jan Kiliński przypomina, że rzemiosło ma godność. Mural Antoine'a Cierplikowskiego mówi, że zawód może stać się sztuką. Konkursy pokazują, kto potrafi działać pod presją.",
+          jubileeLead: "Od ponad 80 lat szkoła kształci kolejne pokolenia. Jan Kiliński przypomina o godności rzemiosła, mural Antoine'a Cierplikowskiego o ambicji, a konkursy o pracy pod presją.",
           gallery: [
             ["public/photos/hero-mural.webp", "Mural Antoine'a Cierplikowskiego"],
             ["public/photos/hair-contest.webp", "Konkurs fryzjerski"],
@@ -1562,11 +1809,11 @@
           ],
           locationKicker: "Gdzie jesteśmy",
           locationTitle: "ul. Jana Władysława Dawida 5",
-          locationLead: "Szkoła jest na Hubach, przy ul. Dawida 5. To środek miejskiego ruchu: blisko centrum, Dworca Głównego i autobusowego.",
+          locationLead: "Szkoła znajduje się w centrum Wrocławia, przy ul. Dawida 5, bardzo blisko Dworca Głównego. To ważny atut dla uczniów dojeżdżających z miasta i okolic.",
           locationFacts: [
             ["Adres", "Jana Władysława Dawida 5, 50-527 Wrocław"],
-            ["Dzielnica", "Huby, obszar Krzyków"],
-            ["Dojazd", "Wygodny punkt dla uczniów z Wrocławia i okolic, w pobliżu Dworca Głównego i autobusowego"]
+            ["Położenie", "Centrum Wrocławia"],
+            ["Dojazd", "Bardzo blisko Dworca Głównego, z wygodnym dojazdem dla uczniów z Wrocławia i okolic"]
           ],
           finalBrand: "ZSZ nr 5 najłatwiej zrozumieć przez ludzi i miejsca: nauczycieli, uczniów, pracownie, pracodawców oraz codzienną pracę przy zawodzie.",
           finaleTitle: "Chcesz zobaczyć więcej? Zacznij od Dawida 5.",
@@ -1578,7 +1825,7 @@
           ]
         },
         en: {
-          nav: ["About", "Dual model", "Workshops", "Projects", "Map"],
+          nav: ["About", "Dual model", "Workshops", "Professions", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
           heroLockupAlt: "ZSZ5 in Wrocław and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
@@ -1605,7 +1852,7 @@
             ["Technical school", "Five years for students who want a profession, vocational exams and the option to take the Matura exam."],
             ["Stage I sectoral school", "Three years closer to craft. Part of the week at school, part with an employer, with a contract and pay."],
             ["Stage II sectoral school and courses", "A further route for graduates and adults: higher qualifications, a technician title and preparation for Matura."],
-            ["Teachers", "The real difference happens at the workstation. A good teacher sees the mistake, shows the movement and protects the standard."]
+            ["Teachers", "An experienced team, often practitioners in their own crafts. They teach from workshop experience and know how to guide young people well."]
           ],
           pathsKicker: "Dual education, without jargon",
           pathsTitle: "Dual education? Simply put: you also learn your profession in a company.",
@@ -1614,9 +1861,9 @@
           pathsPhotoText: "This model is for people who want to feel responsibility sooner: for the customer, deadline, tools and final result.",
           paths: [
             ["School", "Gives structure: vocational subjects, industry language, safety, communication and general education."],
-            ["Employer", "Shows the working day: pace, customers, team, service standards and decisions you cannot learn from a notebook alone."],
+            ["Employer", "Shows the reality of actual work: everyday tasks, responsibility and the standard expected in a real workplace."],
             ["Teacher", "Translates between school and practice. Spots mistakes, explains the meaning and keeps the standard high."],
-            ["Student", "Year by year, moves from observing to completing tasks independently. You can see it in the hands."]
+            ["Student", "Starts gaining experience from day one, building a professional record and first work habits. This is the start of a career, not just preparation."]
           ],
           practiceKicker: "Workshops and teachers",
           practiceTitle: "The school is best explained at the workstation.",
@@ -1628,6 +1875,30 @@
             ["public/photos/trade-lab.webp", "Retail and trade", "wide"],
             ["public/photos/gym.webp", "Gym", "wide"],
             ["public/photos/hair-contest.webp", "Competitions", "wide"]
+          ],
+          professionsKicker: "Professions",
+          professionsTitle: "Many routes, one point: learn to make things happen.",
+          professionsLead: "Stage I sectoral school gives a fast start with a contract and monthly pay. Technical school goes further: profession, exams and Matura.",
+          professionsNoteA: "Students can choose craft, gastronomy, trade, services or technical-school routes.",
+          professionsNoteB: "Each route has its own pace, tools and people worth learning from.",
+          professions: [
+            ["HD", "Hairdresser", "Stage I sectoral school", "64 places", "craft"],
+            ["CO", "Confectioner", "Stage I sectoral school", "64 places", "craft"],
+            ["CK", "Cook", "Stage I sectoral school", "32 places", "craft"],
+            ["SA", "Salesperson", "Stage I sectoral school", "32 places", "craft"],
+            ["AS", "Automotive sheet-metal worker", "Stage I sectoral school", "16 places", "craft"],
+            ["AP", "Automotive painter", "Stage I sectoral school", "16 places", "craft"],
+            ["WA", "Waiter", "Stage I sectoral school", "7 places", "craft"],
+            ["CA", "Carpenter", "Stage I sectoral school", "6 places", "craft"],
+            ["BA", "Baker", "Stage I sectoral school", "6 places", "craft"],
+            ["EL", "Electrician", "Stage I sectoral school", "4 places", "craft"],
+            ["CF", "Construction fitter", "Stage I sectoral school", "3 places", "craft"],
+            ["PH", "Photographer", "Stage I sectoral school", "2 places", "craft"],
+            ["TA", "Tailor", "Stage I sectoral school", "2 places", "craft"],
+            ["BP", "Bricklayer-plasterer", "Stage I sectoral school", "1 place", "craft"],
+            ["UP", "Upholsterer", "Stage I sectoral school", "1 place", "craft"],
+            ["HT", "Hairdressing services technician", "Technical School No. 5", "64 places", "tech"],
+            ["TR", "Trade technician", "Technical School No. 5", "32 places", "tech"]
           ],
           projectsKicker: "Projects and the world beyond school",
           projectsTitle: "ZSZ No. 5 works with the rhythm of the city, companies and Europe.",
@@ -1641,7 +1912,7 @@
           ],
           jubileeKicker: "Tradition, competitions, character",
           jubileeTitle: "This school has memory and ambition.",
-          jubileeLead: "Jan Kiliński reminds us that craft has dignity. The Antoine Cierplikowski mural says that a profession can become art. Competitions show who can perform under pressure.",
+          jubileeLead: "For more than 80 years, the school has educated new generations. Jan Kiliński points to the dignity of craft, the Antoine Cierplikowski mural to ambition, and competitions to work under pressure.",
           gallery: [
             ["public/photos/hero-mural.webp", "Antoine Cierplikowski mural"],
             ["public/photos/hair-contest.webp", "Hairdressing competition"],
@@ -1652,11 +1923,11 @@
           ],
           locationKicker: "Where we are",
           locationTitle: "Jana Władysława Dawida 5",
-          locationLead: "The school is in Huby, at Dawida 5. It sits in the rhythm of the city: close to the centre, the main railway station and the bus station.",
+          locationLead: "The school is in the centre of Wrocław, at Dawida 5, very close to the main railway station. This is a clear advantage for students commuting from the city and the region.",
           locationFacts: [
             ["Address", "Jana Władysława Dawida 5, 50-527 Wrocław"],
-            ["Area", "Huby, within the Krzyki district"],
-            ["Access", "A convenient point for students from Wrocław and the region, near the main railway and bus stations"]
+            ["Location", "Central Wrocław"],
+            ["Access", "Very close to the main railway station, with convenient access for students from Wrocław and the region"]
           ],
           finalBrand: "The easiest way to understand ZSZ No. 5 is through its people and places: teachers, students, workshops, employers and everyday work with a profession.",
           finaleTitle: "Want to see more? Start at Dawida 5.",
@@ -1716,6 +1987,20 @@
           .map(([src, label, size]) => `<figure class="tile ${htmlEscape(size)}"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><span>${htmlEscape(label)}</span></figure>`)
           .join("");
 
+        const professionRows = [
+          t.professions.slice(0, 6),
+          t.professions.slice(6, 12),
+          t.professions.slice(12)
+        ];
+        document.querySelector('[data-render="professions"]').innerHTML = professionRows
+          .map((row) => {
+            const repeated = [...row, ...row, ...row];
+            return `<div class="profession-row"><div class="profession-track">${repeated
+              .map(([mark, name, route, seats, tone]) => `<article class="profession-card ${tone === "tech" ? "tech" : ""}"><span class="profession-mark">${htmlEscape(mark)}</span><span><strong class="profession-name">${htmlEscape(name)}</strong><span class="profession-meta">${htmlEscape(route)} · ${htmlEscape(seats)}</span></span></article>`)
+              .join("")}</div></div>`;
+          })
+          .join("");
+
         document.querySelector('[data-render="projects"]').innerHTML = t.projects
           .map(([title, body]) => `<article class="project"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
           .join("");
@@ -1739,7 +2024,7 @@
         button.addEventListener("click", () => render(button.dataset.lang));
       });
 
-      const sectionIds = ["start", "story", "paths", "practice", "projects", "jubilee", "location", "contact"];
+      const sectionIds = ["start", "story", "paths", "practice", "professions", "projects", "jubilee", "location", "contact"];
       document.addEventListener("keydown", (event) => {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
         const keys = ["ArrowDown", "PageDown", "ArrowUp", "PageUp", "Home", "End"];
@@ -1763,6 +2048,40 @@
 
       render(activeLang);
       document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let lastScrollY = window.scrollY;
+      let professionBoost = 0;
+      let professionOffset = 0;
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          const distance = Math.abs(window.scrollY - lastScrollY);
+          lastScrollY = window.scrollY;
+          professionBoost = Math.min(18, professionBoost + distance * 0.03);
+        },
+        { passive: true }
+      );
+
+      function animateProfessions() {
+        const tracks = document.querySelectorAll(".profession-track");
+        if (!reducedMotion.matches && tracks.length) {
+          professionBoost *= 0.91;
+          professionOffset += 0.42 + professionBoost;
+          tracks.forEach((track, index) => {
+            const rowWidth = track.scrollWidth / 3;
+            if (!rowWidth) return;
+            const speed = 0.86 + index * 0.16;
+            const progress = (professionOffset * speed) % rowWidth;
+            const x = index % 2 === 0 ? -progress : progress - rowWidth;
+            track.style.transform = `translate3d(${x}px, 0, 0)`;
+          });
+        }
+        requestAnimationFrame(animateProfessions);
+      }
+
+      requestAnimationFrame(animateProfessions);
     </script>
   </body>
 </html>
