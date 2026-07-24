@@ -21,7 +21,11 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.match(html, /~1000 students\. Many professions\. Personal paths\./);
   assert.match(html, /heroTitle:\s*"Vocational School Complex no\.5 Wrocław"/);
   assert.match(html, /heroTitleAbbr:\s*"\(VSCW5\)"/);
+  assert.match(html, /finaleTitle:\s*"Chcesz wiedzieć więcej\?"/);
+  assert.match(html, /finaleTitle:\s*"Want to know more\?"/);
+  assert.match(html, /https:\/\/www\.facebook\.com\/zsz5wro/);
   assert.doesNotMatch(html, /heroTitle:\s*"VSCW5 \(Vocational School Complex no\.5 Wrocław\)"/);
+  assert.doesNotMatch(html, /Want to see more\?|Admissions/);
   assert.doesNotMatch(html, /adeodatus11\.github\.io/);
 });
 
