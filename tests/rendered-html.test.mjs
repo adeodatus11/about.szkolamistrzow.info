@@ -19,6 +19,9 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.match(html, /id="professions"/);
   assert.match(html, /1000 uczniów\. Wiele zawodów\. Własna droga\./);
   assert.match(html, /1000 students\. Many professions\. Personal paths\./);
+  assert.match(html, /heroTitle:\s*"Vocational School Complex no\.5 Wrocław"/);
+  assert.match(html, /heroTitleAbbr:\s*"\(VSCW5\)"/);
+  assert.doesNotMatch(html, /heroTitle:\s*"VSCW5 \(Vocational School Complex no\.5 Wrocław\)"/);
   assert.doesNotMatch(html, /adeodatus11\.github\.io/);
 });
 

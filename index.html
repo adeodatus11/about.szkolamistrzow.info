@@ -335,6 +335,19 @@
         font-size: clamp(46px, 6.6vw, 92px);
       }
 
+      .hero-title-abbr {
+        display: inline-block;
+        margin-left: 0.16em;
+        color: rgb(23 32 25 / 0.72);
+        font-size: 0.44em;
+        line-height: 1;
+        vertical-align: 0.18em;
+      }
+
+      .hero-title-abbr:empty {
+        display: none;
+      }
+
       .hero .slide-lead {
         color: var(--green);
         font-size: clamp(34px, 4.6vw, 64px);
@@ -1701,7 +1714,7 @@
               height="110"
               data-i18n-alt="heroLockupAlt"
             />
-            <h1 class="slide-title" data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5 we Wrocławiu</h1>
+            <h1 class="slide-title"><span data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5 we Wrocławiu</span><span class="hero-title-abbr" data-i18n="heroTitleAbbr"></span></h1>
             <p class="slide-lead" data-i18n="heroLead">
               Szkoła Mistrzów
             </p>
@@ -1859,6 +1872,7 @@
           heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
           heroTitle: "Zespół Szkół Zawodowych nr 5 we Wrocławiu",
+          heroTitleAbbr: "",
           heroLead: "Szkoła Mistrzów",
           primaryCta: "Zobacz opowieść",
           secondaryCta: "Gdzie jesteśmy",
@@ -1975,7 +1989,8 @@
           heroAlt: "Mural next to the school building",
           heroLockupAlt: "VSCW5 (Vocational School Complex no.5 Wrocław) and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
-          heroTitle: "VSCW5 (Vocational School Complex no.5 Wrocław)",
+          heroTitle: "Vocational School Complex no.5 Wrocław",
+          heroTitleAbbr: "(VSCW5)",
           heroLead: "Academy of Excellence",
           primaryCta: "Follow the story",
           secondaryCta: "Find us",
