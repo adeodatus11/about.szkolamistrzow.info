@@ -17,8 +17,8 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.match(html, /data-lang="pl"/);
   assert.match(html, /data-lang="en"/);
   assert.match(html, /id="professions"/);
-  assert.match(html, /1000 uczniów\. Wiele zawodów\. Własna droga\./);
-  assert.match(html, /1000 students\. Many professions\. Personal paths\./);
+  assert.match(html, /~1000 uczniów\. Wiele zawodów\. Własna droga\./);
+  assert.match(html, /~1000 students\. Many professions\. Personal paths\./);
   assert.match(html, /heroTitle:\s*"Vocational School Complex no\.5 Wrocław"/);
   assert.match(html, /heroTitleAbbr:\s*"\(VSCW5\)"/);
   assert.doesNotMatch(html, /heroTitle:\s*"VSCW5 \(Vocational School Complex no\.5 Wrocław\)"/);
@@ -31,10 +31,13 @@ test("renders the professions carousel without recruitment metadata", async () =
 
   assert.equal(professionDataBlocks.length, 2);
   assert.match(html, /profession-orbit/);
+  assert.match(html, /profession-map/);
   assert.match(html, /data-profession-card/);
   assert.match(html, /professions-count/);
-  assert.match(html, /Array\.from\(\{ length: 160 \}/);
+  assert.match(html, /classList\.toggle\("is-pulsing"/);
+  assert.match(html, /interactionScale/);
   assert.doesNotMatch(html, /profession-track|profession-row|profession-meta/);
+  assert.doesNotMatch(html, /professionsStatNumber:\s*"1000"/);
   for (const block of professionDataBlocks) {
     assert.doesNotMatch(block[0], /miejsc|places|Technikum nr|Technical School No/);
   }

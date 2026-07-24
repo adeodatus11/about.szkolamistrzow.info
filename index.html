@@ -733,6 +733,7 @@
         background:
           linear-gradient(180deg, rgb(255 250 240 / 0.88), rgb(247 244 234 / 0.96)),
           radial-gradient(circle at 82% 18%, rgb(215 177 93 / 0.28), transparent 34%);
+        min-height: calc(100dvh - 72px);
         padding: 88px 0 48px;
       }
 
@@ -788,7 +789,57 @@
         position: relative;
         width: min(100%, 580px);
         aspect-ratio: 1 / 1;
+        isolation: isolate;
         transform-style: preserve-3d;
+      }
+
+      .profession-map {
+        position: absolute;
+        inset: 7%;
+        z-index: 0;
+        border: 1px solid rgb(31 91 58 / 0.2);
+        border-radius: 50%;
+        background:
+          repeating-conic-gradient(
+            from 8deg,
+            transparent 0deg 19deg,
+            rgb(31 91 58 / 0.16) 19deg 19.4deg
+          ),
+          repeating-radial-gradient(
+            circle,
+            transparent 0 47px,
+            rgb(31 91 58 / 0.2) 48px 49px
+          );
+        box-shadow:
+          inset 0 0 70px rgb(215 177 93 / 0.12),
+          0 0 0 18px rgb(255 255 255 / 0.2);
+        opacity: 0.8;
+        pointer-events: none;
+        transform: rotate(0deg);
+        transform-origin: center;
+        will-change: transform;
+      }
+
+      .profession-map::before,
+      .profession-map::after {
+        content: "";
+        position: absolute;
+        border: 2px solid transparent;
+        border-radius: 50%;
+      }
+
+      .profession-map::before {
+        inset: 12%;
+        border-left-color: rgb(155 111 25 / 0.68);
+        border-top-color: rgb(155 111 25 / 0.28);
+        transform: rotate(28deg);
+      }
+
+      .profession-map::after {
+        inset: 28%;
+        border-bottom-color: rgb(31 91 58 / 0.74);
+        border-right-color: rgb(31 91 58 / 0.28);
+        transform: rotate(-42deg);
       }
 
       .professions-count {
@@ -828,6 +879,12 @@
         padding: 12px;
         backface-visibility: hidden;
         will-change: transform, opacity;
+        cursor: zoom-in;
+        outline: none;
+        transition:
+          border-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+          filter 260ms cubic-bezier(0.16, 1, 0.3, 1);
         --orbit-fallback-radius: min(38vw, 290px);
         transform: translate(-50%, -50%) rotate(var(--fallback-angle)) translateX(var(--orbit-fallback-radius)) rotate(calc(var(--fallback-angle) * -1));
       }
@@ -839,6 +896,23 @@
         border-radius: inherit;
         background: linear-gradient(135deg, rgb(255 255 255 / 0.48), transparent 52%);
         pointer-events: none;
+      }
+
+      .profession-card:hover,
+      .profession-card:focus-visible {
+        z-index: 900 !important;
+        border-color: rgb(155 111 25 / 0.82);
+        box-shadow:
+          0 28px 70px rgb(23 32 25 / 0.24),
+          0 0 0 4px rgb(240 203 119 / 0.34);
+        filter: saturate(1.08);
+      }
+
+      .profession-card.is-pulsing:not(:hover):not(:focus-visible) {
+        border-color: rgb(155 111 25 / 0.72);
+        box-shadow:
+          0 24px 64px rgb(23 32 25 / 0.2),
+          0 0 0 3px rgb(240 203 119 / 0.28);
       }
 
       .profession-card.tech {
@@ -902,31 +976,6 @@
         font-size: 13px;
         font-weight: 900;
         line-height: 1.25;
-      }
-
-      .profession-echo {
-        position: absolute;
-        inset: 4%;
-        opacity: 0.16;
-        pointer-events: none;
-      }
-
-      .profession-echo span {
-        position: absolute;
-        color: var(--green-2);
-        font-size: 11px;
-        font-weight: 1000;
-        text-transform: uppercase;
-        transform: translate(-50%, -50%) rotate(var(--echo-angle));
-        white-space: nowrap;
-      }
-
-      .profession-echo span:nth-child(3n) {
-        color: #9b6f19;
-      }
-
-      .profession-echo span:nth-child(5n) {
-        color: var(--ink);
       }
 
       .gallery {
@@ -1100,6 +1149,10 @@
         .slide {
           min-height: 100dvh;
           padding: 84px 0 36px;
+        }
+
+        .professions-slide {
+          min-height: calc(100dvh - 72px);
         }
 
         .hero {
@@ -1517,6 +1570,10 @@
           padding: 88px 0 56px;
         }
 
+        .professions-slide {
+          min-height: auto;
+        }
+
         .hero {
           min-height: 100dvh;
         }
@@ -1638,10 +1695,6 @@
           font-size: 10.5px;
         }
 
-        .profession-echo {
-          opacity: 0.1;
-        }
-
         .gallery {
           display: flex;
           gap: 12px;
@@ -1676,6 +1729,11 @@
         .reveal {
           opacity: 1;
           transform: none;
+        }
+
+        .profession-card:hover,
+        .profession-card:focus-visible {
+          transform: translate(-50%, -50%) rotate(var(--fallback-angle)) translateX(var(--orbit-fallback-radius)) rotate(calc(var(--fallback-angle) * -1)) scale(1.16);
         }
       }
     </style>
@@ -1778,7 +1836,7 @@
         <div class="shell professions-layout">
           <div class="professions-copy reveal">
             <p class="label" data-i18n="professionsKicker">Zawody</p>
-            <h2 class="slide-title" data-i18n="professionsTitle">1000 uczniów. Wiele zawodów. Własna droga.</h2>
+            <h2 class="slide-title" data-i18n="professionsTitle">~1000 uczniów. Wiele zawodów. Własna droga.</h2>
             <p class="slide-lead" data-i18n="professionsLead">
               Każda nazwa to inny start: pracownia, pracodawca, technikum i własny rytm pracy.
             </p>
@@ -1920,13 +1978,13 @@
             ["public/photos/hair-contest.webp", "Konkursy", "wide"]
           ],
           professionsKicker: "Zawody",
-          professionsTitle: "1000 uczniów. Wiele zawodów. Własna droga.",
+          professionsTitle: "~1000 uczniów. Wiele zawodów. Własna droga.",
           professionsLead: "Każda nazwa to inny start: pracownia, pracodawca, technikum i własny rytm pracy.",
           professionsNoteA: "Tu nie ma jednej ścieżki dla wszystkich. Jest wybór, który szybko nabiera realnego kształtu.",
           professionsNoteB: "Około 1000 uczniów oznacza około 1000 historii dojścia do zawodu.",
-          professionsStatNumber: "1000",
+          professionsStatNumber: "~1000",
           professionsStatLabel: "uczniów",
-          professionsStatSub: "1000 dróg do zawodu",
+          professionsStatSub: "wiele dróg do zawodu",
           professions: [
             ["FR", "Fryzjer", "craft"],
             ["CU", "Cukiernik", "craft"],
@@ -2038,13 +2096,13 @@
             ["public/photos/hair-contest.webp", "Competitions", "wide"]
           ],
           professionsKicker: "Professions",
-          professionsTitle: "1000 students. Many professions. Personal paths.",
+          professionsTitle: "~1000 students. Many professions. Personal paths.",
           professionsLead: "Each name is a different start: workshop, employer, technical education and a personal pace.",
           professionsNoteA: "There is no single route for everyone. The choice quickly becomes practical and visible.",
           professionsNoteB: "Around 1000 students means around 1000 personal routes into a profession.",
-          professionsStatNumber: "1000",
+          professionsStatNumber: "~1000",
           professionsStatLabel: "students",
-          professionsStatSub: "1000 routes into work",
+          professionsStatSub: "many routes into work",
           professions: [
             ["HD", "Hairdresser", "craft"],
             ["CO", "Confectioner", "craft"],
@@ -2151,20 +2209,9 @@
           .map(([src, label, size]) => `<figure class="tile ${htmlEscape(size)}"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><span>${htmlEscape(label)}</span></figure>`)
           .join("");
 
-        const echoWords = Array.from({ length: 160 }, (_, index) => t.professions[index % t.professions.length]);
         document.querySelector('[data-render="professions"]').innerHTML = `
           <div class="profession-orbit" data-profession-orbit>
-            <div class="profession-echo" aria-hidden="true">
-              ${echoWords
-                .map(([mark, name], index) => {
-                  const angle = (index * 137.5) % 360;
-                  const distance = 12 + ((index * 29) % 76);
-                  const x = 50 + Math.cos((angle * Math.PI) / 180) * distance;
-                  const y = 50 + Math.sin((angle * Math.PI) / 180) * distance;
-                  return `<span style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--echo-angle:${angle}deg">${htmlEscape(name)}</span>`;
-                })
-                .join("")}
-            </div>
+            <div class="profession-map" data-profession-map aria-hidden="true"></div>
             <div class="professions-count" aria-label="${htmlEscape(`${t.professionsStatNumber} ${t.professionsStatLabel}. ${t.professionsStatSub}`)}">
               <span>
                 <strong class="count-number">${htmlEscape(t.professionsStatNumber)}</strong>
@@ -2175,7 +2222,7 @@
             ${t.professions
               .map(([mark, name, tone], index) => {
                 const angle = (360 / t.professions.length) * index;
-                return `<article class="profession-card ${tone === "tech" ? "tech" : ""}" data-profession-card data-index="${index}" style="--fallback-angle:${angle}deg"><span class="profession-mark">${htmlEscape(mark)}</span><strong class="profession-name">${htmlEscape(name)}</strong></article>`;
+                return `<article class="profession-card ${tone === "tech" ? "tech" : ""}" data-profession-card data-index="${index}" tabindex="0" style="--fallback-angle:${angle}deg"><span class="profession-mark">${htmlEscape(mark)}</span><strong class="profession-name">${htmlEscape(name)}</strong></article>`;
               })
               .join("")}
           </div>`;
@@ -2232,39 +2279,61 @@
       let lastScrollY = window.scrollY;
       let professionBoost = 0;
       let professionOffset = 0;
+      let lastPulseIndex = -1;
+      let lastProfessionInteraction = false;
 
-      window.addEventListener(
-        "scroll",
-        () => {
-          const distance = Math.abs(window.scrollY - lastScrollY);
-          lastScrollY = window.scrollY;
-          professionBoost = Math.min(18, professionBoost + distance * 0.03);
-        },
-        { passive: true }
-      );
-
-      function animateProfessions() {
+      function animateProfessions(time) {
         const orbit = document.querySelector("[data-profession-orbit]");
         const cards = document.querySelectorAll("[data-profession-card]");
+        const map = document.querySelector("[data-profession-map]");
+        const scrollDistance = Math.abs(window.scrollY - lastScrollY);
+        lastScrollY = window.scrollY;
+        professionBoost = Math.min(18, professionBoost + scrollDistance * 0.03);
+
         if (!reducedMotion.matches && orbit && cards.length) {
+          const bounds = orbit.getBoundingClientRect();
+          const isVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
+          const hasInteraction = Boolean(orbit.querySelector(".profession-card:hover, .profession-card:focus-visible"));
+          professionBoost *= 0.9;
+          if (!isVisible) {
+            requestAnimationFrame(animateProfessions);
+            return;
+          }
+
           const size = Math.min(orbit.clientWidth, orbit.clientHeight);
           const radiusX = Math.max(150, size * 0.41);
           const radiusZ = Math.max(90, size * 0.26);
           const radiusY = Math.max(28, size * 0.09);
-          professionBoost *= 0.9;
-          professionOffset += 0.009 + professionBoost * 0.0018;
+          professionOffset += (0.009 + professionBoost * 0.0018) * (hasInteraction ? 0.08 : 1);
+          if (map) map.style.transform = `rotate(${(professionOffset * 23).toFixed(3)}deg)`;
+
+          const pulseProgress = (time / 1100) % cards.length;
+          const pulseIndex = Math.floor(pulseProgress);
+          const pulseStrength = Math.sin((pulseProgress - pulseIndex) * Math.PI);
+          if (pulseIndex !== lastPulseIndex || hasInteraction !== lastProfessionInteraction) {
+            cards.forEach((card, index) => card.classList.toggle("is-pulsing", !hasInteraction && index === pulseIndex));
+            lastPulseIndex = pulseIndex;
+            lastProfessionInteraction = hasInteraction;
+          }
+
           cards.forEach((card, index) => {
             const angle = (index / cards.length) * Math.PI * 2 + professionOffset;
             const depth = (Math.cos(angle) + 1) / 2;
             const x = Math.sin(angle) * radiusX;
             const y = Math.sin(angle * 2.1) * radiusY;
             const z = Math.cos(angle) * radiusZ;
-            const scale = 0.62 + depth * 0.5;
+            const pulseScale = index === pulseIndex && !hasInteraction ? pulseStrength * 0.14 : 0;
+            const interactionScale = card.matches(":hover, :focus-visible") ? 1.24 : 1;
+            const scale = (0.62 + depth * 0.5 + pulseScale) * interactionScale;
             const opacity = 0.34 + depth * 0.66;
             card.style.transform = `translate(-50%, -50%) translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) scale(${scale.toFixed(3)})`;
             card.style.opacity = opacity.toFixed(3);
             card.style.zIndex = String(Math.round(100 + z));
           });
+        } else if (cards.length && lastPulseIndex !== -1) {
+          cards.forEach((card) => card.classList.remove("is-pulsing"));
+          lastPulseIndex = -1;
+          lastProfessionInteraction = false;
         }
         requestAnimationFrame(animateProfessions);
       }
