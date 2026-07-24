@@ -116,13 +116,6 @@
         font-weight: 900;
       }
 
-      .logo-clean {
-        width: 46px;
-        height: auto;
-        object-fit: contain;
-        mix-blend-mode: multiply;
-      }
-
       .brand img {
         width: 168px;
         height: auto;
@@ -133,6 +126,18 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
 
       .nav {
@@ -255,9 +260,8 @@
 
       .hero-lockup {
         display: block;
-        width: min(520px, 72vw);
+        width: min(760px, 100%);
         height: auto;
-        margin-bottom: 22px;
         mix-blend-mode: multiply;
       }
 
@@ -302,15 +306,7 @@
 
       .hero {
         padding-top: 92px;
-      }
-
-      .hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: -3;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        background: var(--paper);
       }
 
       .hero::before {
@@ -318,34 +314,14 @@
         position: absolute;
         inset: 0;
         z-index: -2;
-        background:
-          linear-gradient(90deg, rgb(247 244 234 / 0.96), rgb(247 244 234 / 0.78), rgb(247 244 234 / 0.2)),
-          linear-gradient(180deg, transparent 64%, var(--paper));
+        background: linear-gradient(180deg, rgb(255 255 255 / 0.38), transparent 48%);
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 270px;
+        grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.62fr);
         align-items: center;
-        gap: 48px;
-      }
-
-      .hero .slide-title {
-        max-width: 920px;
-        font-size: clamp(46px, 6.6vw, 92px);
-      }
-
-      .hero-title-abbr {
-        display: inline-block;
-        margin-left: 0.16em;
-        color: rgb(23 32 25 / 0.72);
-        font-size: 0.44em;
-        line-height: 1;
-        vertical-align: 0.18em;
-      }
-
-      .hero-title-abbr:empty {
-        display: none;
+        gap: clamp(48px, 8vw, 120px);
       }
 
       .hero .slide-lead {
@@ -444,38 +420,22 @@
 
       .qr-card {
         display: grid;
-        gap: 10px;
         justify-items: center;
-        align-self: end;
+        align-self: center;
+        justify-self: end;
+        width: min(100%, 360px);
         border: 1px solid rgb(31 91 58 / 0.16);
         border-radius: 8px;
         background: rgb(255 250 240 / 0.92);
         box-shadow: var(--shadow);
-        padding: 14px;
+        padding: 18px;
       }
 
       .qr-card img {
-        width: 220px;
-        height: 220px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
         border-radius: 6px;
-      }
-
-      .qr-card p {
-        color: var(--ink);
-        font-size: 14px;
-        font-weight: 950;
-        line-height: 1.18;
-        text-align: center;
-      }
-
-      .qr-card span {
-        display: block;
-        color: var(--green);
-        font-size: 11px;
-        font-weight: 900;
-        line-height: 1.12;
-        margin-top: 4px;
-        overflow-wrap: anywhere;
       }
 
       .story-grid {
@@ -978,8 +938,10 @@
       }
 
       .final-brand img {
-        width: 160px;
+        width: min(360px, 100%);
+        height: auto;
         max-width: 100%;
+        mix-blend-mode: multiply;
       }
 
       .links {
@@ -1359,7 +1321,6 @@
           grid-template-columns: minmax(0, 1fr) auto;
         }
 
-        .hero-grid,
         .story-grid,
         .paths-layout,
         .practice-layout,
@@ -1370,12 +1331,13 @@
           grid-template-columns: 1fr;
         }
 
-        .poster-stack {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(220px, 0.46fr);
+          gap: 32px;
         }
 
-        .qr-card {
-          display: none;
+        .poster-stack {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .poster:nth-child(n) {
@@ -1420,21 +1382,25 @@
           min-height: 100dvh;
         }
 
-        .hero::before {
-          background:
-            linear-gradient(90deg, rgb(247 244 234 / 0.96), rgb(247 244 234 / 0.84)),
-            linear-gradient(180deg, transparent 70%, var(--paper));
-        }
-
         .hero .slide-title,
         .slide-title {
           font-size: 43px;
           line-height: 1.02;
         }
 
+        .hero-grid {
+          grid-template-columns: 1fr;
+          justify-items: center;
+          gap: 34px;
+        }
+
         .hero-lockup {
-          width: min(310px, 82vw);
-          margin-bottom: 18px;
+          width: min(520px, 92vw);
+        }
+
+        .qr-card {
+          justify-self: center;
+          width: min(280px, 78vw);
         }
 
         .slide-lead {
@@ -1577,7 +1543,6 @@
 
     <main>
       <section id="start" class="slide hero">
-        <img class="hero-bg" src="public/photos/hero-mural.webp" alt="Mural przy budynku szkoły" data-i18n-alt="heroAlt" />
         <div class="shell hero-grid">
           <div class="reveal">
             <img
@@ -1588,17 +1553,10 @@
               height="110"
               data-i18n-alt="heroLockupAlt"
             />
-            <h1 class="slide-title"><span data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5 we Wrocławiu</span><span class="hero-title-abbr" data-i18n="heroTitleAbbr"></span></h1>
-            <p class="slide-lead" data-i18n="heroLead">
-              Szkoła Mistrzów
-            </p>
+            <h1 class="visually-hidden"><span data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5 we Wrocławiu</span><span data-i18n="heroTitleAbbr"></span></h1>
           </div>
           <aside class="qr-card reveal" aria-label="Kod QR do strony about.szkolamistrzow.info">
-            <img src="public/photos/about-qr.png" alt="Kod QR prowadzący do strony about.szkolamistrzow.info" width="142" height="142" />
-            <p>
-              <span data-i18n="qrLabel">Zeskanuj stronę</span>
-              <span>about.szkolamistrzow.info</span>
-            </p>
+            <img src="public/photos/about-qr.png" alt="Kod QR prowadzący do strony about.szkolamistrzow.info" width="462" height="462" />
           </aside>
         </div>
       </section>
@@ -1720,7 +1678,13 @@
         <div class="shell">
           <div class="final-card">
             <div class="final-brand reveal">
-              <img class="logo-clean" src="public/photos/orzel-zsz5.png" alt="" width="160" height="160" />
+              <img
+                src="public/photos/szkola-mistrzow-lockup.png"
+                alt="Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów"
+                width="1968"
+                height="417"
+                data-i18n-alt="heroLockupAlt"
+              />
               <p class="body" data-i18n="finalBrand">
                 ZSZ nr 5 najłatwiej zrozumieć przez ludzi i miejsca: nauczycieli, uczniów, pracownie, pracodawców oraz codzienną pracę przy zawodzie.
               </p>

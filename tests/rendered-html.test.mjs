@@ -24,7 +24,11 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.match(html, /finaleTitle:\s*"Chcesz wiedzieć więcej\?"/);
   assert.match(html, /finaleTitle:\s*"Want to know more\?"/);
   assert.match(html, /https:\/\/www\.facebook\.com\/zsz5wro/);
+  assert.match(html, /<section id="start" class="slide hero">[\s\S]*?class="hero-lockup"[\s\S]*?class="qr-card reveal"/);
+  assert.match(html, /<div class="final-brand reveal">[\s\S]*?src="public\/photos\/szkola-mistrzow-lockup\.png"/);
   assert.doesNotMatch(html, /heroTitle:\s*"VSCW5 \(Vocational School Complex no\.5 Wrocław\)"/);
+  assert.doesNotMatch(html, /<img class="hero-bg"/);
+  assert.doesNotMatch(html, /<div class="final-brand reveal">[\s\S]*?src="public\/photos\/orzel-zsz5\.png"/);
   assert.doesNotMatch(html, /Want to see more\?|Admissions/);
   assert.doesNotMatch(html, /adeodatus11\.github\.io/);
 });
