@@ -162,7 +162,7 @@ const navTargets = ["manifest", "paths", "practice", "projects", "jubilee"];
 const gallery = [
   ["/photos/school-building.webp", "Główne wejście do szkoły"],
   ["/photos/library.webp", "Biblioteka szkolna"],
-  ["/photos/gastronomy-team.webp", "Zespół przy stanowisku konkursowym"],
+  ["/photos/eu-cooperation.webp", "Flagi Unii Europejskiej i państw europejskich"],
   ["/photos/hair-contest.webp", "Uczestnicy konkursu fryzjerskiego"],
   ["/photos/contest.webp", "Praca konkursowa w turnieju cukierniczym"],
   ["/photos/jubilee-stage.webp", "Uroczystość jubileuszowa szkoły"],
@@ -266,7 +266,7 @@ export default function Home() {
       <header className="fixed left-0 right-0 top-0 z-30 border-b border-[#172019]/10 bg-[#f7f8f3]/88 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
           <a href="#start" aria-label="ZSZ nr 5 Wrocław" className="flex min-w-0 items-center gap-3 text-sm font-semibold tracking-normal text-[#172019]">
-            <img src="/photos/zsz5-logo.webp" alt="" width={42} height={32} className="h-8 w-auto rounded-[4px] object-contain" />
+            <img src="/photos/szkola-mistrzow-lockup.png" alt="" width={168} height={36} className="h-9 w-auto object-contain" />
             <span className="hidden max-w-[260px] truncate sm:block">ZSZ nr 5 Wrocław</span>
           </a>
           <nav aria-label={lang === "pl" ? "Główna nawigacja" : "Main navigation"} className="hidden items-center gap-1 lg:flex">
@@ -399,7 +399,7 @@ export default function Home() {
             <h2 className="text-4xl font-black leading-tight tracking-normal md:text-6xl">{t.projectsTitle}</h2>
             <p className="mt-5 max-w-[60ch] text-lg leading-8 text-white/78">{t.projectsLead}</p>
             <div className="mt-8 overflow-hidden rounded-[8px]">
-              <img src="/photos/gastronomy-team.webp" alt={lang === "pl" ? "Praca zespołu podczas wydarzenia szkolnego" : "Team work during a school event"} width={1100} height={720} className="aspect-[16/10] w-full object-cover" />
+              <img src="/photos/eu-cooperation.webp" alt={lang === "pl" ? "Flagi Unii Europejskiej i państw europejskich" : "European Union and European country flags"} width={1100} height={720} className="aspect-[16/10] w-full object-cover" />
             </div>
           </Reveal>
           <div className="grid gap-4">
@@ -436,7 +436,7 @@ export default function Home() {
       <section id="contact" className="px-4 py-20 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-10 rounded-[8px] bg-[#172019] p-8 text-white md:p-12 lg:grid-cols-[1fr_.8fr]">
           <Reveal>
-            <img src="/photos/zsz5-logo.webp" alt="" width={96} height={73} className="mb-8 h-16 w-auto rounded-[6px]" />
+            <img src="/photos/orzel-zsz5.png" alt="" width={96} height={96} className="mb-8 h-16 w-auto" />
             <h2 className="text-4xl font-black leading-tight tracking-normal md:text-6xl">{t.finaleTitle}</h2>
             <p className="mt-5 max-w-[58ch] text-lg leading-8 text-white/78">{t.finaleLead}</p>
           </Reveal>
