@@ -320,14 +320,22 @@
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.58fr) 178px;
-        align-items: end;
-        gap: 28px;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        align-items: center;
+        gap: 48px;
       }
 
       .hero .slide-title {
-        max-width: 820px;
-        font-size: clamp(46px, 6.4vw, 86px);
+        max-width: 920px;
+        font-size: clamp(46px, 6.6vw, 92px);
+      }
+
+      .hero .slide-lead {
+        color: var(--green);
+        font-size: clamp(34px, 4.6vw, 64px);
+        font-weight: 1000;
+        letter-spacing: 0;
+        line-height: 1.02;
       }
 
       .poster-stack {
@@ -429,14 +437,14 @@
       }
 
       .qr-card img {
-        width: 142px;
-        height: 142px;
+        width: 178px;
+        height: 178px;
         border-radius: 6px;
       }
 
       .qr-card p {
         color: var(--ink);
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 950;
         line-height: 1.18;
         text-align: center;
@@ -445,7 +453,7 @@
       .qr-card span {
         display: block;
         color: var(--green);
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 900;
         line-height: 1.12;
         margin-top: 4px;
@@ -1074,17 +1082,11 @@
               height="110"
               data-i18n-alt="heroLockupAlt"
             />
-            <h1 class="slide-title" data-i18n="heroTitle">Zawód zaczyna się w trzech miejscach.</h1>
+            <h1 class="slide-title" data-i18n="heroTitle">Zespół Szkół Zawodowych nr 5 we Wrocławiu</h1>
             <p class="slide-lead" data-i18n="heroLead">
-              W szkole, w pracowni i u pracodawcy. Tak działa Szkoła Mistrzów we Wrocławiu.
+              Szkoła Mistrzów
             </p>
-            <div class="actions">
-              <a class="btn primary" href="#story" data-i18n="primaryCta">Zobacz opowieść</a>
-              <a class="btn" href="#location" data-i18n="secondaryCta">Gdzie jesteśmy</a>
-            </div>
-            <div class="stat-strip" data-render="stats"></div>
           </div>
-          <div class="poster-stack reveal" data-render="heroPhotos"></div>
           <aside class="qr-card reveal" aria-label="Kod QR do strony about.szkolamistrzow.info">
             <img src="public/photos/about-qr.png" alt="Kod QR prowadzący do strony about.szkolamistrzow.info" width="142" height="142" />
             <p>
@@ -1144,7 +1146,7 @@
         <div class="shell projects-layout">
           <div class="reveal">
             <p class="label" data-i18n="projectsKicker">Projekty i świat poza szkołą</p>
-            <h2 class="slide-title" data-i18n="projectsTitle">Szkoła zawodowa oddycha miastem, firmami i Europą.</h2>
+            <h2 class="slide-title" data-i18n="projectsTitle">ZSZ nr 5 działa w rytmie miasta, firm i Europy.</h2>
             <p class="slide-lead" data-i18n="projectsLead">
               Dlatego ZSZ nr 5 wychodzi poza lekcje: do pracodawców, projektów miejskich i unijnych, mobilności oraz partnerstw, które rozwijają uczniów i kadrę.
             </p>
@@ -1220,8 +1222,8 @@
           heroAlt: "Mural przy budynku szkoły",
           heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
-          heroTitle: "Zawód zaczyna się w trzech miejscach.",
-          heroLead: "W szkole, w pracowni i u pracodawcy. Tak działa Szkoła Mistrzów we Wrocławiu.",
+          heroTitle: "Zespół Szkół Zawodowych nr 5 we Wrocławiu",
+          heroLead: "Szkoła Mistrzów",
           primaryCta: "Zobacz opowieść",
           secondaryCta: "Gdzie jesteśmy",
           qrLabel: "Zeskanuj stronę",
@@ -1268,7 +1270,7 @@
             ["public/photos/hair-contest.webp", "Konkursy", "wide"]
           ],
           projectsKicker: "Projekty i świat poza szkołą",
-          projectsTitle: "Szkoła zawodowa oddycha miastem, firmami i Europą.",
+          projectsTitle: "ZSZ nr 5 działa w rytmie miasta, firm i Europy.",
           projectsLead: "Dlatego ZSZ nr 5 wychodzi poza lekcje: do pracodawców, projektów miejskich i unijnych, mobilności oraz partnerstw, które rozwijają uczniów i kadrę.",
           projectAlt: "Zespół podczas pracy przy stanowisku konkursowym",
           projects: [
@@ -1310,8 +1312,8 @@
           heroAlt: "Mural next to the school building",
           heroLockupAlt: "ZSZ5 in Wrocław and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
-          heroTitle: "A profession starts in three places.",
-          heroLead: "At school, in the workshop and with an employer. This is Szkoła Mistrzów in Wrocław.",
+          heroTitle: "ZSZ No. 5 in Wrocław",
+          heroLead: "Academy of Excellence",
           primaryCta: "Follow the story",
           secondaryCta: "Find us",
           qrLabel: "Scan the page",
@@ -1358,7 +1360,7 @@
             ["public/photos/hair-contest.webp", "Competitions", "wide"]
           ],
           projectsKicker: "Projects and the world beyond school",
-          projectsTitle: "A vocational school breathes with the city, companies and Europe.",
+          projectsTitle: "ZSZ No. 5 works with the rhythm of the city, companies and Europe.",
           projectsLead: "That is why ZSZ No. 5 reaches beyond lessons: to employers, city and EU projects, mobilities and partnerships that develop students and staff.",
           projectAlt: "Students working together at a competition station",
           projects: [
@@ -1427,14 +1429,6 @@
         document.querySelectorAll("[data-lang]").forEach((button) => {
           button.classList.toggle("active", button.dataset.lang === lang);
         });
-
-        document.querySelector('[data-render="stats"]').innerHTML = t.stats
-          .map(([number, label]) => `<article class="stat"><strong>${htmlEscape(number)}</strong><span>${htmlEscape(label)}</span></article>`)
-          .join("");
-
-        document.querySelector('[data-render="heroPhotos"]').innerHTML = t.heroPhotos
-          .map(([src, label]) => `<figure class="poster"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><strong>${htmlEscape(label)}</strong></figure>`)
-          .join("");
 
         document.querySelector('[data-render="storyPhotos"]').innerHTML = t.storyPhotos
           .map(([src, alt]) => `<figure><img src="${htmlEscape(src)}" alt="${htmlEscape(alt)}" /></figure>`)
