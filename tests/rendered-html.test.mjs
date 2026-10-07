@@ -48,3 +48,18 @@ test("renders the professions word field without abbreviations or recruitment me
     assert.doesNotMatch(block[0], /miejsc|places|Technikum nr|Technical School No/);
   }
 });
+
+test("explains the Polish education system with PRK/EQF and ISCED levels in both languages", async () => {
+  const html = await readPage();
+
+  assert.match(html, /<section id="education" class="slide education-slide">/);
+  assert.match(html, /<section id="story"[\s\S]*?<section id="education"[\s\S]*?<section id="paths"/);
+  assert.match(html, /href="#education"/);
+  assert.match(html, /const sectionIds = \["start", "story", "education", "paths"/);
+  assert.match(html, /title: "Do 18\. roku życia uczy się każdy\. Drogi są różne\."/);
+  assert.match(html, /title: "Everyone in Poland learns until 18\. The routes differ\."/);
+  assert.equal([...html.matchAll(/axisHead: \["(?:PRK \/ ERK|PQF \/ EQF)", "ISCED"\]/g)].length, 2);
+  for (const key of ["preschool", "primary", "general", "technical", "sectoral1", "sectoral2", "matura", "bachelor", "master", "doctorate"]) {
+    assert.equal([...html.matchAll(new RegExp(`\\n\\s*${key}: \\["`, "g"))].length, 2, key);
+  }
+});

@@ -987,6 +987,488 @@
         margin-top: 28px;
       }
 
+      .education-slide {
+        background: linear-gradient(180deg, rgb(31 91 58 / 0.07), rgb(31 91 58 / 0.02));
+      }
+
+      .edu-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 40px;
+        align-items: end;
+      }
+
+      .edu-head .slide-title {
+        font-size: clamp(34px, 4.2vw, 60px);
+        line-height: 1;
+      }
+
+      .edu-head .slide-lead {
+        margin-top: 16px;
+        font-size: clamp(16px, 1.35vw, 19px);
+        line-height: 1.4;
+      }
+
+      .edu-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .edu-fact {
+        border: 1px solid rgb(199 93 72 / 0.22);
+        border-top: 3px solid var(--coral);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.92);
+        padding: 14px;
+      }
+
+      .edu-fact strong {
+        display: block;
+        color: var(--coral);
+        font-size: clamp(24px, 2.4vw, 34px);
+        font-weight: 1000;
+        line-height: 1;
+      }
+
+      .edu-fact span {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .edu-diagram {
+        --edu-gap: 12px;
+        --edu-row-gap: 18px;
+        display: grid;
+        grid-template-columns: 82px repeat(3, minmax(0, 1fr)) 150px;
+        column-gap: var(--edu-gap);
+        row-gap: var(--edu-row-gap);
+        margin-top: 30px;
+      }
+
+      .edu-axis-head,
+      .edu-colhead {
+        grid-row: 1;
+        align-self: end;
+        margin-bottom: -6px;
+      }
+
+      .edu-axis-head {
+        grid-column: 1;
+        text-align: right;
+        padding-right: 12px;
+      }
+
+      .edu-axis-head strong,
+      .edu-axis-head span {
+        display: block;
+        font-size: 11px;
+        font-weight: 950;
+        line-height: 1.3;
+      }
+
+      .edu-axis-head strong {
+        color: var(--green);
+      }
+
+      .edu-axis-head span {
+        color: var(--muted);
+      }
+
+      .edu-colhead {
+        border-bottom: 3px solid currentColor;
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.05em;
+        padding-bottom: 7px;
+        text-transform: uppercase;
+      }
+
+      .edu-col-1 {
+        grid-column: 2;
+        color: var(--blue);
+      }
+
+      .edu-col-2 {
+        grid-column: 3;
+        color: var(--green);
+      }
+
+      .edu-col-3 {
+        grid-column: 4;
+        color: #8a6417;
+      }
+
+      .edu-col-4 {
+        grid-column: 5;
+        color: var(--coral);
+      }
+
+      .edu-axis {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        border-right: 2px solid rgb(31 91 58 / 0.24);
+        padding-right: 12px;
+      }
+
+      .edu-axis strong {
+        color: var(--green);
+        font-size: 26px;
+        font-weight: 1000;
+        line-height: 1;
+      }
+
+      .edu-axis span {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .edu-duty-line {
+        grid-column: 5;
+        grid-row: 6 / 10;
+        border-left: 3px solid var(--coral);
+        border-radius: 2px;
+        background: linear-gradient(90deg, rgb(199 93 72 / 0.1), transparent 70%);
+      }
+
+      .edu-duty {
+        position: relative;
+        grid-column: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 0 8px 16px;
+      }
+
+      .edu-duty::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -4px;
+        width: 11px;
+        height: 11px;
+        border: 2px solid var(--coral);
+        border-radius: 50%;
+        background: var(--paper-2);
+        transform: translateY(-50%);
+      }
+
+      .edu-duty strong {
+        color: var(--coral);
+        font-size: 19px;
+        font-weight: 1000;
+        line-height: 1.05;
+      }
+
+      .edu-duty span {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 850;
+        line-height: 1.3;
+      }
+
+      .edu-duty-1 {
+        grid-row: 6 / 8;
+      }
+
+      .edu-duty-2 {
+        grid-row: 8;
+      }
+
+      .edu-duty-3 {
+        grid-row: 9;
+      }
+
+      .edu-card {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.95);
+        box-shadow: 0 12px 34px rgb(23 32 25 / 0.06);
+        padding: 13px 15px;
+      }
+
+      .edu-card h3 {
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 1000;
+        line-height: 1.15;
+      }
+
+      .edu-meta {
+        margin-top: 4px;
+        color: var(--green);
+        font-size: 12.5px;
+        font-weight: 900;
+      }
+
+      .edu-level {
+        display: none;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.04em;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      .edu-gives {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.42;
+      }
+
+      .edu-next {
+        margin-top: 7px;
+        color: var(--ink);
+        font-size: 12.5px;
+        font-weight: 750;
+        line-height: 1.35;
+      }
+
+      .edu-next b {
+        font-weight: 1000;
+      }
+
+      .edu-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .edu-tag {
+        border-radius: 6px;
+        background: var(--green);
+        color: white;
+        font-size: 11px;
+        font-weight: 950;
+        padding: 4px 8px;
+      }
+
+      .edu-tag.alt {
+        background: rgb(215 177 93 / 0.32);
+        color: #5f430e;
+      }
+
+      .edu-card.wide {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: minmax(170px, 0.75fr) minmax(0, 1.45fr) minmax(0, 0.9fr);
+        gap: 4px 20px;
+        align-items: center;
+      }
+
+      .edu-card.wide .edu-gives,
+      .edu-card.wide .edu-next {
+        margin-top: 0;
+      }
+
+      .edu-card.general {
+        border-color: rgb(49 95 125 / 0.26);
+        background: rgb(234 240 240 / 0.95);
+      }
+
+      .edu-card.general .edu-meta {
+        color: var(--blue);
+      }
+
+      .edu-card.technical {
+        border-color: rgb(31 91 58 / 0.3);
+        background: rgb(229 236 223 / 0.96);
+      }
+
+      .edu-card.sectoral {
+        border-color: rgb(155 111 25 / 0.32);
+        background: rgb(246 233 199 / 0.96);
+      }
+
+      .edu-card.sectoral .edu-meta {
+        color: #7a5512;
+      }
+
+      .edu-card.ours {
+        border: 2px solid var(--green);
+      }
+
+      .edu-card.higher {
+        background: white;
+      }
+
+      .edu-card.gate {
+        border-color: transparent;
+        background: var(--green);
+        box-shadow: 0 16px 36px rgb(31 91 58 / 0.24);
+      }
+
+      .edu-card.gate h3 {
+        color: #f0cb77;
+        font-size: 22px;
+      }
+
+      .edu-card.gate .edu-meta,
+      .edu-card.gate .edu-level {
+        color: rgb(255 255 255 / 0.74);
+      }
+
+      .edu-card.gate .edu-gives {
+        color: rgb(255 255 255 / 0.9);
+        font-weight: 700;
+      }
+
+      .edu-card.gate {
+        grid-template-columns: minmax(170px, 0.75fr) minmax(0, 2.35fr);
+      }
+
+      .edu-card[data-edu="doctorate"] {
+        grid-row: 2;
+      }
+
+      .edu-card[data-edu="master"] {
+        grid-row: 3;
+      }
+
+      .edu-card[data-edu="bachelor"] {
+        grid-row: 4;
+      }
+
+      .edu-card[data-edu="matura"] {
+        grid-row: 5;
+      }
+
+      .edu-card[data-edu="general"] {
+        grid-column: 2;
+        grid-row: 6 / 8;
+      }
+
+      .edu-card[data-edu="technical"] {
+        grid-column: 3;
+        grid-row: 6 / 8;
+      }
+
+      .edu-card[data-edu="sectoral2"] {
+        grid-column: 4;
+        grid-row: 6;
+      }
+
+      .edu-card[data-edu="sectoral1"] {
+        grid-column: 4;
+        grid-row: 7;
+      }
+
+      .edu-card[data-edu="primary"] {
+        grid-row: 8;
+      }
+
+      .edu-card[data-edu="preschool"] {
+        grid-row: 9;
+      }
+
+      .edu-arrow {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 2px;
+        height: var(--edu-row-gap);
+        margin-left: -1px;
+        margin-bottom: 1px;
+        background: var(--green);
+        pointer-events: none;
+      }
+
+      .edu-arrow::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid var(--green);
+        border-left: 5px solid transparent;
+        transform: translateX(-50%);
+      }
+
+      .edu-arrow.c1 {
+        left: calc((100% - 2 * var(--edu-gap)) / 6);
+      }
+
+      .edu-arrow.c3 {
+        left: calc(100% - (100% - 2 * var(--edu-gap)) / 6);
+      }
+
+      .edu-foot {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 28px;
+        margin-top: 26px;
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+
+      .edu-foot h3 {
+        color: var(--green);
+        font-size: 16px;
+        font-weight: 1000;
+      }
+
+      .edu-legend p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .edu-legend .edu-sources {
+        font-size: 12px;
+      }
+
+      .edu-sources a {
+        color: var(--green);
+        font-weight: 800;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .edu-other-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .edu-other-list article {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.9);
+        padding: 12px;
+      }
+
+      .edu-other-list h4 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 950;
+        line-height: 1.2;
+      }
+
+      .edu-other-list p {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12.5px;
+        line-height: 1.4;
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(26px);
@@ -1510,6 +1992,77 @@
         }
       }
 
+      @media (max-width: 1180px) {
+        .edu-head,
+        .edu-foot {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .edu-diagram {
+          grid-template-columns: 64px repeat(3, minmax(0, 1fr)) 118px;
+        }
+
+        .edu-card.wide {
+          grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.5fr);
+        }
+
+        .edu-card.wide .edu-next {
+          grid-column: 2;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .edu-diagram {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .edu-axis-head,
+        .edu-colhead,
+        .edu-axis,
+        .edu-duty-line,
+        .edu-duty,
+        .edu-arrow {
+          display: none;
+        }
+
+        .edu-level {
+          display: block;
+        }
+
+        .edu-card.wide {
+          display: block;
+        }
+
+        .edu-card.wide .edu-gives,
+        .edu-card.wide .edu-next {
+          margin-top: 8px;
+        }
+
+        .edu-other-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .edu-facts {
+          grid-template-columns: 1fr;
+        }
+
+        .edu-fact {
+          display: grid;
+          grid-template-columns: 92px minmax(0, 1fr);
+          align-items: center;
+          gap: 12px;
+        }
+
+        .edu-fact span {
+          margin-top: 0;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -1545,11 +2098,12 @@
         </a>
         <nav class="nav" aria-label="Główna nawigacja">
           <a href="#story" data-i18n="nav.0">O szkole</a>
-          <a href="#paths" data-i18n="nav.1">Dualnie</a>
-          <a href="#practice" data-i18n="nav.2">Pracownie</a>
-          <a href="#professions" data-i18n="nav.3">Zawody</a>
-          <a href="#projects" data-i18n="nav.4">Projekty</a>
-          <a href="#location" data-i18n="nav.5">Mapa</a>
+          <a href="#education" data-i18n="nav.1">Ścieżki</a>
+          <a href="#paths" data-i18n="nav.2">Dualnie</a>
+          <a href="#practice" data-i18n="nav.3">Pracownie</a>
+          <a href="#professions" data-i18n="nav.4">Zawody</a>
+          <a href="#projects" data-i18n="nav.5">Projekty</a>
+          <a href="#location" data-i18n="nav.6">Mapa</a>
         </nav>
         <div class="lang" aria-label="Wybór języka">
           <button type="button" data-lang="pl" class="active">PL</button>
@@ -1590,6 +2144,23 @@
             </p>
             <div class="beats" data-render="beats"></div>
           </div>
+        </div>
+      </section>
+
+      <section id="education" class="slide education-slide">
+        <div class="shell">
+          <div class="edu-head reveal">
+            <div>
+              <p class="label" data-i18n="education.kicker">System edukacji w Polsce</p>
+              <h2 class="slide-title" data-i18n="education.title">Do 18. roku życia uczy się każdy. Drogi są różne.</h2>
+              <p class="slide-lead" data-i18n="education.lead">
+                Po szkole podstawowej uczeń wybiera liceum, technikum albo szkołę branżową. Każda z tych dróg może doprowadzić aż na studia.
+              </p>
+            </div>
+            <div class="edu-facts" data-render="educationFacts"></div>
+          </div>
+          <div class="edu-diagram reveal" data-render="education" aria-label="Schemat systemu edukacji w Polsce"></div>
+          <div class="edu-foot reveal" data-render="educationFoot"></div>
         </div>
       </section>
 
@@ -1723,7 +2294,7 @@
     <script>
       const content = {
         pl: {
-          nav: ["O szkole", "Dualnie", "Pracownie", "Zawody", "Projekty", "Mapa"],
+          nav: ["O szkole", "Ścieżki", "Dualnie", "Pracownie", "Zawody", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
           heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
@@ -1753,6 +2324,51 @@
             ["Branżowa szkoła II stopnia i KKZ", "Dalsza droga dla absolwentów i dorosłych: podnoszenie kwalifikacji, tytuł technika, przygotowanie do matury."],
             ["Nauczyciele", "Doświadczona kadra, często praktycy swoich zawodów rzemieślniczych. Uczą z warsztatu i dobrze potrafią prowadzić młodzież."]
           ],
+          education: {
+            kicker: "System edukacji w Polsce",
+            title: "Do 18. roku życia uczy się każdy. Drogi są różne.",
+            lead: "Po szkole podstawowej uczeń wybiera liceum, technikum albo szkołę branżową. Każda z tych dróg może doprowadzić aż na studia – różnią się tempem, praktyką i kwalifikacjami zdobywanymi po drodze.",
+            aria: "Schemat systemu edukacji w Polsce",
+            facts: [
+              ["6 lat", "obowiązkowy rok przygotowania przedszkolnego"],
+              ["7–15", "obowiązek szkolny: 8-letnia szkoła podstawowa"],
+              ["do 18", "obowiązek nauki: szkoła ponadpodstawowa lub nauka zawodu u pracodawcy"]
+            ],
+            axisHead: ["PRK / ERK", "ISCED"],
+            columns: ["Ogólnokształcąca", "Techniczna", "Branżowa (dualna)", "Edukacja obowiązkowa"],
+            duty: [
+              ["do 18 lat", "obowiązek nauki w szkole lub u pracodawcy"],
+              ["7–15 lat", "obowiązek szkolny"],
+              ["6 lat", "roczne przygotowanie przedszkolne"]
+            ],
+            nextLabel: "Dalej:",
+            cards: {
+              preschool: ["Wychowanie przedszkolne", "3–6 lat", "Ostatni rok (6 lat) jest obowiązkowy: przygotowanie do szkoły.", "szkoła podstawowa", [], "ISCED 0"],
+              primary: ["Szkoła podstawowa", "8 lat · 7–15 lat", "Klasy 1–6 to ISCED 1, klasy 7–8 to ISCED 2. Kończy się egzaminem ósmoklasisty i świadectwem na poziomie 2 PRK.", "liceum, technikum lub branżowa szkoła I stopnia", [], "ISCED 1–2 · PRK 2"],
+              general: ["Liceum ogólnokształcące", "4 lata · 15–19 lat", "Wykształcenie średnie i matura (PRK 4). Bez kwalifikacji zawodowej.", "studia lub szkoła policealna", [], "ISCED 3 · PRK 4"],
+              technical: ["Technikum", "5 lat · 15–20 lat", "Dyplom technika po egzaminach zawodowych (PRK 4) i matura. Zawód i droga na studia.", "studia albo praca jako technik", ["ZSZ nr 5"], "ISCED 3 · PRK 4"],
+              sectoral1: ["Branżowa szkoła I stopnia", "3 lata · 15–18 lat", "Dyplom zawodowy lub świadectwo czeladnicze (PRK 3). Nauka dualna: szkoła i pracodawca.", "branżowa szkoła II stopnia, liceum dla dorosłych (od klasy II) albo praca", ["ZSZ nr 5", "dualnie"], "ISCED 3 · PRK 3"],
+              sectoral2: ["Branżowa szkoła II stopnia", "2 lata · zwykle 18–20 lat", "Dyplom technika (PRK 4) i możliwość zdania matury. Wykształcenie średnie branżowe.", "matura i studia albo praca jako technik", ["ZSZ nr 5"], "ISCED 3 · PRK 4"],
+              matura: ["Matura", "egzamin dojrzałości", "Świadectwo dojrzałości (PRK 4) otwiera drogę na studia. Można je zdobyć po liceum, technikum i branżowej szkole II stopnia.", "", [], "PRK 4"],
+              bachelor: ["Studia I stopnia", "3–4 lata", "Licencjat (3 lata) albo inżynier (3,5–4 lata).", "studia II stopnia lub praca", [], "ISCED 6 · PRK 6"],
+              master: ["Studia II stopnia", "1,5–2 lata", "Tytuł magistra. Niektóre kierunki, np. prawo czy medycyna, to jednolite studia magisterskie (5–6 lat).", "szkoła doktorska lub praca", [], "ISCED 7 · PRK 7"],
+              doctorate: ["Szkoła doktorska", "3–4 lata", "Stopień doktora – najwyższy, 8. poziom ram kwalifikacji.", "", [], "ISCED 8 · PRK 8"]
+            },
+            legendTitle: "Jak czytać poziomy",
+            legend: "PRK – Polska Rama Kwalifikacji. Jej poziomy 1–8 odpowiadają 1:1 poziomom Europejskiej Ramy Kwalifikacji (ERK/EQF), więc dyplom z Polski da się porównać z dyplomem z innego kraju UE. ISCED – Międzynarodowa Standardowa Klasyfikacja Kształcenia UNESCO (poziomy 0–8). W niektórych zawodach dyplom technika ma poziom 5 PRK.",
+            otherTitle: "Inne drogi",
+            other: [
+              ["Szkoła policealna", "ISCED 4 · do 2,5 roku po szkole średniej · dyplom zawodowy na poziomie 4 PRK (w części zawodów 5)."],
+              ["Kwalifikacyjne kursy zawodowe", "Dla dorosłych: kolejna kwalifikacja w zawodzie, potwierdzona państwowym egzaminem zawodowym. Prowadzimy je w ZSZ nr 5."],
+              ["Liceum dla dorosłych", "Absolwent branżowej szkoły I stopnia może zacząć od klasy II i przystąpić do matury."]
+            ],
+            sourcesLabel: "Źródła:",
+            sources: [
+              ["Eurydice: Struktury europejskich systemów edukacji (FRSE)", "https://www.frse.org.pl/brepo/panel_repo_files/2023/08/02/7n5sez/diagramy-2023-online.pdf"],
+              ["Eurydice: Poland – overview", "https://eurydice.eacea.ec.europa.eu/eurypedia/poland/overview"],
+              ["Polska Rama Kwalifikacji (MEN)", "https://prk.men.gov.pl/polska-rama-kwalifikacji-prk/"]
+            ]
+          },
           pathsKicker: "Szkoła dualna bez żargonu",
           pathsTitle: "Szkoła dualna: zawodu uczysz się także w firmie.",
           pathsLead: "W branżowej szkole I stopnia uczeń poznaje zasady w szkole i sprawdza je przy prawdziwym stanowisku pracy.",
@@ -1839,7 +2455,7 @@
           ]
         },
         en: {
-          nav: ["About", "Dual model", "Workshops", "Professions", "Projects", "Map"],
+          nav: ["About", "Pathways", "Dual model", "Workshops", "Professions", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
           heroLockupAlt: "VSCW5 (Vocational School Complex no.5 Wrocław) and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
@@ -1869,6 +2485,51 @@
             ["Stage II sectoral school and courses", "A further route for graduates and adults: higher qualifications, a technician title and preparation for Matura."],
             ["Teachers", "An experienced team, often practitioners in their own crafts. They teach from workshop experience and know how to guide young people well."]
           ],
+          education: {
+            kicker: "Education in Poland",
+            title: "Everyone in Poland learns until 18. The routes differ.",
+            lead: "After primary school, students choose a general secondary school, a technical school or a sectoral school. Each route can lead all the way to university – they differ in pace, practice and the qualifications gained along the way.",
+            aria: "Diagram of the Polish education system",
+            facts: [
+              ["Age 6", "one compulsory year of preschool preparation"],
+              ["7–15", "compulsory schooling: 8-year primary school"],
+              ["Until 18", "compulsory education: secondary school or vocational training with an employer"]
+            ],
+            axisHead: ["PQF / EQF", "ISCED"],
+            columns: ["General", "Technical", "Sectoral (dual)", "Compulsory education"],
+            duty: [
+              ["Until 18", "compulsory education at school or with an employer"],
+              ["Ages 7–15", "compulsory schooling"],
+              ["Age 6", "compulsory preschool year"]
+            ],
+            nextLabel: "Next:",
+            cards: {
+              preschool: ["Preschool", "ages 3–6", "The last year (age 6) is compulsory: preparation for school.", "primary school", [], "ISCED 0"],
+              primary: ["Primary school", "8 years · ages 7–15", "Grades 1–6 are ISCED 1, grades 7–8 are ISCED 2. Ends with the national Grade 8 exam and a certificate at PQF level 2.", "general, technical or stage I sectoral school", [], "ISCED 1–2 · PQF 2"],
+              general: ["General secondary school (liceum)", "4 years · ages 15–19", "Secondary education and the Matura (PQF 4). No vocational qualification.", "university or post-secondary school", [], "ISCED 3 · PQF 4"],
+              technical: ["Technical school (technikum)", "5 years · ages 15–20", "Technician diploma after vocational exams (PQF 4) plus the Matura. A profession and a route to university.", "university or work as a technician", ["VSCW5"], "ISCED 3 · PQF 4"],
+              sectoral1: ["Stage I sectoral school", "3 years · ages 15–18", "Vocational diploma or journeyman's certificate (PQF 3). Dual learning: school plus employer.", "stage II sectoral school, adult general school (from grade 2) or work", ["VSCW5", "dual"], "ISCED 3 · PQF 3"],
+              sectoral2: ["Stage II sectoral school", "2 years · usually ages 18–20", "Technician diploma (PQF 4) and the option to take the Matura. Sectoral secondary education.", "Matura and university, or work as a technician", ["VSCW5"], "ISCED 3 · PQF 4"],
+              matura: ["Matura", "secondary school leaving exam", "The maturity certificate (PQF 4) opens the way to university. It can be earned after general, technical and stage II sectoral school.", "", [], "PQF 4"],
+              bachelor: ["First-cycle studies", "3–4 years", "Bachelor's degree (licencjat, 3 years) or engineer's degree (inżynier, 3.5–4 years).", "second-cycle studies or work", [], "ISCED 6 · PQF 6"],
+              master: ["Second-cycle studies", "1.5–2 years", "Master's degree. Some fields, such as law or medicine, are long-cycle master's programmes (5–6 years).", "doctoral school or work", [], "ISCED 7 · PQF 7"],
+              doctorate: ["Doctoral school", "3–4 years", "Doctoral degree (PhD) – the highest, 8th level of the qualifications framework.", "", [], "ISCED 8 · PQF 8"]
+            },
+            legendTitle: "How to read the levels",
+            legend: "PQF – Polish Qualifications Framework. Its levels 1–8 match the European Qualifications Framework (EQF) one to one, so a Polish diploma can be compared with one from any other EU country. ISCED – UNESCO International Standard Classification of Education (levels 0–8). In some professions the technician diploma is placed at PQF level 5.",
+            otherTitle: "Other routes",
+            other: [
+              ["Post-secondary school", "ISCED 4 · up to 2.5 years after secondary school · vocational diploma at PQF level 4 (5 in some professions)."],
+              ["Vocational qualification courses", "For adults: another qualification in a profession, confirmed by a state vocational exam. Run at VSCW5."],
+              ["Adult general secondary school", "Stage I sectoral school graduates can start in grade 2 and take the Matura."]
+            ],
+            sourcesLabel: "Sources:",
+            sources: [
+              ["Eurydice: Structures of European education systems (FRSE, PL edition)", "https://www.frse.org.pl/brepo/panel_repo_files/2023/08/02/7n5sez/diagramy-2023-online.pdf"],
+              ["Eurydice: Poland – overview", "https://eurydice.eacea.ec.europa.eu/eurypedia/poland/overview"],
+              ["Polish Qualifications Framework (Ministry of Education)", "https://prk.men.gov.pl/polska-rama-kwalifikacji-prk/"]
+            ]
+          },
           pathsKicker: "Dual education, simply explained",
           pathsTitle: "Dual education means school plus real work.",
           pathsLead: "In stage I sectoral school, students learn the rules in class and test them at a real workplace.",
@@ -1967,6 +2628,76 @@
           .replaceAll('"', "&quot;");
       }
 
+      // Rows of the diagram, top to bottom: [PRK/EQF level, ISCED level].
+      const educationAxis = [["8", "8"], ["7", "7"], ["6", "6"], ["", ""], ["4", "3"], ["3", "3"], ["2", "1–2"], ["–", "0"]];
+      // Cards in reading order (from preschool up); arrows mark the exits from the top edge of a card.
+      const educationCards = [
+        ["preschool", "base wide", ["mid"]],
+        ["primary", "base wide", ["c1", "mid", "c3"]],
+        ["general", "general", ["mid"]],
+        ["technical", "technical ours", ["mid"]],
+        ["sectoral1", "sectoral ours", ["mid"]],
+        ["sectoral2", "sectoral ours", ["mid"]],
+        ["matura", "gate wide", ["mid"]],
+        ["bachelor", "higher wide", ["mid"]],
+        ["master", "higher wide", ["mid"]],
+        ["doctorate", "higher wide", []]
+      ];
+
+      function renderEducation(e) {
+        document.querySelector('[data-render="educationFacts"]').innerHTML = e.facts
+          .map(([value, label]) => `<div class="edu-fact"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
+          .join("");
+
+        const diagram = document.querySelector('[data-render="education"]');
+        diagram.setAttribute("aria-label", e.aria);
+        const columnHeads = e.columns
+          .map((label, index) => `<p class="edu-colhead edu-col-${index + 1}">${htmlEscape(label)}</p>`)
+          .join("");
+        const axis = educationAxis
+          .map(([prk, isced], index) => `<div class="edu-axis" style="grid-row: ${index + 2}" aria-hidden="true">${prk ? `<strong>${htmlEscape(prk)}</strong><span>ISCED ${htmlEscape(isced)}</span>` : ""}</div>`)
+          .join("");
+        const duty = e.duty
+          .map(([value, label], index) => `<div class="edu-duty edu-duty-${index + 1}"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
+          .join("");
+        const cards = educationCards
+          .map(([key, classes, arrows]) => {
+            const [title, meta, gives, next, tags, level] = e.cards[key];
+            return `<article class="edu-card ${classes}" data-edu="${key}">
+              ${arrows.map((position) => `<i class="edu-arrow ${position}" aria-hidden="true"></i>`).join("")}
+              <div class="edu-card-head">
+                <p class="edu-level">${htmlEscape(level)}</p>
+                <h3>${htmlEscape(title)}</h3>
+                <p class="edu-meta">${htmlEscape(meta)}</p>
+              </div>
+              <p class="edu-gives">${htmlEscape(gives)}</p>
+              ${next ? `<p class="edu-next"><b>${htmlEscape(e.nextLabel)}</b> ${htmlEscape(next)}</p>` : ""}
+              ${tags.length ? `<p class="edu-tags">${tags.map((tag, index) => `<span class="edu-tag${index ? " alt" : ""}">${htmlEscape(tag)}</span>`).join("")}</p>` : ""}
+            </article>`;
+          })
+          .join("");
+        diagram.innerHTML = `
+          <div class="edu-axis-head" aria-hidden="true"><strong>${htmlEscape(e.axisHead[0])}</strong><span>${htmlEscape(e.axisHead[1])}</span></div>
+          ${columnHeads}${axis}
+          <div class="edu-duty-line" aria-hidden="true"></div>
+          ${duty}${cards}`;
+
+        document.querySelector('[data-render="educationFoot"]').innerHTML = `
+          <div class="edu-legend">
+            <h3>${htmlEscape(e.legendTitle)}</h3>
+            <p>${htmlEscape(e.legend)}</p>
+            <p class="edu-sources">${htmlEscape(e.sourcesLabel)} ${e.sources
+              .map(([label, href]) => `<a href="${htmlEscape(href)}" target="_blank" rel="noopener">${htmlEscape(label)}</a>`)
+              .join(" · ")}</p>
+          </div>
+          <div class="edu-other">
+            <h3>${htmlEscape(e.otherTitle)}</h3>
+            <div class="edu-other-list">
+              ${e.other.map(([title, body]) => `<article><h4>${htmlEscape(title)}</h4><p>${htmlEscape(body)}</p></article>`).join("")}
+            </div>
+          </div>`;
+      }
+
       function render(lang) {
         activeLang = lang;
         localStorage.setItem("zsz5-lang", lang);
@@ -1994,6 +2725,8 @@
         document.querySelector('[data-render="beats"]').innerHTML = t.beats
           .map(([title, body]) => `<article class="beat"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
           .join("");
+
+        renderEducation(t.education);
 
         document.querySelector('[data-render="paths"]').innerHTML = t.paths
           .map(([title, body]) => `<article class="path"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
@@ -2038,7 +2771,7 @@
         button.addEventListener("click", () => render(button.dataset.lang));
       });
 
-      const sectionIds = ["start", "story", "paths", "practice", "professions", "projects", "jubilee", "location", "contact"];
+      const sectionIds = ["start", "story", "education", "paths", "practice", "professions", "projects", "jubilee", "location", "contact"];
       document.addEventListener("keydown", (event) => {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
         const keys = ["ArrowDown", "PageDown", "ArrowUp", "PageUp", "Home", "End"];
