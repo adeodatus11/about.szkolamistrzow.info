@@ -2334,7 +2334,7 @@
               ["7–15", "obowiązek szkolny: 8-letnia szkoła podstawowa"],
               ["do 18", "obowiązek nauki: szkoła ponadpodstawowa lub nauka zawodu u pracodawcy"]
             ],
-            axisHead: ["PRK / ERK", "ISCED"],
+            axisHead: ["EQF", "ISCED"],
             columns: ["Ogólnokształcąca", "Techniczna", "Branżowa (dualna)", "Edukacja obowiązkowa"],
             duty: [
               ["do 18 lat", "obowiązek nauki w szkole lub u pracodawcy"],
@@ -2344,21 +2344,21 @@
             nextLabel: "Dalej:",
             cards: {
               preschool: ["Wychowanie przedszkolne", "3–6 lat", "Ostatni rok (6 lat) jest obowiązkowy: przygotowanie do szkoły.", "szkoła podstawowa", [], "ISCED 0"],
-              primary: ["Szkoła podstawowa", "8 lat · 7–15 lat", "Klasy 1–6 to ISCED 1, klasy 7–8 to ISCED 2. Kończy się egzaminem ósmoklasisty i świadectwem na poziomie 2 PRK.", "liceum, technikum lub branżowa szkoła I stopnia", [], "ISCED 1–2 · PRK 2"],
-              general: ["Liceum ogólnokształcące", "4 lata · 15–19 lat", "Wykształcenie średnie i matura (PRK 4). Bez kwalifikacji zawodowej.", "studia lub szkoła policealna", [], "ISCED 3 · PRK 4"],
-              technical: ["Technikum", "5 lat · 15–20 lat", "Dyplom technika po egzaminach zawodowych (PRK 4) i matura. Zawód i droga na studia.", "studia albo praca jako technik", ["ZSZ nr 5"], "ISCED 3 · PRK 4"],
-              sectoral1: ["Branżowa szkoła I stopnia", "3 lata · 15–18 lat", "Dyplom zawodowy lub świadectwo czeladnicze (PRK 3). Nauka dualna: szkoła i pracodawca.", "branżowa szkoła II stopnia, liceum dla dorosłych (od klasy II) albo praca", ["ZSZ nr 5", "dualnie"], "ISCED 3 · PRK 3"],
-              sectoral2: ["Branżowa szkoła II stopnia", "2 lata · zwykle 18–20 lat", "Dyplom technika (PRK 4) i możliwość zdania matury. Wykształcenie średnie branżowe.", "matura i studia albo praca jako technik", ["ZSZ nr 5"], "ISCED 3 · PRK 4"],
-              matura: ["Matura", "egzamin dojrzałości", "Świadectwo dojrzałości (PRK 4) otwiera drogę na studia. Można je zdobyć po liceum, technikum i branżowej szkole II stopnia.", "", [], "PRK 4"],
-              bachelor: ["Studia I stopnia", "3–4 lata", "Licencjat (3 lata) albo inżynier (3,5–4 lata).", "studia II stopnia lub praca", [], "ISCED 6 · PRK 6"],
-              master: ["Studia II stopnia", "1,5–2 lata", "Tytuł magistra. Niektóre kierunki, np. prawo czy medycyna, to jednolite studia magisterskie (5–6 lat).", "szkoła doktorska lub praca", [], "ISCED 7 · PRK 7"],
-              doctorate: ["Szkoła doktorska", "3–4 lata", "Stopień doktora – najwyższy, 8. poziom ram kwalifikacji.", "", [], "ISCED 8 · PRK 8"]
+              primary: ["Szkoła podstawowa", "8 lat · 7–15 lat", "Klasy 1–6 to ISCED 1, klasy 7–8 to ISCED 2. Kończy się egzaminem ósmoklasisty i świadectwem na poziomie 2 EQF.", "liceum, technikum lub branżowa szkoła I stopnia", [], "EQF 2 · ISCED 1–2"],
+              general: ["Liceum ogólnokształcące", "4 lata · 15–19 lat", "Wykształcenie średnie i matura (EQF 4). Bez kwalifikacji zawodowej.", "studia lub szkoła policealna", [], "EQF 4 · ISCED 3"],
+              technical: ["Technikum", "5 lat · 15–20 lat", "Dyplom technika po egzaminach zawodowych (EQF 4) i matura. Zawód i droga na studia.", "studia albo praca jako technik", ["ZSZ nr 5"], "EQF 4 · ISCED 3"],
+              sectoral1: ["Branżowa szkoła I stopnia", "3 lata · 15–18 lat", "Dyplom zawodowy lub świadectwo czeladnicze (EQF 3). Nauka dualna: szkoła i pracodawca.", "branżowa szkoła II stopnia, liceum dla dorosłych (od klasy II) albo praca", ["ZSZ nr 5", "dualnie"], "EQF 3 · ISCED 3"],
+              sectoral2: ["Branżowa szkoła II stopnia", "2 lata · zwykle 18–20 lat", "Dyplom technika (EQF 4) i możliwość zdania matury. Wykształcenie średnie branżowe.", "matura i studia albo praca jako technik", ["ZSZ nr 5"], "EQF 4 · ISCED 3"],
+              matura: ["Matura", "egzamin dojrzałości", "Świadectwo dojrzałości (EQF 4) otwiera drogę na studia. Można je zdobyć po liceum, technikum i branżowej szkole II stopnia.", "", [], "EQF 4"],
+              bachelor: ["Studia I stopnia", "3–4 lata", "Licencjat (3 lata) albo inżynier (3,5–4 lata).", "studia II stopnia lub praca", [], "EQF 6 · ISCED 6"],
+              master: ["Studia II stopnia", "1,5–2 lata", "Tytuł magistra. Niektóre kierunki, np. prawo czy medycyna, to jednolite studia magisterskie (5–6 lat).", "szkoła doktorska lub praca", [], "EQF 7 · ISCED 7"],
+              doctorate: ["Szkoła doktorska", "3–4 lata", "Stopień doktora – najwyższy, 8. poziom EQF.", "", [], "EQF 8 · ISCED 8"]
             },
             legendTitle: "Jak czytać poziomy",
-            legend: "PRK – Polska Rama Kwalifikacji. Jej poziomy 1–8 odpowiadają 1:1 poziomom Europejskiej Ramy Kwalifikacji (ERK/EQF), więc dyplom z Polski da się porównać z dyplomem z innego kraju UE. ISCED – Międzynarodowa Standardowa Klasyfikacja Kształcenia UNESCO (poziomy 0–8). W niektórych zawodach dyplom technika ma poziom 5 PRK.",
+            legend: "EQF – Europejska Rama Kwalifikacji (European Qualifications Framework): wspólna dla krajów UE skala poziomów 1–8, dzięki której dyplom z Polski da się porównać z dyplomem z każdego innego kraju. Polska Rama Kwalifikacji (PRK) ma te same poziomy co EQF. ISCED – klasyfikacja programów nauczania UNESCO (poziomy 0–8). W niektórych zawodach dyplom technika ma poziom 5 EQF.",
             otherTitle: "Inne drogi",
             other: [
-              ["Szkoła policealna", "ISCED 4 · do 2,5 roku po szkole średniej · dyplom zawodowy na poziomie 4 PRK (w części zawodów 5)."],
+              ["Szkoła policealna", "ISCED 4 · do 2,5 roku po szkole średniej · dyplom zawodowy na poziomie 4 EQF (w części zawodów 5)."],
               ["Kwalifikacyjne kursy zawodowe", "Dla dorosłych: kolejna kwalifikacja w zawodzie, potwierdzona państwowym egzaminem zawodowym. Prowadzimy je w ZSZ nr 5."],
               ["Liceum dla dorosłych", "Absolwent branżowej szkoły I stopnia może zacząć od klasy II i przystąpić do matury."]
             ],
@@ -2366,6 +2366,7 @@
             sources: [
               ["Eurydice: Struktury europejskich systemów edukacji (FRSE)", "https://www.frse.org.pl/brepo/panel_repo_files/2023/08/02/7n5sez/diagramy-2023-online.pdf"],
               ["Eurydice: Poland – overview", "https://eurydice.eacea.ec.europa.eu/eurypedia/poland/overview"],
+              ["Europass: Europejska Rama Kwalifikacji", "https://europass.europa.eu/en/european-qualifications-framework-eqf"],
               ["Polska Rama Kwalifikacji (MEN)", "https://prk.men.gov.pl/polska-rama-kwalifikacji-prk/"]
             ]
           },
@@ -2495,7 +2496,7 @@
               ["7–15", "compulsory schooling: 8-year primary school"],
               ["Until 18", "compulsory education: secondary school or vocational training with an employer"]
             ],
-            axisHead: ["PQF / EQF", "ISCED"],
+            axisHead: ["EQF", "ISCED"],
             columns: ["General", "Technical", "Sectoral (dual)", "Compulsory education"],
             duty: [
               ["Until 18", "compulsory education at school or with an employer"],
@@ -2505,21 +2506,21 @@
             nextLabel: "Next:",
             cards: {
               preschool: ["Preschool", "ages 3–6", "The last year (age 6) is compulsory: preparation for school.", "primary school", [], "ISCED 0"],
-              primary: ["Primary school", "8 years · ages 7–15", "Grades 1–6 are ISCED 1, grades 7–8 are ISCED 2. Ends with the national Grade 8 exam and a certificate at PQF level 2.", "general, technical or stage I sectoral school", [], "ISCED 1–2 · PQF 2"],
-              general: ["General secondary school (liceum)", "4 years · ages 15–19", "Secondary education and the Matura (PQF 4). No vocational qualification.", "university or post-secondary school", [], "ISCED 3 · PQF 4"],
-              technical: ["Technical school (technikum)", "5 years · ages 15–20", "Technician diploma after vocational exams (PQF 4) plus the Matura. A profession and a route to university.", "university or work as a technician", ["VSCW5"], "ISCED 3 · PQF 4"],
-              sectoral1: ["Stage I sectoral school", "3 years · ages 15–18", "Vocational diploma or journeyman's certificate (PQF 3). Dual learning: school plus employer.", "stage II sectoral school, adult general school (from grade 2) or work", ["VSCW5", "dual"], "ISCED 3 · PQF 3"],
-              sectoral2: ["Stage II sectoral school", "2 years · usually ages 18–20", "Technician diploma (PQF 4) and the option to take the Matura. Sectoral secondary education.", "Matura and university, or work as a technician", ["VSCW5"], "ISCED 3 · PQF 4"],
-              matura: ["Matura", "secondary school leaving exam", "The maturity certificate (PQF 4) opens the way to university. It can be earned after general, technical and stage II sectoral school.", "", [], "PQF 4"],
-              bachelor: ["First-cycle studies", "3–4 years", "Bachelor's degree (licencjat, 3 years) or engineer's degree (inżynier, 3.5–4 years).", "second-cycle studies or work", [], "ISCED 6 · PQF 6"],
-              master: ["Second-cycle studies", "1.5–2 years", "Master's degree. Some fields, such as law or medicine, are long-cycle master's programmes (5–6 years).", "doctoral school or work", [], "ISCED 7 · PQF 7"],
-              doctorate: ["Doctoral school", "3–4 years", "Doctoral degree (PhD) – the highest, 8th level of the qualifications framework.", "", [], "ISCED 8 · PQF 8"]
+              primary: ["Primary school", "8 years · ages 7–15", "Grades 1–6 are ISCED 1, grades 7–8 are ISCED 2. Ends with the national Grade 8 exam and a certificate at EQF level 2.", "general, technical or stage I sectoral school", [], "EQF 2 · ISCED 1–2"],
+              general: ["General secondary school (liceum)", "4 years · ages 15–19", "Secondary education and the Matura (EQF 4). No vocational qualification.", "university or post-secondary school", [], "EQF 4 · ISCED 3"],
+              technical: ["Technical school (technikum)", "5 years · ages 15–20", "Technician diploma after vocational exams (EQF 4) plus the Matura. A profession and a route to university.", "university or work as a technician", ["VSCW5"], "EQF 4 · ISCED 3"],
+              sectoral1: ["Stage I sectoral school", "3 years · ages 15–18", "Vocational diploma or journeyman's certificate (EQF 3). Dual learning: school plus employer.", "stage II sectoral school, adult general school (from grade 2) or work", ["VSCW5", "dual"], "EQF 3 · ISCED 3"],
+              sectoral2: ["Stage II sectoral school", "2 years · usually ages 18–20", "Technician diploma (EQF 4) and the option to take the Matura. Sectoral secondary education.", "Matura and university, or work as a technician", ["VSCW5"], "EQF 4 · ISCED 3"],
+              matura: ["Matura", "secondary school leaving exam", "The maturity certificate (EQF 4) opens the way to university. It can be earned after general, technical and stage II sectoral school.", "", [], "EQF 4"],
+              bachelor: ["First-cycle studies", "3–4 years", "Bachelor's degree (licencjat, 3 years) or engineer's degree (inżynier, 3.5–4 years).", "second-cycle studies or work", [], "EQF 6 · ISCED 6"],
+              master: ["Second-cycle studies", "1.5–2 years", "Master's degree. Some fields, such as law or medicine, are long-cycle master's programmes (5–6 years).", "doctoral school or work", [], "EQF 7 · ISCED 7"],
+              doctorate: ["Doctoral school", "3–4 years", "Doctoral degree (PhD) – the highest level, EQF 8.", "", [], "EQF 8 · ISCED 8"]
             },
             legendTitle: "How to read the levels",
-            legend: "PQF – Polish Qualifications Framework. Its levels 1–8 match the European Qualifications Framework (EQF) one to one, so a Polish diploma can be compared with one from any other EU country. ISCED – UNESCO International Standard Classification of Education (levels 0–8). In some professions the technician diploma is placed at PQF level 5.",
+            legend: "EQF – European Qualifications Framework: a common EU scale of levels 1–8 that makes a Polish diploma comparable with one from any other European country. The Polish Qualifications Framework uses the same levels as the EQF. ISCED – UNESCO classification of education programmes (levels 0–8). In some professions the technician diploma is placed at EQF level 5.",
             otherTitle: "Other routes",
             other: [
-              ["Post-secondary school", "ISCED 4 · up to 2.5 years after secondary school · vocational diploma at PQF level 4 (5 in some professions)."],
+              ["Post-secondary school", "ISCED 4 · up to 2.5 years after secondary school · vocational diploma at EQF level 4 (5 in some professions)."],
               ["Vocational qualification courses", "For adults: another qualification in a profession, confirmed by a state vocational exam. Run at VSCW5."],
               ["Adult general secondary school", "Stage I sectoral school graduates can start in grade 2 and take the Matura."]
             ],
@@ -2527,6 +2528,7 @@
             sources: [
               ["Eurydice: Structures of European education systems (FRSE, PL edition)", "https://www.frse.org.pl/brepo/panel_repo_files/2023/08/02/7n5sez/diagramy-2023-online.pdf"],
               ["Eurydice: Poland – overview", "https://eurydice.eacea.ec.europa.eu/eurypedia/poland/overview"],
+              ["Europass: European Qualifications Framework", "https://europass.europa.eu/en/european-qualifications-framework-eqf"],
               ["Polish Qualifications Framework (Ministry of Education)", "https://prk.men.gov.pl/polska-rama-kwalifikacji-prk/"]
             ]
           },
@@ -2628,7 +2630,7 @@
           .replaceAll('"', "&quot;");
       }
 
-      // Rows of the diagram, top to bottom: [PRK/EQF level, ISCED level].
+      // Rows of the diagram, top to bottom: [EQF level, ISCED level].
       const educationAxis = [["8", "8"], ["7", "7"], ["6", "6"], ["", ""], ["4", "3"], ["3", "3"], ["2", "1–2"], ["–", "0"]];
       // Cards in reading order (from preschool up); arrows mark the exits from the top edge of a card.
       const educationCards = [

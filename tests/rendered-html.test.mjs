@@ -58,7 +58,8 @@ test("explains the Polish education system with PRK/EQF and ISCED levels in both
   assert.match(html, /const sectionIds = \["start", "story", "education", "paths"/);
   assert.match(html, /title: "Do 18\. roku życia uczy się każdy\. Drogi są różne\."/);
   assert.match(html, /title: "Everyone in Poland learns until 18\. The routes differ\."/);
-  assert.equal([...html.matchAll(/axisHead: \["(?:PRK \/ ERK|PQF \/ EQF)", "ISCED"\]/g)].length, 2);
+  assert.equal([...html.matchAll(/axisHead: \["EQF", "ISCED"\]/g)].length, 2);
+  assert.doesNotMatch(html, /"ISCED [0-9–]+ · (?:PRK|PQF) \d"|\((?:PRK|PQF) \d\)/);
   for (const key of ["preschool", "primary", "general", "technical", "sectoral1", "sectoral2", "matura", "bachelor", "master", "doctorate"]) {
     assert.equal([...html.matchAll(new RegExp(`\\n\\s*${key}: \\["`, "g"))].length, 2, key);
   }
