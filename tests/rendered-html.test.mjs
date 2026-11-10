@@ -17,8 +17,9 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.match(html, /data-lang="pl"/);
   assert.match(html, /data-lang="en"/);
   assert.match(html, /id="professions"/);
-  assert.match(html, /~1000 uczniów\. Wiele zawodów\. Własna droga\./);
-  assert.match(html, /~1000 students\. Many professions\. Personal paths\./);
+  assert.match(html, /professionsTitle: "Od nożyczek po kielnię\."/);
+  assert.match(html, /professionsTitle: "From scissors to trowel\."/);
+  assert.doesNotMatch(html, /Wiele zawodów\. Własna droga|Many professions\. Personal paths/);
   assert.match(html, /heroTitle:\s*"Vocational School Complex no\.5 Wrocław"/);
   assert.match(html, /heroTitleAbbr:\s*"\(VSCW5\)"/);
   assert.match(html, /finaleTitle:\s*"Chcesz wiedzieć więcej\?"/);
@@ -33,16 +34,23 @@ test("contains the published ZSZ5 presentation page", async () => {
   assert.doesNotMatch(html, /adeodatus11\.github\.io/);
 });
 
-test("renders the professions word field without abbreviations or recruitment metadata", async () => {
+test("renders the profession explorer without abbreviations or recruitment metadata", async () => {
   const html = await readPage();
   const professionDataBlocks = [...html.matchAll(/professions:\s*\[[\s\S]*?\n\s*\],\n\s*projectsKicker/g)];
 
   assert.equal(professionDataBlocks.length, 2);
-  assert.match(html, /profession-cloud/);
-  assert.match(html, /data-profession-word/);
-  assert.match(html, /Array\.from\(\{ length: 204 \}/);
-  assert.match(html, /pulseProfessionWords/);
+  assert.match(html, /<ol class="prof-explorer reveal" data-render="professions"/);
+  assert.match(html, /data-prof-preview/);
+  assert.match(html, /function setProfessionFilter\(filter\)/);
+  assert.doesNotMatch(html, /profession-cloud|data-profession-word|pulseProfessionWords/);
   assert.doesNotMatch(html, /profession-orbit|profession-map|data-profession-card|profession-mark|professions-count/);
+  const detailBlocks = [...html.matchAll(/professionDetails: \[([\s\S]*?)\n\s*\],/g)].map((match) => match[1]);
+  assert.equal(detailBlocks.length, 2);
+  for (const [index, block] of professionDataBlocks.entries()) {
+    const names = [...block[0].matchAll(/\["[^"]+", "(?:craft|tech)"\]/g)].length;
+    const details = [...detailBlocks[index].matchAll(/\n\s*\["(?:beauty|food|trade|build|auto|design)", "/g)].length;
+    assert.equal(details, names, "every profession has a detail entry");
+  }
   assert.doesNotMatch(html, /\["(?:FR|CU|KU|SP|BL|LA|KE|ST|PI|EL|MB|FO|KR|MT|TA|TF|TH|HD|CO|CK|SA|AS|AP|WA|CA|BA|CF|PH|BP|UP|HT|TR)",/);
   for (const block of professionDataBlocks) {
     assert.doesNotMatch(block[0], /miejsc|places|Technikum nr|Technical School No/);
@@ -58,7 +66,10 @@ test("explains the Polish education system with PRK/EQF and ISCED levels in both
   assert.match(html, /const sectionIds = \["start", "story", "education", "paths"/);
   assert.match(html, /title: "Do 18\. roku życia uczy się każdy\. Drogi są różne\."/);
   assert.match(html, /title: "Everyone in Poland learns until 18\. The routes differ\."/);
-  assert.equal([...html.matchAll(/axisHead: \["EQF", "ISCED"\]/g)].length, 2);
+  assert.match(html, /<div class="metro reveal" data-render="education"/);
+  assert.match(html, /const metroLines = \{/);
+  assert.equal([...html.matchAll(/\n\s*short: \{/g)].length, 2);
+  assert.doesNotMatch(html, /edu-diagram|edu-card|edu-axis|axisHead/);
   assert.doesNotMatch(html, /"ISCED [0-9–]+ · (?:PRK|PQF) \d"|\((?:PRK|PQF) \d\)/);
   const cardBlocks = [...html.matchAll(/\n\s*cards: \{([\s\S]*?)\n\s*\},/g)].map((match) => match[1]);
   assert.equal(cardBlocks.length, 2);
@@ -77,7 +88,7 @@ test("adds the career quiz, route highlighting and vendored GSAP motion", async 
   assert.match(html, /title: "Which profession suits you\?"/);
   assert.equal([...html.matchAll(/\n\s*families: \{/g)].length, 2);
   assert.match(html, /data-render="educationRoutes"/);
-  assert.match(html, /data-routes="\$\{routes\}"/);
+  assert.match(html, /data-routes="\$\{station\.routes\}"/);
   assert.match(html, /<script src="public\/vendor\/gsap\/gsap\.min\.js"><\/script>\s*<script src="public\/vendor\/gsap\/ScrollTrigger\.min\.js"><\/script>/);
   assert.match(html, /const motionEnabled = \(\) => Boolean\(window\.gsap && window\.ScrollTrigger && window\.ScrambleTextPlugin\) && !reducedMotion\.matches;/);
 
@@ -97,7 +108,7 @@ test("hides the QR code on phones and adds the kinetic hero, marquee and motion 
   assert.equal([...html.matchAll(/\n\s*heroWords: \[/g)].length, 2);
   assert.equal([...html.matchAll(/\n\s*heroStats: \[/g)].length, 2);
   assert.match(html, /<\/section>\s*<div class="marquee-band" data-render="marquee" aria-hidden="true"><\/div>\s*<section id="story"/);
-  assert.match(html, /<script src="public\/vendor\/gsap\/ScrambleTextPlugin\.min\.js"><\/script>\s*<script src="public\/vendor\/lenis\/lenis\.min\.js"><\/script>/);
+  assert.match(html, /<script src="public\/vendor\/gsap\/ScrambleTextPlugin\.min\.js"><\/script>\s*<script src="public\/vendor\/gsap\/Flip\.min\.js"><\/script>\s*<script src="public\/vendor\/lenis\/lenis\.min\.js"><\/script>/);
   assert.match(html, /motionMedia\.add\("\(min-width: 901px\)"/);
   assert.match(html, /function setupAurora\(\)/);
 

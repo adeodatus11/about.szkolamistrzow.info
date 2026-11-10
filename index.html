@@ -731,114 +731,6 @@
         line-height: 1.36;
       }
 
-      .professions-note {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .professions-note p {
-        border-top: 2px solid var(--green);
-        color: var(--muted);
-        font-size: 13.5px;
-        font-weight: 800;
-        line-height: 1.3;
-        padding-top: 10px;
-      }
-
-      .profession-stage {
-        position: relative;
-        min-height: 520px;
-        overflow: visible;
-      }
-
-      .profession-cloud {
-        position: relative;
-        width: 100%;
-        height: 520px;
-        overflow: hidden;
-        border: 1px solid rgb(31 91 58 / 0.18);
-        border-radius: 8px;
-        background: rgb(255 250 240 / 0.72);
-        box-shadow:
-          inset 0 0 80px rgb(31 91 58 / 0.06),
-          0 24px 70px rgb(23 32 25 / 0.08);
-        padding: 22px;
-        isolation: isolate;
-      }
-
-      .profession-words {
-        display: flex;
-        height: 100%;
-        align-content: flex-start;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px 9px;
-        overflow: hidden;
-      }
-
-      .profession-word {
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        border-radius: 4px;
-        color: rgb(23 32 25 / 0.45);
-        cursor: zoom-in;
-        font-size: clamp(11px, 0.96vw, 15px);
-        font-weight: 900;
-        line-height: 1;
-        opacity: 0.42;
-        padding: 3px 4px;
-        transform: scale(1);
-        transform-origin: center;
-        transition:
-          color 320ms cubic-bezier(0.16, 1, 0.3, 1),
-          background-color 320ms cubic-bezier(0.16, 1, 0.3, 1),
-          opacity 320ms cubic-bezier(0.16, 1, 0.3, 1),
-          transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1);
-        white-space: nowrap;
-      }
-
-      .profession-word:nth-child(5n) {
-        color: rgb(31 91 58 / 0.62);
-      }
-
-      .profession-word:nth-child(7n) {
-        color: rgb(155 111 25 / 0.68);
-      }
-
-      .profession-word:nth-child(11n) {
-        font-size: 1.08em;
-      }
-
-      .profession-word.tech {
-        color: var(--green);
-        font-weight: 1000;
-        opacity: 0.64;
-      }
-
-      .profession-word.is-pulsing {
-        z-index: 3;
-        background: rgb(240 203 119 / 0.28);
-        color: var(--green-2);
-        opacity: 1;
-        transform: none;
-      }
-
-      .profession-word:hover {
-        z-index: 10;
-        background: var(--green);
-        color: white;
-        opacity: 1;
-        box-shadow:
-          0 18px 40px rgb(23 32 25 / 0.22),
-          0 0 0 3px rgb(240 203 119 / 0.34);
-        transform: scale(1.58);
-      }
-
       .gallery {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1040,371 +932,352 @@
         line-height: 1.3;
       }
 
-      .edu-diagram {
-        --edu-gap: 12px;
-        --edu-row-gap: 18px;
-        display: grid;
-        grid-template-columns: 82px repeat(3, minmax(0, 1fr)) 150px;
-        column-gap: var(--edu-gap);
-        row-gap: var(--edu-row-gap);
-        margin-top: 30px;
+      .metro {
+        margin-top: 16px;
       }
 
-      .edu-axis-head,
-      .edu-colhead {
-        grid-row: 1;
-        align-self: end;
-        margin-bottom: -6px;
+      .metro-map {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 253 247 / 0.94);
+        box-shadow: var(--shadow);
+        padding: 14px 12px 4px;
       }
 
-      .edu-axis-head {
-        grid-column: 1;
-        text-align: right;
-        padding-right: 12px;
-      }
-
-      .edu-axis-head strong,
-      .edu-axis-head span {
+      .metro-map svg {
         display: block;
-        font-size: 11px;
+        width: 100%;
+        height: auto;
+        font-family: inherit;
+        overflow: visible;
+      }
+
+      .metro-duty text {
+        fill: var(--coral);
+        font-size: 14px;
         font-weight: 950;
-        line-height: 1.3;
-      }
-
-      .edu-axis-head strong {
-        color: var(--green);
-      }
-
-      .edu-axis-head span {
-        color: var(--muted);
-      }
-
-      .edu-colhead {
-        border-bottom: 3px solid currentColor;
-        font-size: 12px;
-        font-weight: 950;
-        letter-spacing: 0.05em;
-        padding-bottom: 7px;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
-      .edu-col-1 {
-        grid-column: 2;
-        color: var(--blue);
+      .metro-line {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10;
+        transition: opacity 0.35s ease;
       }
 
-      .edu-col-2 {
-        grid-column: 3;
-        color: var(--green);
+      .line-general {
+        stroke: var(--blue);
       }
 
-      .edu-col-3 {
-        grid-column: 4;
-        color: #8a6417;
+      .line-technical {
+        stroke: var(--green);
       }
 
-      .edu-col-4 {
-        grid-column: 5;
-        color: var(--coral);
+      .line-sectoral {
+        stroke: #c9962e;
       }
 
-      .edu-axis {
-        grid-column: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        border-right: 2px solid rgb(31 91 58 / 0.24);
-        padding-right: 12px;
+      .metro-station {
+        cursor: pointer;
+        outline: none;
+        transition: opacity 0.35s ease;
       }
 
-      .edu-axis strong {
-        color: var(--green);
-        font-size: 26px;
+      .metro-station .halo {
+        fill: rgb(215 177 93 / 0.38);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .metro-station:hover .halo,
+      .metro-station:focus-visible .halo,
+      .metro-station.is-selected .halo {
+        opacity: 1;
+      }
+
+      .metro-station .stop {
+        fill: #fffdf7;
+        stroke: var(--ink);
+        stroke-width: 4;
+        transition: fill 0.2s ease;
+      }
+
+      .metro-station .stop.general {
+        stroke: var(--blue);
+        stroke-width: 6;
+      }
+
+      .metro-station .stop.technical {
+        stroke: var(--green);
+        stroke-width: 6;
+      }
+
+      .metro-station .stop.sectoral {
+        stroke: #c9962e;
+        stroke-width: 6;
+      }
+
+      .metro-station.is-selected .stop {
+        fill: var(--green-2);
+      }
+
+      .metro-station .num {
+        fill: var(--ink);
+        font-size: 19px;
+        font-weight: 1000;
+        text-anchor: middle;
+        dominant-baseline: central;
+        pointer-events: none;
+      }
+
+      .metro-station.is-selected .num {
+        fill: #f0cb77;
+      }
+
+      .metro-label {
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .metro-label .t {
+        fill: var(--ink);
+        font-size: 17px;
+        font-weight: 1000;
+      }
+
+      .metro-label .m {
+        fill: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .metro-label .v {
+        fill: #8a6417;
+        font-size: 12.5px;
+        font-weight: 950;
+      }
+
+      .metro[data-route="general"] [data-routes]:not([data-routes~="general"]),
+      .metro[data-route="technical"] [data-routes]:not([data-routes~="technical"]),
+      .metro[data-route="sectoral"] [data-routes]:not([data-routes~="sectoral"]) {
+        opacity: 0.12;
+      }
+
+      .metro-detail {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 14px 28px;
+        align-items: start;
+        margin-top: 14px;
+        border-radius: 8px;
+        background: var(--green-2);
+        color: white;
+        padding: 22px 26px;
+      }
+
+      .metro-eqf {
+        display: grid;
+        width: 86px;
+        height: 86px;
+        place-content: center;
+        border-radius: 50%;
+        background: #f0cb77;
+        color: var(--green-2);
+        text-align: center;
+      }
+
+      .metro-eqf span {
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.1em;
+      }
+
+      .metro-eqf strong {
+        font-size: 36px;
         font-weight: 1000;
         line-height: 1;
       }
 
-      .edu-axis span {
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 11px;
+      .metro-detail h3 {
+        color: white;
+        font-size: 26px;
+        font-weight: 1000;
+        line-height: 1.1;
+      }
+
+      .metro-detail .meta {
+        margin-top: 5px;
+        color: #f0cb77;
+        font-size: 14px;
         font-weight: 900;
-        white-space: nowrap;
       }
 
-      .edu-duty-line {
-        grid-column: 5;
-        grid-row: 6 / 10;
-        border-left: 3px solid var(--coral);
-        border-radius: 2px;
-        background: linear-gradient(90deg, rgb(199 93 72 / 0.1), transparent 70%);
+      .metro-detail .gives {
+        margin-top: 10px;
+        color: rgb(255 255 255 / 0.86);
+        font-size: 15.5px;
+        line-height: 1.5;
       }
 
-      .edu-duty {
+      .metro-detail .next {
+        color: rgb(255 255 255 / 0.8);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .metro-detail .next b {
+        color: white;
+      }
+
+      .metro-detail .edu-tags {
+        margin-top: 12px;
+      }
+
+      .metro-list {
+        display: none;
+        margin: 6px 0 0;
+        padding: 0;
+        list-style: none;
+        --route-color: var(--green);
+      }
+
+      .metro-list[data-route="general"] {
+        --route-color: var(--blue);
+      }
+
+      .metro-list[data-route="sectoral"] {
+        --route-color: #c9962e;
+      }
+
+      .metro-list li {
         position: relative;
-        grid-column: 5;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 8px 0 8px 16px;
+        display: grid;
+        grid-template-columns: 50px minmax(0, 1fr);
+        gap: 12px;
+        padding-bottom: 14px;
       }
 
-      .edu-duty::before {
+      .metro-list li::before {
         content: "";
         position: absolute;
-        top: 50%;
-        left: -4px;
-        width: 11px;
-        height: 11px;
-        border: 2px solid var(--coral);
-        border-radius: 50%;
-        background: var(--paper-2);
-        transform: translateY(-50%);
+        top: 30px;
+        bottom: -6px;
+        left: 21px;
+        width: 8px;
+        border-radius: 4px;
+        background: var(--route-color);
       }
 
-      .edu-duty strong {
-        color: var(--coral);
+      .metro-list li:last-child::before {
+        display: none;
+      }
+
+      .metro-badge {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 50px;
+        height: 50px;
+        place-items: center;
+        border: 5px solid var(--route-color);
+        border-radius: 50%;
+        background: #fffdf7;
         font-size: 19px;
         font-weight: 1000;
-        line-height: 1.05;
       }
 
-      .edu-duty span {
-        margin-top: 4px;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 850;
-        line-height: 1.3;
-      }
-
-      .edu-duty-1 {
-        grid-row: 6 / 8;
-      }
-
-      .edu-duty-2 {
-        grid-row: 8;
-      }
-
-      .edu-duty-3 {
-        grid-row: 9;
-      }
-
-      .edu-card {
-        position: relative;
+      .metro-list-card {
         border: 1px solid var(--line);
         border-radius: 8px;
         background: rgb(255 250 240 / 0.95);
-        box-shadow: 0 12px 34px rgb(23 32 25 / 0.06);
-        padding: 13px 15px;
+        padding: 12px 14px;
       }
 
-      .edu-card h3 {
-        color: var(--ink);
+      .metro-list-card h4 {
+        margin: 0;
         font-size: 17px;
         font-weight: 1000;
-        line-height: 1.15;
+        line-height: 1.2;
       }
 
-      .edu-meta {
-        margin-top: 4px;
+      .metro-list-card .meta {
+        margin-top: 3px;
         color: var(--green);
-        font-size: 12.5px;
+        font-size: 13px;
         font-weight: 900;
       }
 
-      .edu-level {
-        display: none;
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 950;
-        letter-spacing: 0.04em;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-      }
-
-      .edu-gives {
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: 13.5px;
-        line-height: 1.42;
-      }
-
-      .edu-next {
+      .metro-list-card p:not(.meta):not(.edu-tags) {
         margin-top: 7px;
-        color: var(--ink);
-        font-size: 12.5px;
-        font-weight: 750;
-        line-height: 1.35;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
       }
 
-      .edu-next b {
-        font-weight: 1000;
+      .metro-list-card .edu-tags {
+        margin-top: 8px;
       }
 
       .edu-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        margin-top: 10px;
       }
 
       .edu-tag {
         border-radius: 6px;
-        background: var(--green);
-        color: white;
+        background: #f0cb77;
+        color: var(--green-2);
         font-size: 11px;
         font-weight: 950;
         padding: 4px 8px;
       }
 
       .edu-tag.alt {
+        background: rgb(255 255 255 / 0.16);
+        color: inherit;
+      }
+
+      .metro-list .edu-tag {
+        background: var(--green);
+        color: white;
+      }
+
+      .metro-list .edu-tag.alt {
         background: rgb(215 177 93 / 0.32);
         color: #5f430e;
       }
 
-      .edu-card.wide {
-        grid-column: 2 / 5;
-        display: grid;
-        grid-template-columns: minmax(170px, 0.75fr) minmax(0, 1.45fr) minmax(0, 0.9fr);
-        gap: 4px 20px;
-        align-items: center;
+      .edu-route-btn i {
+        display: inline-block;
+        width: 18px;
+        height: 6px;
+        margin-right: 8px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--blue) 33%, var(--green) 33% 66%, #c9962e 66%);
+        vertical-align: middle;
       }
 
-      .edu-card.wide .edu-gives,
-      .edu-card.wide .edu-next {
-        margin-top: 0;
+      .edu-route-btn.route-general i {
+        background: var(--blue);
       }
 
-      .edu-card.general {
-        border-color: rgb(49 95 125 / 0.26);
-        background: rgb(234 240 240 / 0.95);
-      }
-
-      .edu-card.general .edu-meta {
-        color: var(--blue);
-      }
-
-      .edu-card.technical {
-        border-color: rgb(31 91 58 / 0.3);
-        background: rgb(229 236 223 / 0.96);
-      }
-
-      .edu-card.sectoral {
-        border-color: rgb(155 111 25 / 0.32);
-        background: rgb(246 233 199 / 0.96);
-      }
-
-      .edu-card.sectoral .edu-meta {
-        color: #7a5512;
-      }
-
-      .edu-card.ours {
-        border: 2px solid var(--green);
-      }
-
-      .edu-card.higher {
-        background: white;
-      }
-
-      .edu-card.gate {
-        border-color: transparent;
+      .edu-route-btn.route-technical i {
         background: var(--green);
-        box-shadow: 0 16px 36px rgb(31 91 58 / 0.24);
       }
 
-      .edu-card.gate h3 {
-        color: #f0cb77;
-        font-size: 22px;
+      .edu-route-btn.route-sectoral i {
+        background: #c9962e;
       }
 
-      .edu-card.gate .edu-meta,
-      .edu-card.gate .edu-level {
-        color: rgb(255 255 255 / 0.74);
-      }
-
-      .edu-card.gate .edu-gives {
-        color: rgb(255 255 255 / 0.9);
-        font-weight: 700;
-      }
-
-      .edu-card.gate {
-        grid-template-columns: minmax(170px, 0.75fr) minmax(0, 2.35fr);
-      }
-
-      .edu-card[data-edu="doctorate"] {
-        grid-row: 2;
-      }
-
-      .edu-card[data-edu="master"] {
-        grid-row: 3;
-      }
-
-      .edu-card[data-edu="bachelor"] {
-        grid-row: 4;
-      }
-
-      .edu-card[data-edu="matura"] {
-        grid-row: 5;
-      }
-
-      .edu-card[data-edu="general"] {
-        grid-column: 2;
-        grid-row: 6 / 8;
-      }
-
-      .edu-card[data-edu="technical"] {
-        grid-column: 3;
-        grid-row: 6 / 8;
-      }
-
-      .edu-card[data-edu="sectoral2"] {
-        grid-column: 4;
-        grid-row: 6;
-      }
-
-      .edu-card[data-edu="sectoral1"] {
-        grid-column: 4;
-        grid-row: 7;
-      }
-
-      .edu-card[data-edu="primary"] {
-        grid-row: 8;
-      }
-
-      .edu-card[data-edu="preschool"] {
-        grid-row: 9;
-      }
-
-      .edu-arrow {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        width: 2px;
-        height: var(--edu-row-gap);
-        margin-left: -1px;
-        margin-bottom: 1px;
-        background: var(--green);
-        pointer-events: none;
-      }
-
-      .edu-arrow::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        border-right: 5px solid transparent;
-        border-bottom: 7px solid var(--green);
-        border-left: 5px solid transparent;
-        transform: translateX(-50%);
-      }
-
-      .edu-arrow.c1 {
-        left: calc((100% - 2 * var(--edu-gap)) / 6);
-      }
-
-      .edu-arrow.c3 {
-        left: calc(100% - (100% - 2 * var(--edu-gap)) / 6);
+      .metro-hint {
+        flex-basis: 100%;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 750;
       }
 
       .edu-foot {
@@ -1505,10 +1378,6 @@
         scroll-margin-top: 96px;
       }
 
-      .edu-routes + .edu-diagram {
-        margin-top: 18px;
-      }
-
       .edu-routes-label {
         margin-right: 4px;
         color: var(--muted);
@@ -1539,24 +1408,6 @@
         border-color: transparent;
         background: var(--green);
         color: white;
-      }
-
-      .edu-card,
-      .edu-arrow {
-        transition: opacity 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
-      }
-
-      .edu-diagram[data-route="general"] :is(.edu-card, .edu-arrow):not([data-routes~="general"]),
-      .edu-diagram[data-route="technical"] :is(.edu-card, .edu-arrow):not([data-routes~="technical"]),
-      .edu-diagram[data-route="sectoral"] :is(.edu-card, .edu-arrow):not([data-routes~="sectoral"]) {
-        filter: grayscale(0.8);
-        opacity: 0.2;
-      }
-
-      .edu-diagram[data-route="general"] .edu-card[data-routes~="general"],
-      .edu-diagram[data-route="technical"] .edu-card[data-routes~="technical"],
-      .edu-diagram[data-route="sectoral"] .edu-card[data-routes~="sectoral"] {
-        box-shadow: 0 0 0 3px rgb(215 177 93 / 0.6), 0 14px 34px rgb(23 32 25 / 0.1);
       }
 
       .quiz-slide {
@@ -2050,11 +1901,11 @@
         font-size: 15px;
       }
 
-      .has-motion :is(.beat, .path, .project, .fact, .edu-other-list article) {
+      .has-motion :is(.beat, .path, .project, .fact, .edu-other-list article, .prof-preview) {
         position: relative;
       }
 
-      .has-motion :is(.beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card)::before {
+      .has-motion :is(.beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card, .prof-preview)::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -2066,7 +1917,7 @@
         transition: opacity 0.35s ease;
       }
 
-      .has-motion :is(.beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card).is-lit::before {
+      .has-motion :is(.beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card, .prof-preview).is-lit::before {
         opacity: 1;
       }
 
@@ -2091,6 +1942,278 @@
 
       .aurora.is-ready {
         opacity: 1;
+      }
+
+      .professions-slide {
+        overflow: clip;
+      }
+
+      .professions-layout {
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 48px;
+      }
+
+      .professions-copy {
+        position: sticky;
+        top: 92px;
+      }
+
+      .professions-copy,
+      .prof-explorer {
+        min-width: 0;
+      }
+
+      .prof-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .prof-filter {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgb(255 250 240 / 0.9);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 900;
+        padding: 8px 14px;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .prof-filter:hover,
+      .prof-filter:focus-visible {
+        border-color: var(--green);
+        outline: 0;
+      }
+
+      .prof-filter[aria-pressed="true"] {
+        border-color: transparent;
+        background: var(--ink);
+        color: white;
+      }
+
+      .prof-preview {
+        overflow: hidden;
+        margin-top: 22px;
+        border-radius: 8px;
+        background: var(--paper-2);
+        box-shadow: var(--shadow);
+      }
+
+      .prof-art {
+        position: relative;
+        display: grid;
+        height: clamp(170px, 24vh, 250px);
+        overflow: hidden;
+        place-items: center;
+        color: white;
+        --family: var(--green);
+        background:
+          radial-gradient(circle at 78% 20%, rgb(255 255 255 / 0.22), transparent 40%),
+          linear-gradient(135deg, var(--family), color-mix(in srgb, var(--family) 55%, #0b120d));
+      }
+
+      .prof-art.family-beauty {
+        --family: var(--coral);
+      }
+
+      .prof-art.family-food {
+        --family: #b98a2f;
+      }
+
+      .prof-art.family-trade {
+        --family: var(--blue);
+      }
+
+      .prof-art.family-build {
+        --family: var(--green);
+      }
+
+      .prof-art.family-auto {
+        --family: #2b3530;
+      }
+
+      .prof-art.family-design {
+        --family: #6b4b8a;
+      }
+
+      .prof-art img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .prof-art svg {
+        width: 34%;
+        max-width: 120px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2.6;
+      }
+
+      .prof-art-num {
+        position: absolute;
+        right: 14px;
+        bottom: -18px;
+        color: rgb(255 255 255 / 0.85);
+        font-size: 92px;
+        font-weight: 1000;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        mix-blend-mode: overlay;
+      }
+
+      .prof-preview-body {
+        padding: 20px 22px 22px;
+      }
+
+      .prof-family {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .prof-preview-body h3 {
+        margin-top: 4px;
+        font-size: clamp(28px, 2.6vw, 38px);
+        font-weight: 1000;
+        line-height: 1.02;
+      }
+
+      .prof-desc {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 15.5px;
+        line-height: 1.5;
+      }
+
+      .prof-school-line {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 750;
+        line-height: 1.4;
+      }
+
+      .prof-school-line b {
+        display: block;
+        color: var(--ink);
+        font-weight: 1000;
+      }
+
+      .prof-preview-body .btn {
+        margin-top: 16px;
+        min-height: 46px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .prof-explorer {
+        margin: 0;
+        border-top: 2px solid var(--ink);
+        padding: 0;
+        list-style: none;
+      }
+
+      .prof-row {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .prof-row.is-hidden {
+        display: none;
+      }
+
+      .prof-trigger {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 38px minmax(0, 1fr) auto 26px;
+        align-items: center;
+        gap: 14px;
+        border: 0;
+        background: none;
+        color: var(--ink);
+        cursor: pointer;
+        padding: 13px 4px;
+        text-align: left;
+      }
+
+      .prof-trigger:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: -2px;
+      }
+
+      .prof-num {
+        color: rgb(23 32 25 / 0.4);
+        font-size: 13px;
+        font-weight: 950;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .prof-name {
+        font-size: clamp(22px, 2.3vw, 34px);
+        font-weight: 1000;
+        letter-spacing: -0.01em;
+        line-height: 1.08;
+        transition: color 0.25s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .prof-tag {
+        border-radius: 999px;
+        background: rgb(215 177 93 / 0.28);
+        color: #5f430e;
+        font-size: 11.5px;
+        font-weight: 950;
+        padding: 5px 10px;
+        white-space: nowrap;
+      }
+
+      .prof-tag.tech {
+        background: rgb(31 91 58 / 0.14);
+        color: var(--green-2);
+      }
+
+      .prof-arrow {
+        color: var(--green);
+        font-size: 22px;
+        font-weight: 1000;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .prof-row.is-active .prof-name,
+      .prof-trigger:hover .prof-name {
+        color: var(--green);
+        transform: translateX(10px);
+      }
+
+      .prof-row.is-active .prof-arrow,
+      .prof-trigger:hover .prof-arrow {
+        opacity: 1;
+        transform: none;
+      }
+
+      .prof-row.is-active .prof-num {
+        color: var(--coral);
+      }
+
+      .prof-more {
+        display: none;
+        padding: 0 4px 16px 56px;
+      }
+
+      .prof-more p {
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.5;
       }
 
       .reveal {
@@ -2234,23 +2357,6 @@
           aspect-ratio: 16 / 8.6;
         }
 
-        .professions-note {
-          margin-top: 18px;
-        }
-
-        .professions-note p {
-          font-size: 13.5px;
-          line-height: 1.32;
-        }
-
-        .profession-stage {
-          min-height: 520px;
-        }
-
-        .profession-cloud {
-          height: 520px;
-        }
-
         .gallery {
           grid-auto-rows: 220px;
           margin-top: 24px;
@@ -2379,29 +2485,6 @@
 
         .professions-layout {
           gap: 24px;
-        }
-
-        .professions-note {
-          margin-top: 14px;
-        }
-
-        .professions-note p {
-          font-size: 12.5px;
-          line-height: 1.26;
-          padding-top: 9px;
-        }
-
-        .profession-stage {
-          min-height: 470px;
-        }
-
-        .profession-cloud {
-          height: 470px;
-          padding: 18px;
-        }
-
-        .profession-word {
-          font-size: 12.5px;
         }
 
         .gallery {
@@ -2534,7 +2617,6 @@
         .poster-stack,
         .stat-strip,
         .paths-grid,
-        .professions-note,
         .links {
           grid-template-columns: 1fr;
         }
@@ -2577,28 +2659,6 @@
           grid-row: auto;
         }
 
-        .profession-stage {
-          min-height: 460px;
-        }
-
-        .profession-cloud {
-          height: 460px;
-          padding: 12px;
-        }
-
-        .profession-words {
-          gap: 4px 6px;
-        }
-
-        .profession-word {
-          font-size: 11px;
-          padding: 2px 3px;
-        }
-
-        .profession-word:hover {
-          transform: scale(1.34);
-        }
-
         .gallery {
           display: flex;
           gap: 12px;
@@ -2628,46 +2688,66 @@
           gap: 22px;
         }
 
-        .edu-diagram {
-          grid-template-columns: 64px repeat(3, minmax(0, 1fr)) 118px;
+        .metro-detail {
+          grid-template-columns: auto minmax(0, 1fr);
         }
 
-        .edu-card.wide {
-          grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.5fr);
-        }
-
-        .edu-card.wide .edu-next {
+        .metro-detail-side {
           grid-column: 2;
         }
       }
 
+      @media (min-width: 901px) and (max-width: 1180px) {
+        .professions-layout {
+          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        }
+      }
+
       @media (max-width: 900px) {
-        .edu-diagram {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
+        .professions-copy {
+          position: static;
         }
 
-        .edu-axis-head,
-        .edu-colhead,
-        .edu-axis,
-        .edu-duty-line,
-        .edu-duty,
-        .edu-arrow {
+        .prof-preview {
           display: none;
         }
 
-        .edu-level {
+        .prof-filters {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          margin-right: -16px;
+          padding-bottom: 6px;
+        }
+
+        .prof-filter {
+          flex: 0 0 auto;
+        }
+
+        .prof-row.is-active .prof-more {
           display: block;
         }
 
-        .edu-card.wide {
-          display: block;
+        .prof-trigger {
+          grid-template-columns: 30px minmax(0, 1fr) auto;
+          gap: 10px;
         }
 
-        .edu-card.wide .edu-gives,
-        .edu-card.wide .edu-next {
-          margin-top: 8px;
+        .prof-arrow {
+          display: none;
+        }
+
+        .prof-more {
+          padding-left: 44px;
+        }
+
+        .metro-map,
+        .metro-detail,
+        .edu-route-btn[data-route="all"] {
+          display: none;
+        }
+
+        .metro-list {
+          display: block;
         }
 
         .edu-other-list {
@@ -2755,11 +2835,6 @@
           transform: none;
         }
 
-        .profession-word.is-pulsing {
-          background: transparent;
-          opacity: 0.68;
-          transform: none;
-        }
       }
     </style>
   </head>
@@ -2846,7 +2921,7 @@
             <div class="edu-facts" data-render="educationFacts"></div>
           </div>
           <div class="edu-routes reveal" data-render="educationRoutes"></div>
-          <div class="edu-diagram reveal" data-render="education" aria-label="Schemat systemu edukacji w Polsce"></div>
+          <div class="metro reveal" data-render="education" aria-label="Mapa systemu edukacji w Polsce"></div>
           <div class="edu-foot reveal" data-render="educationFoot"></div>
         </div>
       </section>
@@ -2886,16 +2961,12 @@
         <div class="shell professions-layout">
           <div class="professions-copy reveal">
             <p class="label" data-i18n="professionsKicker">Zawody</p>
-            <h2 class="slide-title" data-i18n="professionsTitle">~1000 uczniów. Wiele zawodów. Własna droga.</h2>
-            <p class="slide-lead" data-i18n="professionsLead">
-              Każda nazwa to inny start: pracownia, pracodawca, technikum i własny rytm pracy.
-            </p>
-            <div class="professions-note">
-              <p data-i18n="professionsNoteA">Tu nie ma jednej ścieżki dla wszystkich. Jest wybór, który szybko nabiera realnego kształtu.</p>
-              <p data-i18n="professionsNoteB">Około 1000 uczniów oznacza około 1000 historii dojścia do zawodu.</p>
-            </div>
+            <h2 class="slide-title" data-i18n="professionsTitle">Od nożyczek po kielnię.</h2>
+            <p class="slide-lead" data-i18n="professionsLead">Wybierz zawód i zobacz, czego się nauczysz, w jakiej szkole i jak długo to trwa.</p>
+            <div class="prof-filters" data-render="professionFilters" role="group"></div>
+            <div class="prof-preview" data-prof-preview aria-live="polite"></div>
           </div>
-          <div class="profession-stage reveal" data-render="professions" aria-label="Pole nazw zawodów"></div>
+          <ol class="prof-explorer reveal" data-render="professions" aria-label="Zawody w ZSZ nr 5"></ol>
         </div>
       </section>
 
@@ -2995,6 +3066,7 @@
     <script src="public/vendor/gsap/gsap.min.js"></script>
     <script src="public/vendor/gsap/ScrollTrigger.min.js"></script>
     <script src="public/vendor/gsap/ScrambleTextPlugin.min.js"></script>
+    <script src="public/vendor/gsap/Flip.min.js"></script>
     <script src="public/vendor/lenis/lenis.min.js"></script>
     <script>
       const content = {
@@ -3044,13 +3116,21 @@
               ["7–15", "obowiązek szkolny: 8-letnia szkoła podstawowa"],
               ["do 18", "obowiązek nauki: szkoła ponadpodstawowa lub nauka zawodu u pracodawcy"]
             ],
-            axisHead: ["EQF", "ISCED"],
-            columns: ["Ogólnokształcąca", "Techniczna", "Branżowa (dualna)", "Edukacja obowiązkowa"],
-            duty: [
-              ["do 18 lat", "obowiązek nauki w szkole lub u pracodawcy"],
-              ["7–15 lat", "obowiązek szkolny"],
-              ["6 lat", "roczne przygotowanie przedszkolne"]
-            ],
+            dutyBand: "Obowiązek nauki do 18. roku życia",
+            vocational: "dyplom zawodowy",
+            mapHint: "Kliknij przystanek, żeby zobaczyć szczegóły. Liczba w kółku to poziom EQF.",
+            short: {
+              preschool: ["Przedszkole", "3–6 lat"],
+              primary: ["Szkoła podstawowa", "8 lat · 7–15"],
+              general: ["Liceum", "4 lata · 15–19"],
+              technical: ["Technikum", "5 lat · 15–20"],
+              sectoral1: ["Branżowa I st.", "3 lata · 15–18"],
+              sectoral2: ["Branżowa II st.", "2 lata · 18–20"],
+              matura: ["Matura", "egzamin dojrzałości"],
+              bachelor: ["Licencjat", "lub inżynier · 3–4 lata"],
+              master: ["Magister", "1,5–2 lata"],
+              doctorate: ["Doktorat", "3–4 lata"]
+            },
             nextLabel: "Dalej:",
             routesLabel: "Pokaż drogę:",
             routes: [["all", "Wszystkie"], ["general", "Liceum"], ["technical", "Technikum"], ["sectoral", "Branżowa I → II"]],
@@ -3104,12 +3184,36 @@
             ["public/photos/gym.webp", "Sala gimnastyczna", "wide"],
             ["public/photos/hair-contest.webp", "Konkursy", "wide"]
           ],
+          professionFilters: [["all", "Wszystkie"], ["beauty", "Fryzjerstwo"], ["food", "Gastronomia"], ["trade", "Handel"], ["build", "Budowa i drewno"], ["auto", "Motoryzacja"], ["design", "Styl i obraz"]],
+          professionFamilies: { beauty: "Usługi fryzjerskie", food: "Gastronomia i cukiernictwo", trade: "Handel i obsługa klienta", build: "Budownictwo i drewno", auto: "Motoryzacja", design: "Rzemiosło i styl" },
+          professionSchools: {
+            craft: ["Branżowa I st.", "Branżowa szkoła I stopnia", "3 lata · nauka dualna u pracodawcy"],
+            tech: ["Technikum", "Technikum", "5 lat · zawód, dyplom technika i matura"]
+          },
+          professionRoute: "Pokaż tę drogę na mapie",
+          professionDetails: [
+            ["beauty", "public/photos/hair-lab.webp", "Strzyżenie, koloryzacja i stylizacja włosów. Od pierwszego roku uczysz się pracy z prawdziwym klientem."],
+            ["food", "public/photos/contest.webp", "Ciasta, torty, desery i dekoracje. Liczą się receptura, precyzja i cierpliwość."],
+            ["food", "public/photos/gastronomy-team.webp", "Przygotowanie potraw, organizacja stanowiska i tempo pracy w zespole kuchni."],
+            ["trade", "public/photos/trade-lab.webp", "Obsługa klienta, ekspozycja towaru, praca przy kasie i porządek w sklepie."],
+            ["auto", "car", "Naprawa nadwozi po kolizjach: prostowanie, wymiana i dopasowanie elementów karoserii."],
+            ["auto", "car", "Przygotowanie powierzchni, dobór koloru i lakierowanie aut tak, żeby wyglądały jak nowe."],
+            ["food", "public/photos/gastronomy-tools.webp", "Obsługa gości, nakrywanie stołów, serwowanie potraw i organizacja przyjęć."],
+            ["build", "hammer", "Meble i elementy z drewna: od pomiaru i projektu do obróbki i montażu."],
+            ["food", "public/photos/gastronomy-tools.webp", "Chleb i pieczywo od zaczynu do wypieku. Praca z ciastem, piecem i technologią."],
+            ["build", "bolt", "Instalacje elektryczne w budynkach: montaż, pomiary, naprawy i bezpieczeństwo."],
+            ["build", "hammer", "Ścianki działowe, sufity, okładziny i prace wykończeniowe we wnętrzach."],
+            ["design", "camera", "Światło, kadr i obróbka zdjęć. Portret, produkt, reportaż i praca w studiu."],
+            ["design", "scissors", "Szycie i przeróbki odzieży, dobór tkanin, wykroje i praca z miarą klienta."],
+            ["build", "trowel", "Murowanie ścian i tynkowanie. Solidna robota, na której stoi cały budynek."],
+            ["build", "sofa", "Wykonywanie i odnawianie mebli tapicerowanych: stelaż, pianka, tkanina i wykończenie."],
+            ["beauty", "public/photos/hair-contest.webp", "Fryzjerstwo na wyższym poziomie: projektowanie fryzur, doradztwo i prowadzenie salonu. Zawód i matura."],
+            ["trade", "public/photos/trade-lab.webp", "Sprzedaż, marketing, negocjacje i prowadzenie działalności handlowej. Zawód i matura."]
+          ],
           professionsKicker: "Zawody",
-          professionsAria: "Pole nazw zawodów",
-          professionsTitle: "~1000 uczniów. Wiele zawodów. Własna droga.",
-          professionsLead: "Każda nazwa to inny start: pracownia, pracodawca, technikum i własny rytm pracy.",
-          professionsNoteA: "Tu nie ma jednej ścieżki dla wszystkich. Jest wybór, który szybko nabiera realnego kształtu.",
-          professionsNoteB: "Około 1000 uczniów oznacza około 1000 historii dojścia do zawodu.",
+          professionsAria: "Zawody w ZSZ nr 5",
+          professionsTitle: "Od nożyczek po kielnię.",
+          professionsLead: "Wybierz zawód i zobacz, czego się nauczysz, w jakiej szkole i jak długo to trwa.",
           professions: [
             ["Fryzjer", "craft"],
             ["Cukiernik", "craft"],
@@ -3268,13 +3372,21 @@
               ["7–15", "compulsory schooling: 8-year primary school"],
               ["Until 18", "compulsory education: secondary school or vocational training with an employer"]
             ],
-            axisHead: ["EQF", "ISCED"],
-            columns: ["General", "Technical", "Sectoral (dual)", "Compulsory education"],
-            duty: [
-              ["Until 18", "compulsory education at school or with an employer"],
-              ["Ages 7–15", "compulsory schooling"],
-              ["Age 6", "compulsory preschool year"]
-            ],
+            dutyBand: "Compulsory education until 18",
+            vocational: "vocational diploma",
+            mapHint: "Click a station to see the details. The number in the circle is the EQF level.",
+            short: {
+              preschool: ["Preschool", "ages 3–6"],
+              primary: ["Primary school", "8 years · 7–15"],
+              general: ["Liceum", "4 years · 15–19"],
+              technical: ["Technical school", "5 years · 15–20"],
+              sectoral1: ["Sectoral stage I", "3 years · 15–18"],
+              sectoral2: ["Sectoral stage II", "2 years · 18–20"],
+              matura: ["Matura", "school leaving exam"],
+              bachelor: ["Bachelor", "or engineer · 3–4 yrs"],
+              master: ["Master's", "1.5–2 years"],
+              doctorate: ["Doctorate", "3–4 years"]
+            },
             nextLabel: "Next:",
             routesLabel: "Show a route:",
             routes: [["all", "All"], ["general", "Liceum"], ["technical", "Technical school"], ["sectoral", "Sectoral I → II"]],
@@ -3328,12 +3440,36 @@
             ["public/photos/gym.webp", "Gym", "wide"],
             ["public/photos/hair-contest.webp", "Competitions", "wide"]
           ],
+          professionFilters: [["all", "All"], ["beauty", "Hairdressing"], ["food", "Gastronomy"], ["trade", "Retail"], ["build", "Building & wood"], ["auto", "Automotive"], ["design", "Style & image"]],
+          professionFamilies: { beauty: "Hairdressing services", food: "Gastronomy and confectionery", trade: "Retail and customer service", build: "Construction and woodwork", auto: "Automotive", design: "Craft and style" },
+          professionSchools: {
+            craft: ["Sectoral I", "Stage I sectoral school", "3 years · dual learning with an employer"],
+            tech: ["Technical", "Technical school", "5 years · profession, technician diploma and Matura"]
+          },
+          professionRoute: "Show this route on the map",
+          professionDetails: [
+            ["beauty", "public/photos/hair-lab.webp", "Cutting, colouring and styling hair. From the first year you learn to work with real clients."],
+            ["food", "public/photos/contest.webp", "Cakes, gateaux, desserts and decorations. Recipes, precision and patience matter."],
+            ["food", "public/photos/gastronomy-team.webp", "Preparing dishes, organising your station and keeping pace in a kitchen team."],
+            ["trade", "public/photos/trade-lab.webp", "Serving customers, displaying goods, working the till and keeping the shop in order."],
+            ["auto", "car", "Repairing car bodies after collisions: straightening, replacing and fitting body panels."],
+            ["auto", "car", "Preparing surfaces, matching colours and painting cars so they look brand new."],
+            ["food", "public/photos/gastronomy-tools.webp", "Serving guests, laying tables, serving dishes and organising events."],
+            ["build", "hammer", "Furniture and wooden elements: from measuring and design to machining and assembly."],
+            ["food", "public/photos/gastronomy-tools.webp", "Bread and baked goods from starter to oven. Working with dough, ovens and technology."],
+            ["build", "bolt", "Electrical installations in buildings: fitting, measuring, repairs and safety."],
+            ["build", "hammer", "Partition walls, ceilings, cladding and interior finishing work."],
+            ["design", "camera", "Light, framing and photo editing. Portraits, products, reportage and studio work."],
+            ["design", "scissors", "Sewing and altering clothes, choosing fabrics, patterns and working to a client's measurements."],
+            ["build", "trowel", "Bricklaying and plastering. Solid work that the whole building stands on."],
+            ["build", "sofa", "Making and restoring upholstered furniture: frame, foam, fabric and finish."],
+            ["beauty", "public/photos/hair-contest.webp", "Hairdressing at a higher level: designing hairstyles, advising clients and running a salon. A profession plus the Matura."],
+            ["trade", "public/photos/trade-lab.webp", "Sales, marketing, negotiation and running a retail business. A profession plus the Matura."]
+          ],
           professionsKicker: "Professions",
-          professionsAria: "Field of profession names",
-          professionsTitle: "~1000 students. Many professions. Personal paths.",
-          professionsLead: "Each name is a different start: workshop, employer, technical education and a personal pace.",
-          professionsNoteA: "There is no single route for everyone. The choice quickly becomes practical and visible.",
-          professionsNoteB: "Around 1000 students means around 1000 personal routes into a profession.",
+          professionsAria: "Professions at VSCW5",
+          professionsTitle: "From scissors to trowel.",
+          professionsLead: "Pick a profession to see what you will learn, at which school and for how long.",
           professions: [
             ["Hairdresser", "craft"],
             ["Confectioner", "craft"],
@@ -3477,71 +3613,126 @@
           .replaceAll('"', "&quot;");
       }
 
-      // Rows of the diagram, top to bottom: [EQF level, ISCED level].
-      const educationAxis = [["8", "8"], ["7", "7"], ["6", "6"], ["", ""], ["4", "3"], ["3", "3"], ["2", "1–2"], ["–", "0"]];
-      // Cards in reading order (from preschool up); arrows mark the exits from the top edge of a card.
-      // The last field lists the routes (general / technical / sectoral) a card belongs to.
+      // Education map drawn like a metro plan: three coloured lines (routes), schools as stations,
+      // the number in each station is its EQF level. Coordinates are in the SVG's 1230×450 viewBox.
       const allRoutes = "general technical sectoral";
-      const educationCards = [
-        ["preschool", "base wide", ["mid"], allRoutes],
-        ["primary", "base wide", ["c1", "mid", "c3"], allRoutes],
-        ["general", "general", ["mid"], "general"],
-        ["technical", "technical ours", ["mid"], "technical"],
-        ["sectoral1", "sectoral ours", ["mid"], "sectoral"],
-        ["sectoral2", "sectoral ours", ["mid"], "sectoral"],
-        ["matura", "gate wide", ["mid"], allRoutes],
-        ["bachelor", "higher wide", ["mid"], allRoutes],
-        ["master", "higher wide", ["mid"], allRoutes],
-        ["doctorate", "higher wide", [], allRoutes]
+      const metroLines = {
+        general: "M40 219 H285 L394 110 H615 L724 219 H1190",
+        technical: "M40 230 H1190",
+        sectoral: "M40 241 H285 L394 350 H615 L724 241 H1190"
+      };
+      const metroStations = [
+        ["preschool", { x: 70, y: 230, pill: true, eqf: "", routes: allRoutes, above: true }],
+        ["primary", { x: 200, y: 230, pill: true, eqf: "2", routes: allRoutes }],
+        ["sectoral1", { x: 435, y: 350, line: "sectoral", eqf: "3", routes: "sectoral", vocational: true }],
+        ["general", { x: 480, y: 110, line: "general", eqf: "4", routes: "general", above: true }],
+        ["technical", { x: 480, y: 230, line: "technical", eqf: "4", routes: "technical", vocational: true }],
+        ["sectoral2", { x: 590, y: 350, line: "sectoral", eqf: "4", routes: "sectoral", vocational: true }],
+        ["matura", { x: 765, y: 230, pill: true, eqf: "4", routes: allRoutes }],
+        ["bachelor", { x: 918, y: 230, pill: true, eqf: "6", routes: allRoutes }],
+        ["master", { x: 1042, y: 230, pill: true, eqf: "7", routes: allRoutes }],
+        ["doctorate", { x: 1152, y: 230, pill: true, eqf: "8", routes: allRoutes }]
       ];
-      // Primary school splits into the three tracks, so each of its arrows belongs to one route.
-      const primaryArrowRoutes = { c1: "general", mid: "technical", c3: "sectoral" };
+      const metroStation = Object.fromEntries(metroStations);
+      const routeStations = {
+        general: ["preschool", "primary", "general", "matura", "bachelor", "master", "doctorate"],
+        technical: ["preschool", "primary", "technical", "matura", "bachelor", "master", "doctorate"],
+        sectoral: ["preschool", "primary", "sectoral1", "sectoral2", "matura", "bachelor", "master", "doctorate"]
+      };
       let activeRoute = "all";
+      let activeStation = "technical";
+
+      function metroStationSvg(key, station, e) {
+        const [short, shortMeta] = e.short[key];
+        const { x, y } = station;
+        const shape = station.pill
+          ? `<rect class="halo" x="${x - 30}" y="${y - 37}" width="60" height="74" rx="30" /><rect class="stop" x="${x - 21}" y="${y - 28}" width="42" height="56" rx="21" />`
+          : `<circle class="halo" cx="${x}" cy="${y}" r="29" /><circle class="stop ${station.line}" cx="${x}" cy="${y}" r="19" />`;
+        const labelY = station.above ? y - (station.pill ? 70 : 60) : y + (station.pill ? 54 : 46);
+        const lines = [`<tspan class="t" x="${x}" dy="0">${htmlEscape(short)}</tspan>`, `<tspan class="m" x="${x}" dy="18">${htmlEscape(shortMeta)}</tspan>`];
+        if (station.vocational) lines.push(`<tspan class="v" x="${x}" dy="17">+ ${htmlEscape(e.vocational)}</tspan>`);
+        const [title] = e.cards[key];
+        return `<g class="metro-station${key === activeStation ? " is-selected" : ""}" data-station="${key}" data-routes="${station.routes}" role="button" tabindex="0" aria-pressed="${key === activeStation}" aria-label="${htmlEscape(title)}${station.eqf ? `, EQF ${station.eqf}` : ""}">
+          ${shape}
+          <text class="num" x="${x}" y="${y}">${station.eqf || "·"}</text>
+          <text class="metro-label" x="${x}" y="${labelY}">${lines.join("")}</text>
+        </g>`;
+      }
+
+      function renderMetroDetail(e) {
+        const [title, meta, gives, next, tags] = e.cards[activeStation];
+        const { eqf } = metroStation[activeStation];
+        document.querySelector("[data-metro-detail]").innerHTML = `
+          <div class="metro-eqf">${eqf ? `<span>EQF</span><strong>${eqf}</strong>` : `<span>ISCED</span><strong>0</strong>`}</div>
+          <div>
+            <h3>${htmlEscape(title)}</h3>
+            <p class="meta">${htmlEscape(meta)}</p>
+            <p class="gives">${htmlEscape(gives)}</p>
+          </div>
+          <div class="metro-detail-side">
+            ${next ? `<p class="next"><b>${htmlEscape(e.nextLabel)}</b> ${htmlEscape(next)}</p>` : ""}
+            ${tags.length ? `<p class="edu-tags">${tags.map((tag, index) => `<span class="edu-tag${index ? " alt" : ""}">${htmlEscape(tag)}</span>`).join("")}</p>` : ""}
+          </div>`;
+      }
+
+      function renderMetroList(e) {
+        const route = activeRoute === "all" ? "technical" : activeRoute;
+        const list = document.querySelector("[data-metro-list]");
+        list.dataset.route = route;
+        list.innerHTML = routeStations[route]
+          .map((key) => {
+            const [title, meta, gives, , tags] = e.cards[key];
+            const { eqf } = metroStation[key];
+            return `<li>
+              <span class="metro-badge" aria-label="${eqf ? `EQF ${eqf}` : "ISCED 0"}">${eqf || "·"}</span>
+              <div class="metro-list-card">
+                <h4>${htmlEscape(title)}</h4>
+                <p class="meta">${htmlEscape(meta)}</p>
+                <p>${htmlEscape(gives)}</p>
+                ${tags.length ? `<p class="edu-tags">${tags.map((tag, index) => `<span class="edu-tag${index ? " alt" : ""}">${htmlEscape(tag)}</span>`).join("")}</p>` : ""}
+              </div>
+            </li>`;
+          })
+          .join("");
+      }
 
       function renderEducation(e) {
         document.querySelector('[data-render="educationRoutes"]').innerHTML = `
           <span class="edu-routes-label">${htmlEscape(e.routesLabel)}</span>
           ${e.routes
-            .map(([key, label]) => `<button type="button" class="edu-route-btn" data-route="${key}" aria-pressed="${key === activeRoute}">${htmlEscape(label)}</button>`)
-            .join("")}`;
+            .map(([key, label]) => `<button type="button" class="edu-route-btn route-${key}" data-route="${key}" aria-pressed="${key === activeRoute}"><i aria-hidden="true"></i>${htmlEscape(label)}</button>`)
+            .join("")}
+          <span class="metro-hint">${htmlEscape(e.mapHint)}</span>`;
 
         document.querySelector('[data-render="educationFacts"]').innerHTML = e.facts
           .map(([value, label]) => `<div class="edu-fact"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
           .join("");
 
-        const diagram = document.querySelector('[data-render="education"]');
-        diagram.setAttribute("aria-label", e.aria);
-        const columnHeads = e.columns
-          .map((label, index) => `<p class="edu-colhead edu-col-${index + 1}">${htmlEscape(label)}</p>`)
-          .join("");
-        const axis = educationAxis
-          .map(([prk, isced], index) => `<div class="edu-axis" style="grid-row: ${index + 2}" aria-hidden="true">${prk ? `<strong>${htmlEscape(prk)}</strong><span>ISCED ${htmlEscape(isced)}</span>` : ""}</div>`)
-          .join("");
-        const duty = e.duty
-          .map(([value, label], index) => `<div class="edu-duty edu-duty-${index + 1}"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
-          .join("");
-        const cards = educationCards
-          .map(([key, classes, arrows, routes]) => {
-            const [title, meta, gives, next, tags, level] = e.cards[key];
-            return `<article class="edu-card ${classes}" data-edu="${key}" data-routes="${routes}">
-              ${arrows.map((position) => `<i class="edu-arrow ${position}" data-routes="${key === "primary" ? primaryArrowRoutes[position] : routes}" aria-hidden="true"></i>`).join("")}
-              <div class="edu-card-head">
-                <p class="edu-level">${htmlEscape(level)}</p>
-                <h3>${htmlEscape(title)}</h3>
-                <p class="edu-meta">${htmlEscape(meta)}</p>
-              </div>
-              <p class="edu-gives">${htmlEscape(gives)}</p>
-              ${next ? `<p class="edu-next"><b>${htmlEscape(e.nextLabel)}</b> ${htmlEscape(next)}</p>` : ""}
-              ${tags.length ? `<p class="edu-tags">${tags.map((tag, index) => `<span class="edu-tag${index ? " alt" : ""}">${htmlEscape(tag)}</span>`).join("")}</p>` : ""}
-            </article>`;
-          })
-          .join("");
-        diagram.innerHTML = `
-          <div class="edu-axis-head" aria-hidden="true"><strong>${htmlEscape(e.axisHead[0])}</strong><span>${htmlEscape(e.axisHead[1])}</span></div>
-          ${columnHeads}${axis}
-          <div class="edu-duty-line" aria-hidden="true"></div>
-          ${duty}${cards}`;
-        diagram.dataset.route = activeRoute;
+        const metro = document.querySelector('[data-render="education"]');
+        metro.setAttribute("aria-label", e.aria);
+        metro.dataset.route = activeRoute;
+        metro.innerHTML = `
+          <div class="metro-map">
+            <svg viewBox="0 0 1230 450" role="group" aria-label="${htmlEscape(e.aria)}">
+              <defs>
+                <linearGradient id="metro-duty" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0" stop-color="#c75d48" stop-opacity="0.09" />
+                  <stop offset="0.82" stop-color="#c75d48" stop-opacity="0.09" />
+                  <stop offset="1" stop-color="#c75d48" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="metro-duty" aria-hidden="true">
+                <rect x="24" y="14" width="660" height="430" rx="18" fill="url(#metro-duty)" />
+                <text x="44" y="42">${htmlEscape(e.dutyBand)}</text>
+              </g>
+              ${Object.entries(metroLines).map(([route, d]) => `<path class="metro-line line-${route}" data-routes="${route}" d="${d}" />`).join("")}
+              ${metroStations.map(([key, station]) => metroStationSvg(key, station, e)).join("")}
+            </svg>
+          </div>
+          <div class="metro-detail" data-metro-detail aria-live="polite"></div>
+          <ol class="metro-list" data-metro-list></ol>`;
+        renderMetroDetail(e);
+        renderMetroList(e);
 
         document.querySelector('[data-render="educationFoot"]').innerHTML = `
           <div class="edu-legend">
@@ -3559,36 +3750,174 @@
           </div>`;
       }
 
+      function selectStation(key) {
+        activeStation = key;
+        document.querySelectorAll(".metro-station").forEach((station) => {
+          const selected = station.dataset.station === key;
+          station.classList.toggle("is-selected", selected);
+          station.setAttribute("aria-pressed", String(selected));
+        });
+        renderMetroDetail(content[activeLang].education);
+        if (motionEnabled()) gsap.from(".metro-detail > *", { y: 14, opacity: 0, duration: 0.4, ease: "power3.out", stagger: 0.05, clearProps: "all" });
+      }
+
       function showRoute(route, { walk = true } = {}) {
         activeRoute = route;
-        const diagram = document.querySelector('[data-render="education"]');
-        diagram.dataset.route = route;
+        const metro = document.querySelector('[data-render="education"]');
+        metro.dataset.route = route;
         document.querySelectorAll(".edu-route-btn").forEach((button) => {
           button.setAttribute("aria-pressed", String(button.dataset.route === route));
         });
+        if (route !== "all" && !routeStations[route].includes(activeStation)) {
+          selectStation(route === "general" ? "general" : route === "technical" ? "technical" : "sectoral1");
+        }
+        renderMetroList(content[activeLang].education);
         if (!walk || route === "all" || !motionEnabled()) return;
-        // Light up the chosen route step by step, from preschool to the doctorate.
-        const steps = [...diagram.querySelectorAll(`.edu-card[data-routes~="${route}"]`)];
-        gsap.killTweensOf(steps);
-        gsap.fromTo(
-          steps,
-          { scale: 0.97, boxShadow: "0 0 0 0 rgb(215 177 93 / 0)" },
-          {
-            scale: 1,
-            boxShadow: "0 0 0 4px rgb(215 177 93 / 0.55)",
-            duration: 0.32,
-            ease: "power2.out",
-            stagger: 0.11,
-            yoyo: true,
-            repeat: 1,
-            clearProps: "transform,boxShadow"
-          }
-        );
+        // Draw the chosen line again and light up its stations one after another.
+        const line = metro.querySelector(`.line-${route}`);
+        const length = line.getTotalLength();
+        gsap.fromTo(line, { strokeDasharray: length, strokeDashoffset: length }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut", clearProps: "strokeDasharray,strokeDashoffset" });
+        const stops = routeStations[route].map((key) => metro.querySelector(`[data-station="${key}"] .stop`));
+        gsap.fromTo(stops, { scale: 0.6, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(3)", stagger: 0.14, clearProps: "transform" });
+        gsap.from(".metro-list li", { x: -24, opacity: 0, duration: 0.45, ease: "power3.out", stagger: 0.06, clearProps: "all" });
       }
 
       document.querySelector('[data-render="educationRoutes"]').addEventListener("click", (event) => {
         const button = event.target.closest("[data-route]");
         if (button) showRoute(button.dataset.route);
+      });
+
+      const metroContainer = document.querySelector('[data-render="education"]');
+      metroContainer.addEventListener("click", (event) => {
+        const station = event.target.closest("[data-station]");
+        if (station) selectStation(station.dataset.station);
+      });
+      metroContainer.addEventListener("keydown", (event) => {
+        const station = event.target.closest("[data-station]");
+        if (!station || (event.key !== "Enter" && event.key !== " ")) return;
+        event.preventDefault();
+        selectStation(station.dataset.station);
+      });
+
+      // Profession explorer: a big numbered index; hovering (mouse) or tapping a row shows the details.
+      const professionIcons = {
+        car: '<path d="M7 31v-6l5-9h24l5 9v6z"/><circle cx="15" cy="32" r="4"/><circle cx="33" cy="32" r="4"/><path d="M13 23h22"/>',
+        hammer: '<path d="M13 40l15-15"/><path d="M22 14l8-7 11 11-7 8z"/>',
+        bolt: '<path d="M27 5L12 27h11l-3 16 16-23H25z"/>',
+        camera: '<rect x="6" y="15" width="36" height="24" rx="4"/><circle cx="24" cy="27" r="7"/><path d="M17 15l3-5h8l3 5"/>',
+        scissors: '<circle cx="13" cy="34" r="5"/><circle cx="13" cy="14" r="5"/><path d="M17 31L41 11M17 17l24 20"/>',
+        trowel: '<path d="M9 40l11-11"/><path d="M17 25L38 7l3 20z"/>',
+        sofa: '<path d="M8 23v13h32V23"/><path d="M12 23v-7h24v7"/><path d="M8 23h6v6h20v-6h6"/><path d="M11 36v3M37 36v3"/>'
+      };
+      let activeProfession = 0;
+      let professionFilter = "all";
+
+      function renderProfessionPreview(t) {
+        const [name, tone] = t.professions[activeProfession];
+        const [family, art, description] = t.professionDetails[activeProfession];
+        const [, school, schoolMeta] = t.professionSchools[tone];
+        const number = String(activeProfession + 1).padStart(2, "0");
+        document.querySelector("[data-prof-preview]").innerHTML = `
+          <div class="prof-art family-${family}">
+            ${art.includes("/") ? `<img src="${htmlEscape(art)}" alt="" />` : `<svg viewBox="0 0 48 48" aria-hidden="true">${professionIcons[art]}</svg>`}
+            <span class="prof-art-num" aria-hidden="true">${number}</span>
+          </div>
+          <div class="prof-preview-body">
+            <p class="prof-family">${htmlEscape(t.professionFamilies[family])}</p>
+            <h3>${htmlEscape(name)}</h3>
+            <p class="prof-desc">${htmlEscape(description)}</p>
+            <p class="prof-school-line"><b>${htmlEscape(school)}</b> ${htmlEscape(schoolMeta)}</p>
+            <button type="button" class="btn primary" data-prof-route="${tone === "tech" ? "technical" : "sectoral"}">${htmlEscape(t.professionRoute)}</button>
+          </div>`;
+      }
+
+      function renderProfessions(t) {
+        document.querySelector('[data-render="professionFilters"]').innerHTML = t.professionFilters
+          .map(([key, label]) => `<button type="button" class="prof-filter" data-prof-filter="${key}" aria-pressed="${key === professionFilter}">${htmlEscape(label)}</button>`)
+          .join("");
+        const list = document.querySelector('[data-render="professions"]');
+        list.setAttribute("aria-label", t.professionsAria);
+        list.innerHTML = t.professions
+          .map(([name, tone], index) => {
+            const [family, , description] = t.professionDetails[index];
+            const [schoolShort, school, schoolMeta] = t.professionSchools[tone];
+            const hidden = professionFilter !== "all" && professionFilter !== family;
+            return `<li class="prof-row${index === activeProfession ? " is-active" : ""}${hidden ? " is-hidden" : ""}" data-prof="${index}" data-family="${family}">
+              <button type="button" class="prof-trigger" aria-expanded="${index === activeProfession}">
+                <span class="prof-num">${String(index + 1).padStart(2, "0")}</span>
+                <span class="prof-name">${htmlEscape(name)}</span>
+                <span class="prof-tag ${tone}">${htmlEscape(schoolShort)}</span>
+                <span class="prof-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="prof-more">
+                <p>${htmlEscape(description)}</p>
+                <p class="prof-school-line"><b>${htmlEscape(school)}</b> ${htmlEscape(schoolMeta)}</p>
+              </div>
+            </li>`;
+          })
+          .join("");
+        renderProfessionPreview(t);
+      }
+
+      function setActiveProfession(index) {
+        if (index === activeProfession) return;
+        activeProfession = index;
+        document.querySelectorAll(".prof-row").forEach((row) => {
+          const active = Number(row.dataset.prof) === index;
+          row.classList.toggle("is-active", active);
+          row.querySelector(".prof-trigger").setAttribute("aria-expanded", String(active));
+        });
+        renderProfessionPreview(content[activeLang]);
+        if (!motionEnabled()) return;
+        gsap.fromTo(".prof-art", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power3.out", clearProps: "clipPath" });
+        gsap.fromTo(".prof-art img, .prof-art svg", { scale: 1.25 }, { scale: 1, duration: 0.9, ease: "power3.out" });
+        gsap.from(".prof-preview-body > *", { y: 16, opacity: 0, duration: 0.45, ease: "power3.out", stagger: 0.05, clearProps: "all" });
+      }
+
+      function setProfessionFilter(filter) {
+        professionFilter = filter;
+        document.querySelectorAll(".prof-filter").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.profFilter === filter)));
+        const rows = [...document.querySelectorAll(".prof-row")];
+        const state = motionEnabled() && window.Flip ? Flip.getState(rows) : null;
+        rows.forEach((row) => row.classList.toggle("is-hidden", filter !== "all" && row.dataset.family !== filter));
+        const first = rows.find((row) => !row.classList.contains("is-hidden"));
+        if (first && document.querySelector(".prof-row.is-active.is-hidden")) setActiveProfession(Number(first.dataset.prof));
+        if (state) {
+          Flip.from(state, {
+            duration: 0.55,
+            ease: "power3.inOut",
+            stagger: 0.02,
+            absolute: true,
+            onEnter: (elements) => gsap.fromTo(elements, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.04 }),
+            onLeave: (elements) => gsap.to(elements, { opacity: 0, x: -40, duration: 0.3 })
+          });
+        }
+      }
+
+      document.querySelector('[data-render="professionFilters"]').addEventListener("click", (event) => {
+        const button = event.target.closest("[data-prof-filter]");
+        if (button) setProfessionFilter(button.dataset.profFilter);
+      });
+
+      const professionList = document.querySelector('[data-render="professions"]');
+      professionList.addEventListener("click", (event) => {
+        const row = event.target.closest(".prof-row");
+        if (row) setActiveProfession(Number(row.dataset.prof));
+      });
+      professionList.addEventListener("pointerover", (event) => {
+        const row = event.target.closest(".prof-row");
+        if (row && event.pointerType === "mouse") setActiveProfession(Number(row.dataset.prof));
+      });
+      professionList.addEventListener("focusin", (event) => {
+        const row = event.target.closest(".prof-row");
+        if (row) setActiveProfession(Number(row.dataset.prof));
+      });
+
+      document.querySelector("[data-prof-preview]").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-prof-route]");
+        if (!button) return;
+        scrollToTarget(document.querySelector(".edu-routes"), -96);
+        window.setTimeout(() => showRoute(button.dataset.profRoute), motionEnabled() ? 1300 : 0);
       });
 
       function render(lang) {
@@ -3642,17 +3971,7 @@
           .map(([src, label, size]) => `<figure class="tile ${htmlEscape(size)}"><img src="${htmlEscape(src)}" alt="${htmlEscape(label)}" /><span>${htmlEscape(label)}</span></figure>`)
           .join("");
 
-        const professionWords = Array.from({ length: 204 }, (_, index) => t.professions[(index * 7 + Math.floor(index / t.professions.length) * 3) % t.professions.length]);
-        const professionsStage = document.querySelector('[data-render="professions"]');
-        professionsStage.setAttribute("aria-label", t.professionsAria);
-        professionsStage.innerHTML = `
-          <div class="profession-cloud">
-            <div class="profession-words" aria-hidden="true">
-              ${professionWords
-                .map(([name, tone], index) => `<span class="profession-word ${tone === "tech" ? "tech" : ""}" data-profession-word data-index="${index}">${htmlEscape(name)}</span>`)
-                .join("")}
-            </div>
-          </div>`;
+        renderProfessions(t);
 
         document.querySelector('[data-render="projects"]').innerHTML = t.projects
           .map(([title, body]) => `<article class="project"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
@@ -3945,17 +4264,33 @@
           gsap.fromTo(".paths-photo img", { scale: 1.18 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".paths-photo", start: "top bottom", end: "bottom top", scrub: true } });
 
           // The education ladder builds itself from preschool upwards.
-          gsap.from(".edu-card", { y: 44, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.07, clearProps: "opacity,transform", scrollTrigger: once(".edu-diagram", "top 78%") });
-          gsap.from(".edu-arrow", { scaleY: 0, transformOrigin: "50% 100%", duration: 0.35, ease: "power2.out", stagger: 0.07, delay: 0.35, clearProps: "transform", scrollTrigger: once(".edu-diagram", "top 78%") });
           gsap.from(".edu-fact", { y: 26, opacity: 0, scale: 0.92, duration: 0.6, ease: "back.out(1.7)", stagger: 0.1, clearProps: "all", scrollTrigger: once(".edu-facts", "top 85%") });
 
           gsap.from(".tile", { clipPath: "inset(100% 0% 0% 0%)", duration: 1.1, ease: "power3.inOut", stagger: 0.1, clearProps: "clipPath", scrollTrigger: once(".tile-grid") });
           gsap.fromTo(".tile img", { scale: 1.2 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".tile-grid", start: "top bottom", end: "bottom top", scrub: true } });
 
+          gsap.from(".prof-row", { x: 70, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.045, clearProps: "all", scrollTrigger: once(".prof-explorer", "top 82%") });
+          gsap.from(".prof-preview", { y: 50, rotation: -2, opacity: 0, duration: 0.9, ease: "power3.out", clearProps: "all", scrollTrigger: once(".prof-filters", "top 85%") });
           gsap.from(".quiz-stage", { rotation: -3, y: 60, duration: 1, ease: "power3.out", clearProps: "transform", scrollTrigger: once(".quiz-stage", "top 85%") });
           gsap.from(".project", { x: 60, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1, clearProps: "all", scrollTrigger: once(".project-list") });
           gsap.fromTo(".project-photo img", { scale: 1.14 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".project-photo", start: "top bottom", end: "bottom top", scrub: true } });
           gsap.from(".fact, .links a", { y: 26, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.06, clearProps: "all", scrollTrigger: once("#location", "top 70%") });
+        });
+
+        // Wide screens: the metro map draws its lines, then the stations pop in.
+        motionMedia.add("(min-width: 901px)", () => {
+          const metroIntro = gsap.timeline({ scrollTrigger: once(".metro", "top 75%") });
+          metroIntro.from(".metro-duty", { opacity: 0, duration: 0.8 }, 0);
+          document.querySelectorAll(".metro-line").forEach((line, index) => {
+            const length = line.getTotalLength();
+            metroIntro.fromTo(line, { strokeDasharray: length, strokeDashoffset: length }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut", clearProps: "strokeDasharray,strokeDashoffset" }, index * 0.18);
+          });
+          metroIntro.from(".metro-station", { scale: 0, opacity: 0, transformOrigin: "50% 50%", duration: 0.45, ease: "back.out(2.4)", stagger: 0.08, clearProps: "transform,opacity" }, 0.45);
+          metroIntro.from(".metro-detail", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out", clearProps: "transform,opacity" }, 1.1);
+        });
+
+        motionMedia.add("(max-width: 900px)", () => {
+          gsap.from(".metro-list li", { x: -30, opacity: 0, duration: 0.5, ease: "power3.out", stagger: 0.08, clearProps: "all", scrollTrigger: once(".metro-list", "top 85%") });
         });
 
         // Wide screens: the jubilee gallery is pinned and scrolls sideways.
@@ -3981,7 +4316,7 @@
       }
 
       // Pointer effects for mouse users: 3D tilt with a golden spotlight on cards, magnetic buttons.
-      const tiltSelector = ".beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card";
+      const tiltSelector = ".beat, .path, .project, .fact, .tile, .gallery figure, .edu-other-list article, .qr-card, .prof-preview";
       let tiltCard;
       let magnet;
 
@@ -4114,7 +4449,6 @@
         });
       }
 
-
       document.querySelectorAll("[data-lang]").forEach((button) => {
         button.addEventListener("click", () => {
           render(button.dataset.lang);
@@ -4158,21 +4492,6 @@
         setupAurora();
       });
 
-      let professionPulseCursor = 0;
-
-      function pulseProfessionWords() {
-        const words = [...document.querySelectorAll("[data-profession-word]")];
-        words.forEach((word) => word.classList.remove("is-pulsing"));
-        if (reducedMotion.matches || !words.length) return;
-
-        [0, 37, 79, 121, 163].forEach((offset) => {
-          words[(professionPulseCursor + offset) % words.length].classList.add("is-pulsing");
-        });
-        professionPulseCursor = (professionPulseCursor + 7) % words.length;
-      }
-
-      pulseProfessionWords();
-      window.setInterval(pulseProfessionWords, 640);
     </script>
   </body>
 </html>
