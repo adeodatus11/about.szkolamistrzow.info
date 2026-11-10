@@ -79,11 +79,32 @@ test("adds the career quiz, route highlighting and vendored GSAP motion", async 
   assert.match(html, /data-render="educationRoutes"/);
   assert.match(html, /data-routes="\$\{routes\}"/);
   assert.match(html, /<script src="public\/vendor\/gsap\/gsap\.min\.js"><\/script>\s*<script src="public\/vendor\/gsap\/ScrollTrigger\.min\.js"><\/script>/);
-  assert.match(html, /const motionEnabled = \(\) => Boolean\(window\.gsap && window\.ScrollTrigger\) && !reducedMotion\.matches;/);
+  assert.match(html, /const motionEnabled = \(\) => Boolean\(window\.gsap && window\.ScrollTrigger && window\.ScrambleTextPlugin\) && !reducedMotion\.matches;/);
 
   for (const [file, name] of [["gsap.min.js", "GSAP"], ["ScrollTrigger.min.js", "ScrollTrigger"]]) {
     const vendor = await readFile(new URL(`../public/vendor/gsap/${file}`, import.meta.url), "utf8");
     assert.ok(vendor.startsWith(`/*!\n * ${name} 3.13.0\n`), file);
     assert.match(vendor.slice(0, 300), /gsap\.com\/standard-license/);
   }
+});
+
+test("hides the QR code on phones and adds the kinetic hero, marquee and motion libraries", async () => {
+  const html = await readPage();
+
+  assert.match(html, /@media \(max-width: 760px\) \{\s*\.hero \.qr-card,\s*\.scroll-cue \{\s*display: none;/);
+  assert.match(html, /data-hero-rotator/);
+  assert.match(html, /<a class="btn primary" href="#quiz" data-i18n="heroCtaQuiz">/);
+  assert.equal([...html.matchAll(/\n\s*heroWords: \[/g)].length, 2);
+  assert.equal([...html.matchAll(/\n\s*heroStats: \[/g)].length, 2);
+  assert.match(html, /<\/section>\s*<div class="marquee-band" data-render="marquee" aria-hidden="true"><\/div>\s*<section id="story"/);
+  assert.match(html, /<script src="public\/vendor\/gsap\/ScrambleTextPlugin\.min\.js"><\/script>\s*<script src="public\/vendor\/lenis\/lenis\.min\.js"><\/script>/);
+  assert.match(html, /motionMedia\.add\("\(min-width: 901px\)"/);
+  assert.match(html, /function setupAurora\(\)/);
+
+  const lenis = await readFile(new URL("../public/vendor/lenis/lenis.min.js", import.meta.url), "utf8");
+  assert.match(lenis, /^var t="1\.3\.19"/);
+  assert.match(lenis, /globalThis\.Lenis=Lenis/);
+  assert.doesNotMatch(lenis, /sourceMappingURL/);
+  const license = await readFile(new URL("../public/vendor/lenis/LICENSE", import.meta.url), "utf8");
+  assert.match(license, /MIT License/);
 });
