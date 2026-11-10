@@ -1469,6 +1469,358 @@
         line-height: 1.4;
       }
 
+      .scroll-progress {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 45;
+        height: 3px;
+        background: linear-gradient(90deg, var(--green), var(--honey), var(--coral));
+        pointer-events: none;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+      }
+
+      .word {
+        display: inline-block;
+        overflow: hidden;
+        margin-bottom: -0.14em;
+        padding-bottom: 0.14em;
+        vertical-align: top;
+      }
+
+      .word-inner {
+        display: inline-block;
+        will-change: transform;
+      }
+
+      .edu-routes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-top: 28px;
+      }
+
+      .edu-routes {
+        scroll-margin-top: 96px;
+      }
+
+      .edu-routes + .edu-diagram {
+        margin-top: 18px;
+      }
+
+      .edu-routes-label {
+        margin-right: 4px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .edu-route-btn {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgb(255 250 240 / 0.92);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 900;
+        padding: 8px 13px;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      }
+
+      .edu-route-btn:hover,
+      .edu-route-btn:focus-visible {
+        outline: 0;
+        transform: translateY(-1px);
+        border-color: rgb(31 91 58 / 0.4);
+      }
+
+      .edu-route-btn[aria-pressed="true"] {
+        border-color: transparent;
+        background: var(--green);
+        color: white;
+      }
+
+      .edu-card,
+      .edu-arrow {
+        transition: opacity 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .edu-diagram[data-route="general"] :is(.edu-card, .edu-arrow):not([data-routes~="general"]),
+      .edu-diagram[data-route="technical"] :is(.edu-card, .edu-arrow):not([data-routes~="technical"]),
+      .edu-diagram[data-route="sectoral"] :is(.edu-card, .edu-arrow):not([data-routes~="sectoral"]) {
+        filter: grayscale(0.8);
+        opacity: 0.2;
+      }
+
+      .edu-diagram[data-route="general"] .edu-card[data-routes~="general"],
+      .edu-diagram[data-route="technical"] .edu-card[data-routes~="technical"],
+      .edu-diagram[data-route="sectoral"] .edu-card[data-routes~="sectoral"] {
+        box-shadow: 0 0 0 3px rgb(215 177 93 / 0.6), 0 14px 34px rgb(23 32 25 / 0.1);
+      }
+
+      .quiz-slide {
+        background:
+          radial-gradient(circle at 12% 18%, rgb(215 177 93 / 0.26), transparent 38%),
+          radial-gradient(circle at 88% 84%, rgb(31 91 58 / 0.13), transparent 44%),
+          var(--paper);
+      }
+
+      .quiz-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 48px;
+        align-items: center;
+      }
+
+      .quiz-copy .slide-title {
+        font-size: clamp(36px, 4.6vw, 66px);
+        line-height: 1;
+      }
+
+      .quiz-note {
+        margin-top: 22px;
+        border-left: 3px solid var(--honey);
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.45;
+        padding-left: 14px;
+      }
+
+      .quiz-card {
+        position: relative;
+        min-height: 430px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper-2);
+        box-shadow: var(--shadow);
+        padding: 30px;
+      }
+
+      .quiz-progress {
+        display: flex;
+        gap: 6px;
+      }
+
+      .quiz-progress span {
+        flex: 1;
+        height: 6px;
+        border-radius: 3px;
+        background: rgb(23 32 25 / 0.1);
+        transition: background 0.3s ease;
+      }
+
+      .quiz-progress .done {
+        background: var(--green);
+      }
+
+      .quiz-progress .current {
+        background: var(--honey);
+      }
+
+      .quiz-step {
+        margin-top: 18px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .quiz-question {
+        margin-top: 8px;
+        font-size: clamp(24px, 2.6vw, 36px);
+        font-weight: 1000;
+        line-height: 1.1;
+      }
+
+      .quiz-options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .quiz-option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 72px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 15.5px;
+        font-weight: 850;
+        line-height: 1.3;
+        padding: 14px;
+        text-align: left;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .quiz-option:hover,
+      .quiz-option:focus-visible {
+        border-color: var(--green);
+        box-shadow: 0 10px 24px rgb(31 91 58 / 0.14);
+        outline: 0;
+        transform: translateY(-2px);
+      }
+
+      .quiz-option.picked {
+        border-color: transparent;
+        background: var(--green);
+        color: white;
+        transform: scale(1.02);
+      }
+
+      .quiz-option:disabled {
+        cursor: default;
+      }
+
+      .quiz-letter {
+        display: grid;
+        flex: 0 0 32px;
+        height: 32px;
+        place-items: center;
+        border-radius: 8px;
+        background: rgb(215 177 93 / 0.3);
+        color: #5f430e;
+        font-size: 14px;
+        font-weight: 1000;
+      }
+
+      .quiz-option.picked .quiz-letter {
+        background: rgb(255 255 255 / 0.2);
+        color: white;
+      }
+
+      .quiz-back {
+        margin-top: 18px;
+        border: 0;
+        background: none;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 6px 0;
+      }
+
+      .quiz-back:hover,
+      .quiz-back:focus-visible {
+        color: var(--green);
+        outline: 0;
+      }
+
+      .quiz-result .quiz-step {
+        margin-top: 0;
+      }
+
+      .quiz-result-title {
+        margin-top: 6px;
+        color: var(--green);
+        font-size: clamp(30px, 3.4vw, 48px);
+        font-weight: 1000;
+        line-height: 1;
+      }
+
+      .quiz-result-text {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .quiz-sub {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .quiz-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .quiz-chips span {
+        border-radius: 8px;
+        background: rgb(31 91 58 / 0.1);
+        color: var(--green-2);
+        font-size: 14px;
+        font-weight: 900;
+        padding: 7px 11px;
+      }
+
+      .quiz-route {
+        margin-top: 18px;
+        border-radius: 8px;
+        background: var(--green-2);
+        color: white;
+        padding: 16px 18px;
+      }
+
+      .quiz-route .quiz-sub {
+        margin-top: 0;
+        color: rgb(255 255 255 / 0.62);
+      }
+
+      .quiz-route strong {
+        display: block;
+        margin-top: 4px;
+        color: #f0cb77;
+        font-size: 21px;
+        font-weight: 1000;
+      }
+
+      .quiz-route p:not(.quiz-sub) {
+        margin-top: 6px;
+        color: rgb(255 255 255 / 0.84);
+        font-size: 14.5px;
+        line-height: 1.45;
+      }
+
+      .quiz-route .quiz-route-note {
+        border-top: 1px solid rgb(255 255 255 / 0.16);
+        font-size: 13.5px;
+        padding-top: 8px;
+      }
+
+      .quiz-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .quiz-actions .btn {
+        min-height: 46px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .quiz-burst {
+        position: absolute;
+        top: 34%;
+        left: 50%;
+        z-index: 5;
+        pointer-events: none;
+      }
+
+      .quiz-burst i {
+        position: absolute;
+        width: 9px;
+        height: 14px;
+        margin: -7px 0 0 -4px;
+        border-radius: 2px;
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(26px);
@@ -1993,6 +2345,11 @@
       }
 
       @media (max-width: 1180px) {
+        .quiz-layout {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+
         .edu-head,
         .edu-foot {
           grid-template-columns: 1fr;
@@ -2047,6 +2404,19 @@
       }
 
       @media (max-width: 760px) {
+        .quiz-options {
+          grid-template-columns: 1fr;
+        }
+
+        .quiz-card {
+          min-height: 0;
+          padding: 20px;
+        }
+
+        .quiz-option {
+          min-height: 56px;
+        }
+
         .edu-facts {
           grid-template-columns: 1fr;
         }
@@ -2102,8 +2472,9 @@
           <a href="#paths" data-i18n="nav.2">Dualnie</a>
           <a href="#practice" data-i18n="nav.3">Pracownie</a>
           <a href="#professions" data-i18n="nav.4">Zawody</a>
-          <a href="#projects" data-i18n="nav.5">Projekty</a>
-          <a href="#location" data-i18n="nav.6">Mapa</a>
+          <a href="#quiz" data-i18n="nav.5">Quiz</a>
+          <a href="#projects" data-i18n="nav.6">Projekty</a>
+          <a href="#location" data-i18n="nav.7">Mapa</a>
         </nav>
         <div class="lang" aria-label="Wybór języka">
           <button type="button" data-lang="pl" class="active">PL</button>
@@ -2159,6 +2530,7 @@
             </div>
             <div class="edu-facts" data-render="educationFacts"></div>
           </div>
+          <div class="edu-routes reveal" data-render="educationRoutes"></div>
           <div class="edu-diagram reveal" data-render="education" aria-label="Schemat systemu edukacji w Polsce"></div>
           <div class="edu-foot reveal" data-render="educationFoot"></div>
         </div>
@@ -2209,6 +2581,18 @@
             </div>
           </div>
           <div class="profession-stage reveal" data-render="professions" aria-label="Pole nazw zawodów"></div>
+        </div>
+      </section>
+
+      <section id="quiz" class="slide quiz-slide">
+        <div class="shell quiz-layout">
+          <div class="quiz-copy reveal">
+            <p class="label" data-i18n="quiz.kicker">Quiz zawodowy</p>
+            <h2 class="slide-title" data-i18n="quiz.title">Jaki zawód do Ciebie pasuje?</h2>
+            <p class="slide-lead" data-i18n="quiz.lead">Cztery szybkie pytania. Nie ma złych odpowiedzi, jest tylko podpowiedź, od czego zacząć.</p>
+            <p class="quiz-note" data-i18n="quiz.note">Wynik to podpowiedź, nie wyrok. Każdy zawód najlepiej poczuć w pracowni.</p>
+          </div>
+          <div class="quiz-stage reveal" data-render="quiz" aria-live="polite"></div>
         </div>
       </section>
 
@@ -2291,10 +2675,14 @@
       </section>
     </main>
 
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <script src="public/vendor/gsap/gsap.min.js"></script>
+    <script src="public/vendor/gsap/ScrollTrigger.min.js"></script>
     <script>
       const content = {
         pl: {
-          nav: ["O szkole", "Ścieżki", "Dualnie", "Pracownie", "Zawody", "Projekty", "Mapa"],
+          nav: ["O szkole", "Ścieżki", "Dualnie", "Pracownie", "Zawody", "Quiz", "Projekty", "Mapa"],
           heroAlt: "Mural przy budynku szkoły",
           heroLockupAlt: "Logo ZSZ5 we Wrocławiu i Szkoła Mistrzów",
           heroKicker: "Academy of Excellence",
@@ -2342,6 +2730,8 @@
               ["6 lat", "roczne przygotowanie przedszkolne"]
             ],
             nextLabel: "Dalej:",
+            routesLabel: "Pokaż drogę:",
+            routes: [["all", "Wszystkie"], ["general", "Liceum"], ["technical", "Technikum"], ["sectoral", "Branżowa I → II"]],
             cards: {
               preschool: ["Wychowanie przedszkolne", "3–6 lat", "Ostatni rok (6 lat) jest obowiązkowy: przygotowanie do szkoły.", "szkoła podstawowa", [], "ISCED 0"],
               primary: ["Szkoła podstawowa", "8 lat · 7–15 lat", "Klasy 1–6 to ISCED 1, klasy 7–8 to ISCED 2. Kończy się egzaminem ósmoklasisty i świadectwem na poziomie 2 EQF.", "liceum, technikum lub branżowa szkoła I stopnia", [], "EQF 2 · ISCED 1–2"],
@@ -2438,6 +2828,61 @@
             ["public/photos/jubilee-stage.webp", "Uroczystość jubileuszowa"],
             ["public/photos/jubilee-award.webp", "Wręczenie wyróżnienia"]
           ],
+          quiz: {
+            kicker: "Quiz zawodowy",
+            title: "Jaki zawód do Ciebie pasuje?",
+            lead: "Cztery szybkie pytania. Nie ma złych odpowiedzi, jest tylko podpowiedź, od czego zacząć.",
+            note: "Wynik to podpowiedź, nie wyrok. Każdy zawód najlepiej poczuć w pracowni.",
+            step: "Pytanie",
+            of: "z",
+            back: "Wstecz",
+            restart: "Zagraj jeszcze raz",
+            showRoute: "Pokaż tę drogę na schemacie",
+            resultKicker: "Twój kierunek",
+            professionsLabel: "Zawody w ZSZ nr 5",
+            routeLabel: "Proponowana droga",
+            questions: [
+              ["Twój idealny dzień w pracy to…", [
+                ["Ludzie wokół mnie i dobra rozmowa", { beauty: 2, trade: 2, food: 1 }],
+                ["Ręce w działaniu i konkretny efekt", { build: 2, auto: 2, food: 1 }],
+                ["Coś, co pięknie pachnie i smakuje", { food: 3 }],
+                ["Tworzenie czegoś, co cieszy oko", { design: 2, beauty: 1 }]
+              ]],
+              ["Co najchętniej oglądasz w sieci?", [
+                ["Metamorfozy i nowe trendy", { beauty: 3, design: 1 }],
+                ["Przepisy i kulinarne wyzwania", { food: 3 }],
+                ["Remonty, meble i DIY", { build: 3 }],
+                ["Auta, lakiery i renowacje", { auto: 3 }],
+                ["Zdjęcia, moda i styl", { design: 3 }],
+                ["Recenzje produktów i zakupy", { trade: 3 }]
+              ]],
+              ["Gdzie widzisz siebie za kilka lat?", [
+                ["We własnym salonie albo studiu", { beauty: 2, design: 2 }],
+                ["W kuchni, cukierni albo piekarni", { food: 3 }],
+                ["W sklepie lub firmie, wśród klientów", { trade: 3 }],
+                ["Na budowie albo w warsztacie", { build: 2, auto: 2 }]
+              ]],
+              ["Jak chcesz się uczyć?", [
+                ["Jak najszybciej w prawdziwej pracy, z wypłatą", { route: "sectoral" }],
+                ["Zawód i matura od razu, a potem może studia", { route: "technical" }],
+                ["Najpierw fach, a technik i matura później", { route: "sectoral2" }]
+              ]]
+            ],
+            families: {
+              beauty: ["Usługi fryzjerskie", "Masz oko do stylu i lubisz ludzi. Tu liczą się precyzja dłoni, cierpliwość i dobry kontakt z klientem.", ["Fryzjer", "Technik usług fryzjerskich"], true],
+              food: ["Gastronomia i cukiernictwo", "Lubisz, gdy efekt pracy można poczuć i posmakować. W kuchni liczą się tempo, porządek i praca zespołowa.", ["Cukiernik", "Piekarz", "Kucharz", "Kelner"], false],
+              trade: ["Handel i obsługa klienta", "Dobrze czujesz się wśród ludzi i lubisz doradzać. Rozmowa, produkt i odpowiedzialność za klienta to Twoje narzędzia.", ["Sprzedawca", "Technik handlowiec"], true],
+              build: ["Budownictwo i drewno", "Chcesz widzieć, jak coś powstaje od zera. Ręczna robota, dokładność i solidny efekt na lata.", ["Stolarz", "Elektryk", "Monter zabudowy w budownictwie", "Murarz-tynkarz", "Tapicer"], false],
+              auto: ["Motoryzacja", "Auta to dla Ciebie coś więcej niż transport. Blacharka i lakiernictwo to precyzja, cierpliwość i efekt jak z salonu.", ["Blacharz samochodowy", "Lakiernik samochodowy"], false],
+              design: ["Rzemiosło i styl", "Masz wyczucie formy, koloru i detalu. Tu tworzysz rzeczy, które ludzie noszą, oglądają i zapamiętują.", ["Fotograf", "Krawiec"], false]
+            },
+            routes: {
+              technical: ["Technikum", "5 lat: zawód, dyplom technika i matura. Najprostsza droga, jeśli od początku myślisz o studiach.", "technical"],
+              sectoral: ["Branżowa szkoła I stopnia", "3 lata nauki dualnej: część tygodnia w szkole, część u pracodawcy, z umową i wynagrodzeniem.", "sectoral"],
+              sectoral2: ["Branżowa I, potem II stopnia", "Najpierw fach i praktyka u pracodawcy, później dyplom technika i matura. Droga na studia zostaje otwarta.", "sectoral"]
+            },
+            noTechnikum: "W tym kierunku najprościej zacząć od branżowej szkoły I stopnia, a technika i maturę zdobyć potem w szkole II stopnia."
+          },
           locationKicker: "Gdzie jesteśmy",
           locationTitle: "ul. Jana Władysława Dawida 5",
           locationLead: "Szkoła znajduje się w centrum Wrocławia, przy ul. Dawida 5, bardzo blisko Dworca Głównego. To ważny atut dla uczniów dojeżdżających z miasta i okolic.",
@@ -2456,7 +2901,7 @@
           ]
         },
         en: {
-          nav: ["About", "Pathways", "Dual model", "Workshops", "Professions", "Projects", "Map"],
+          nav: ["About", "Pathways", "Dual model", "Workshops", "Professions", "Quiz", "Projects", "Map"],
           heroAlt: "Mural next to the school building",
           heroLockupAlt: "VSCW5 (Vocational School Complex no.5 Wrocław) and Szkoła Mistrzów logo",
           heroKicker: "Academy of Excellence",
@@ -2504,6 +2949,8 @@
               ["Age 6", "compulsory preschool year"]
             ],
             nextLabel: "Next:",
+            routesLabel: "Show a route:",
+            routes: [["all", "All"], ["general", "Liceum"], ["technical", "Technical school"], ["sectoral", "Sectoral I → II"]],
             cards: {
               preschool: ["Preschool", "ages 3–6", "The last year (age 6) is compulsory: preparation for school.", "primary school", [], "ISCED 0"],
               primary: ["Primary school", "8 years · ages 7–15", "Grades 1–6 are ISCED 1, grades 7–8 are ISCED 2. Ends with the national Grade 8 exam and a certificate at EQF level 2.", "general, technical or stage I sectoral school", [], "EQF 2 · ISCED 1–2"],
@@ -2600,6 +3047,61 @@
             ["public/photos/jubilee-stage.webp", "Jubilee ceremony"],
             ["public/photos/jubilee-award.webp", "Award presentation"]
           ],
+          quiz: {
+            kicker: "Career quiz",
+            title: "Which profession suits you?",
+            lead: "Four quick questions. There are no wrong answers, just a hint about where to start.",
+            note: "The result is a hint, not a verdict. Every profession is best felt in the workshop.",
+            step: "Question",
+            of: "of",
+            back: "Back",
+            restart: "Play again",
+            showRoute: "Show this route on the diagram",
+            resultKicker: "Your direction",
+            professionsLabel: "Professions at VSCW5",
+            routeLabel: "Suggested route",
+            questions: [
+              ["Your ideal working day is…", [
+                ["People around me and a good conversation", { beauty: 2, trade: 2, food: 1 }],
+                ["Hands at work and a visible result", { build: 2, auto: 2, food: 1 }],
+                ["Something that smells and tastes great", { food: 3 }],
+                ["Creating something that looks beautiful", { design: 2, beauty: 1 }]
+              ]],
+              ["What do you watch most online?", [
+                ["Makeovers and new trends", { beauty: 3, design: 1 }],
+                ["Recipes and cooking challenges", { food: 3 }],
+                ["Renovations, furniture and DIY", { build: 3 }],
+                ["Cars, paint jobs and restorations", { auto: 3 }],
+                ["Photography, fashion and style", { design: 3 }],
+                ["Product reviews and shopping", { trade: 3 }]
+              ]],
+              ["Where do you see yourself in a few years?", [
+                ["In my own salon or studio", { beauty: 2, design: 2 }],
+                ["In a kitchen, patisserie or bakery", { food: 3 }],
+                ["In a shop or company, with customers", { trade: 3 }],
+                ["On a building site or in a workshop", { build: 2, auto: 2 }]
+              ]],
+              ["How do you want to learn?", [
+                ["At a real job as soon as possible, with pay", { route: "sectoral" }],
+                ["A profession and the Matura now, maybe university later", { route: "technical" }],
+                ["A trade first, technician and Matura later", { route: "sectoral2" }]
+              ]]
+            ],
+            families: {
+              beauty: ["Hairdressing services", "You have an eye for style and you like people. Precise hands, patience and good contact with clients matter here.", ["Hairdresser", "Hairdressing services technician"], true],
+              food: ["Gastronomy and confectionery", "You like results you can smell and taste. In the kitchen, pace, order and teamwork matter.", ["Confectioner", "Baker", "Cook", "Waiter"], false],
+              trade: ["Retail and customer service", "You feel at home among people and like giving advice. Conversation, product knowledge and care for the customer are your tools.", ["Salesperson", "Trade technician"], true],
+              build: ["Construction and woodwork", "You want to see things being built from scratch. Hands-on work, accuracy and results that last for years.", ["Carpenter", "Electrician", "Construction fitter", "Bricklayer-plasterer", "Upholsterer"], false],
+              auto: ["Automotive", "Cars are more than transport to you. Bodywork and painting mean precision, patience and a showroom finish.", ["Automotive sheet-metal worker", "Automotive painter"], false],
+              design: ["Craft and style", "You have a feel for form, colour and detail. Here you make things people wear, look at and remember.", ["Photographer", "Tailor"], false]
+            },
+            routes: {
+              technical: ["Technical school", "5 years: a profession, a technician diploma and the Matura. The simplest route if you are already thinking about university.", "technical"],
+              sectoral: ["Stage I sectoral school", "3 years of dual learning: part of the week at school, part with an employer, with a contract and pay.", "sectoral"],
+              sectoral2: ["Stage I, then stage II sectoral school", "A trade and work experience first, then a technician diploma and the Matura. The road to university stays open.", "sectoral"]
+            },
+            noTechnikum: "In this direction it is simplest to start at a stage I sectoral school and earn the technician title and the Matura later at a stage II school."
+          },
           locationKicker: "Where we are",
           locationTitle: "Jana Władysława Dawida 5",
           locationLead: "The school is in the centre of Wrocław, at Dawida 5, very close to the main railway station. This is a clear advantage for students commuting from the city and the region.",
@@ -2619,6 +3121,8 @@
         }
       };
 
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const motionEnabled = () => Boolean(window.gsap && window.ScrollTrigger) && !reducedMotion.matches;
       const get = (obj, path) => path.split(".").reduce((acc, key) => acc?.[key], obj);
       let activeLang = localStorage.getItem("zsz5-lang") === "en" ? "en" : "pl";
 
@@ -2633,20 +3137,31 @@
       // Rows of the diagram, top to bottom: [EQF level, ISCED level].
       const educationAxis = [["8", "8"], ["7", "7"], ["6", "6"], ["", ""], ["4", "3"], ["3", "3"], ["2", "1–2"], ["–", "0"]];
       // Cards in reading order (from preschool up); arrows mark the exits from the top edge of a card.
+      // The last field lists the routes (general / technical / sectoral) a card belongs to.
+      const allRoutes = "general technical sectoral";
       const educationCards = [
-        ["preschool", "base wide", ["mid"]],
-        ["primary", "base wide", ["c1", "mid", "c3"]],
-        ["general", "general", ["mid"]],
-        ["technical", "technical ours", ["mid"]],
-        ["sectoral1", "sectoral ours", ["mid"]],
-        ["sectoral2", "sectoral ours", ["mid"]],
-        ["matura", "gate wide", ["mid"]],
-        ["bachelor", "higher wide", ["mid"]],
-        ["master", "higher wide", ["mid"]],
-        ["doctorate", "higher wide", []]
+        ["preschool", "base wide", ["mid"], allRoutes],
+        ["primary", "base wide", ["c1", "mid", "c3"], allRoutes],
+        ["general", "general", ["mid"], "general"],
+        ["technical", "technical ours", ["mid"], "technical"],
+        ["sectoral1", "sectoral ours", ["mid"], "sectoral"],
+        ["sectoral2", "sectoral ours", ["mid"], "sectoral"],
+        ["matura", "gate wide", ["mid"], allRoutes],
+        ["bachelor", "higher wide", ["mid"], allRoutes],
+        ["master", "higher wide", ["mid"], allRoutes],
+        ["doctorate", "higher wide", [], allRoutes]
       ];
+      // Primary school splits into the three tracks, so each of its arrows belongs to one route.
+      const primaryArrowRoutes = { c1: "general", mid: "technical", c3: "sectoral" };
+      let activeRoute = "all";
 
       function renderEducation(e) {
+        document.querySelector('[data-render="educationRoutes"]').innerHTML = `
+          <span class="edu-routes-label">${htmlEscape(e.routesLabel)}</span>
+          ${e.routes
+            .map(([key, label]) => `<button type="button" class="edu-route-btn" data-route="${key}" aria-pressed="${key === activeRoute}">${htmlEscape(label)}</button>`)
+            .join("")}`;
+
         document.querySelector('[data-render="educationFacts"]').innerHTML = e.facts
           .map(([value, label]) => `<div class="edu-fact"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
           .join("");
@@ -2663,10 +3178,10 @@
           .map(([value, label], index) => `<div class="edu-duty edu-duty-${index + 1}"><strong>${htmlEscape(value)}</strong><span>${htmlEscape(label)}</span></div>`)
           .join("");
         const cards = educationCards
-          .map(([key, classes, arrows]) => {
+          .map(([key, classes, arrows, routes]) => {
             const [title, meta, gives, next, tags, level] = e.cards[key];
-            return `<article class="edu-card ${classes}" data-edu="${key}">
-              ${arrows.map((position) => `<i class="edu-arrow ${position}" aria-hidden="true"></i>`).join("")}
+            return `<article class="edu-card ${classes}" data-edu="${key}" data-routes="${routes}">
+              ${arrows.map((position) => `<i class="edu-arrow ${position}" data-routes="${key === "primary" ? primaryArrowRoutes[position] : routes}" aria-hidden="true"></i>`).join("")}
               <div class="edu-card-head">
                 <p class="edu-level">${htmlEscape(level)}</p>
                 <h3>${htmlEscape(title)}</h3>
@@ -2683,6 +3198,7 @@
           ${columnHeads}${axis}
           <div class="edu-duty-line" aria-hidden="true"></div>
           ${duty}${cards}`;
+        diagram.dataset.route = activeRoute;
 
         document.querySelector('[data-render="educationFoot"]').innerHTML = `
           <div class="edu-legend">
@@ -2699,6 +3215,38 @@
             </div>
           </div>`;
       }
+
+      function showRoute(route, { walk = true } = {}) {
+        activeRoute = route;
+        const diagram = document.querySelector('[data-render="education"]');
+        diagram.dataset.route = route;
+        document.querySelectorAll(".edu-route-btn").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.route === route));
+        });
+        if (!walk || route === "all" || !motionEnabled()) return;
+        // Light up the chosen route step by step, from preschool to the doctorate.
+        const steps = [...diagram.querySelectorAll(`.edu-card[data-routes~="${route}"]`)];
+        gsap.killTweensOf(steps);
+        gsap.fromTo(
+          steps,
+          { scale: 0.97, boxShadow: "0 0 0 0 rgb(215 177 93 / 0)" },
+          {
+            scale: 1,
+            boxShadow: "0 0 0 4px rgb(215 177 93 / 0.55)",
+            duration: 0.32,
+            ease: "power2.out",
+            stagger: 0.11,
+            yoyo: true,
+            repeat: 1,
+            clearProps: "transform,boxShadow"
+          }
+        );
+      }
+
+      document.querySelector('[data-render="educationRoutes"]').addEventListener("click", (event) => {
+        const button = event.target.closest("[data-route]");
+        if (button) showRoute(button.dataset.route);
+      });
 
       function render(lang) {
         activeLang = lang;
@@ -2729,6 +3277,7 @@
           .join("");
 
         renderEducation(t.education);
+        renderQuiz();
 
         document.querySelector('[data-render="paths"]').innerHTML = t.paths
           .map(([title, body]) => `<article class="path"><h3>${htmlEscape(title)}</h3><p>${htmlEscape(body)}</p></article>`)
@@ -2769,11 +3318,194 @@
         document.querySelector("[data-year]").textContent = new Date().getFullYear();
       }
 
-      document.querySelectorAll("[data-lang]").forEach((button) => {
-        button.addEventListener("click", () => render(button.dataset.lang));
+      const quizAnswers = [];
+      const quizColors = ["#1f5b3a", "#d7b15d", "#c75d48", "#315f7d", "#f0cb77"];
+
+      function quizResult(q) {
+        const scores = Object.fromEntries(Object.keys(q.families).map((key) => [key, 0]));
+        quizAnswers.forEach((answer, step) => {
+          Object.entries(q.questions[step][1][answer][1]).forEach(([key, points]) => {
+            if (key in scores) scores[key] += points;
+          });
+        });
+        const family = Object.keys(scores).reduce((best, key) => (scores[key] > scores[best] ? key : best));
+        const chosenRoute = q.questions.at(-1)[1][quizAnswers.at(-1)][1].route;
+        const hasTechnikum = q.families[family][3];
+        const route = chosenRoute === "technical" && !hasTechnikum ? "sectoral2" : chosenRoute;
+        return { family, route, note: chosenRoute === "technical" && !hasTechnikum };
+      }
+
+      function renderQuiz() {
+        const q = content[activeLang].quiz;
+        const stage = document.querySelector('[data-render="quiz"]');
+        const step = quizAnswers.length;
+
+        if (step < q.questions.length) {
+          const [question, options] = q.questions[step];
+          stage.innerHTML = `
+            <div class="quiz-card">
+              <div class="quiz-progress" aria-hidden="true">
+                ${q.questions.map((_, index) => `<span class="${index < step ? "done" : index === step ? "current" : ""}"></span>`).join("")}
+              </div>
+              <p class="quiz-step">${htmlEscape(q.step)} ${step + 1} ${htmlEscape(q.of)} ${q.questions.length}</p>
+              <h3 class="quiz-question">${htmlEscape(question)}</h3>
+              <div class="quiz-options${options.length > 4 ? " many" : ""}">
+                ${options
+                  .map(([label], index) => `<button type="button" class="quiz-option" data-quiz="answer" data-index="${index}"><span class="quiz-letter">${String.fromCharCode(65 + index)}</span><span>${htmlEscape(label)}</span></button>`)
+                  .join("")}
+              </div>
+              ${step ? `<button type="button" class="quiz-back" data-quiz="back">← ${htmlEscape(q.back)}</button>` : ""}
+            </div>`;
+          return;
+        }
+
+        const { family, route, note } = quizResult(q);
+        const [familyTitle, familyText, professions] = q.families[family];
+        const [routeTitle, routeText, diagramRoute] = q.routes[route];
+        stage.innerHTML = `
+          <div class="quiz-card quiz-result">
+            <div class="quiz-burst" aria-hidden="true"></div>
+            <p class="quiz-step">${htmlEscape(q.resultKicker)}</p>
+            <h3 class="quiz-result-title">${htmlEscape(familyTitle)}</h3>
+            <p class="quiz-result-text">${htmlEscape(familyText)}</p>
+            <p class="quiz-sub">${htmlEscape(q.professionsLabel)}</p>
+            <div class="quiz-chips">${professions.map((name) => `<span>${htmlEscape(name)}</span>`).join("")}</div>
+            <div class="quiz-route">
+              <p class="quiz-sub">${htmlEscape(q.routeLabel)}</p>
+              <strong>${htmlEscape(routeTitle)}</strong>
+              <p>${htmlEscape(routeText)}</p>
+              ${note ? `<p class="quiz-route-note">${htmlEscape(q.noTechnikum)}</p>` : ""}
+            </div>
+            <div class="quiz-actions">
+              <button type="button" class="btn primary" data-quiz="route" data-route="${diagramRoute}">${htmlEscape(q.showRoute)}</button>
+              <button type="button" class="btn" data-quiz="restart">↻ ${htmlEscape(q.restart)}</button>
+            </div>
+          </div>`;
+      }
+
+      function animateQuizIn({ celebrate = false } = {}) {
+        if (!motionEnabled()) return;
+        const card = document.querySelector(".quiz-card");
+        gsap.from(card.querySelectorAll(":scope > *:not(.quiz-burst)"), { y: 22, opacity: 0, duration: 0.5, ease: "power3.out", stagger: 0.05, clearProps: "all" });
+        if (!celebrate) return;
+        // A small burst of confetti in the school colours when the result appears.
+        const burst = card.querySelector(".quiz-burst");
+        burst.innerHTML = Array.from({ length: 34 }, (_, index) => `<i style="background:${quizColors[index % quizColors.length]}"></i>`).join("");
+        gsap.fromTo(
+          burst.children,
+          { x: 0, y: 0, scale: 1, opacity: 1, rotation: 0 },
+          {
+            x: () => gsap.utils.random(-260, 260),
+            y: () => gsap.utils.random(-220, 120),
+            rotation: () => gsap.utils.random(-360, 360),
+            scale: () => gsap.utils.random(0.5, 1.3),
+            opacity: 0,
+            duration: () => gsap.utils.random(0.9, 1.6),
+            ease: "power3.out"
+          }
+        );
+      }
+
+      document.querySelector('[data-render="quiz"]').addEventListener("click", (event) => {
+        const button = event.target.closest("[data-quiz]");
+        if (!button || button.disabled) return;
+        const action = button.dataset.quiz;
+        const total = content[activeLang].quiz.questions.length;
+
+        if (action === "answer") {
+          button.classList.add("picked");
+          document.querySelectorAll(".quiz-option").forEach((option) => (option.disabled = true));
+          window.setTimeout(() => {
+            quizAnswers.push(Number(button.dataset.index));
+            renderQuiz();
+            animateQuizIn({ celebrate: quizAnswers.length === total });
+            document.querySelector(".quiz-card button")?.focus({ preventScroll: true });
+          }, motionEnabled() ? 260 : 0);
+        }
+        if (action === "back") {
+          quizAnswers.pop();
+          renderQuiz();
+          animateQuizIn();
+        }
+        if (action === "restart") {
+          quizAnswers.length = 0;
+          renderQuiz();
+          animateQuizIn();
+        }
+        if (action === "route") {
+          document.querySelector(".edu-routes").scrollIntoView({ behavior: motionEnabled() ? "smooth" : "auto", block: "start" });
+          window.setTimeout(() => showRoute(button.dataset.route), motionEnabled() ? 900 : 0);
+        }
       });
 
-      const sectionIds = ["start", "story", "education", "paths", "practice", "professions", "projects", "jubilee", "location", "contact"];
+      // Scroll-driven motion (GSAP + ScrollTrigger). Skipped for reduced motion or if the scripts fail to load.
+      let motionContext;
+
+      function splitWords(node) {
+        const words = node.textContent.trim().split(/\s+/);
+        node.innerHTML = words.map((word) => `<span class="word"><span class="word-inner">${htmlEscape(word)}</span></span>`).join(" ");
+        return node.querySelectorAll(".word-inner");
+      }
+
+      function setupMotion() {
+        motionContext?.revert();
+        if (!motionEnabled()) return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        motionContext = gsap.context(() => {
+          gsap.to(".scroll-progress", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.2 } });
+
+          const heroScroll = { trigger: "#start", start: "top top", end: "bottom top", scrub: true };
+          gsap.fromTo(".hero-bg", { scale: 1.14 }, { scale: 1, yPercent: 14, ease: "none", scrollTrigger: heroScroll });
+          gsap.to(".hero-grid", { yPercent: -22, opacity: 0.15, ease: "none", scrollTrigger: heroScroll });
+
+          document.querySelectorAll(".slide-title").forEach((title) => {
+            gsap.from(splitWords(title), {
+              yPercent: 115,
+              duration: 0.9,
+              ease: "power4.out",
+              stagger: 0.045,
+              scrollTrigger: { trigger: title, start: "top 88%", once: true }
+            });
+          });
+
+          document.querySelectorAll(".story-photo figure").forEach((figure, index) => {
+            gsap.to(figure, {
+              yPercent: [-7, 9, -22][index] ?? 0,
+              ease: "none",
+              scrollTrigger: { trigger: ".story-photo", start: "top bottom", end: "bottom top", scrub: true }
+            });
+          });
+
+          const once = (trigger, start = "top 80%") => ({ trigger, start, once: true });
+          gsap.from(".beat", { y: 34, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.08, clearProps: "all", scrollTrigger: once(".beats") });
+          gsap.from(".path", { y: 34, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.08, clearProps: "all", scrollTrigger: once(".paths-grid") });
+
+          // The education ladder builds itself from preschool upwards.
+          gsap.from(".edu-card", { y: 40, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.07, clearProps: "opacity,transform", scrollTrigger: once(".edu-diagram", "top 78%") });
+          gsap.from(".edu-arrow", { scaleY: 0, transformOrigin: "50% 100%", duration: 0.35, ease: "power2.out", stagger: 0.07, delay: 0.35, clearProps: "transform", scrollTrigger: once(".edu-diagram", "top 78%") });
+          gsap.from(".edu-fact", { y: 24, opacity: 0, duration: 0.6, ease: "back.out(1.6)", stagger: 0.1, clearProps: "all", scrollTrigger: once(".edu-facts", "top 85%") });
+
+          gsap.from(".tile", { clipPath: "inset(100% 0% 0% 0%)", duration: 1, ease: "power3.inOut", stagger: 0.1, clearProps: "clipPath", scrollTrigger: once(".tile-grid") });
+          gsap.fromTo(".tile img", { scale: 1.16 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".tile-grid", start: "top bottom", end: "bottom top", scrub: true } });
+
+          gsap.from(".quiz-stage", { rotation: -2, y: 50, duration: 0.9, ease: "power3.out", clearProps: "transform", scrollTrigger: once(".quiz-stage", "top 85%") });
+          gsap.from(".project", { x: 50, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1, clearProps: "all", scrollTrigger: once(".project-list") });
+          gsap.fromTo(".project-photo img", { scale: 1.12 }, { scale: 1, ease: "none", scrollTrigger: { trigger: ".project-photo", start: "top bottom", end: "bottom top", scrub: true } });
+          gsap.from(".gallery figure", { y: 70, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.08, clearProps: "all", scrollTrigger: once(".gallery", "top 85%") });
+          gsap.from(".fact, .links a", { y: 26, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.06, clearProps: "all", scrollTrigger: once("#location", "top 70%") });
+        });
+        ScrollTrigger.refresh();
+      }
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.addEventListener("click", () => {
+          render(button.dataset.lang);
+          setupMotion();
+        });
+      });
+
+      const sectionIds = ["start", "story", "education", "paths", "practice", "professions", "quiz", "projects", "jubilee", "location", "contact"];
       document.addEventListener("keydown", (event) => {
         if (event.altKey || event.ctrlKey || event.metaKey) return;
         const keys = ["ArrowDown", "PageDown", "ArrowUp", "PageUp", "Home", "End"];
@@ -2797,8 +3529,9 @@
 
       render(activeLang);
       document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+      setupMotion();
+      reducedMotion.addEventListener("change", setupMotion);
 
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       let professionPulseCursor = 0;
 
       function pulseProfessionWords() {

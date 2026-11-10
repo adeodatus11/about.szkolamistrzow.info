@@ -60,7 +60,30 @@ test("explains the Polish education system with PRK/EQF and ISCED levels in both
   assert.match(html, /title: "Everyone in Poland learns until 18\. The routes differ\."/);
   assert.equal([...html.matchAll(/axisHead: \["EQF", "ISCED"\]/g)].length, 2);
   assert.doesNotMatch(html, /"ISCED [0-9–]+ · (?:PRK|PQF) \d"|\((?:PRK|PQF) \d\)/);
+  const cardBlocks = [...html.matchAll(/\n\s*cards: \{([\s\S]*?)\n\s*\},/g)].map((match) => match[1]);
+  assert.equal(cardBlocks.length, 2);
   for (const key of ["preschool", "primary", "general", "technical", "sectoral1", "sectoral2", "matura", "bachelor", "master", "doctorate"]) {
-    assert.equal([...html.matchAll(new RegExp(`\\n\\s*${key}: \\["`, "g"))].length, 2, key);
+    for (const block of cardBlocks) assert.match(block, new RegExp(`\\n\\s*${key}: \\["`), key);
+  }
+});
+
+test("adds the career quiz, route highlighting and vendored GSAP motion", async () => {
+  const html = await readPage();
+
+  assert.match(html, /<section id="professions"[\s\S]*?<section id="quiz" class="slide quiz-slide">[\s\S]*?<section id="projects"/);
+  assert.match(html, /href="#quiz"/);
+  assert.match(html, /"professions", "quiz", "projects"/);
+  assert.match(html, /title: "Jaki zawód do Ciebie pasuje\?"/);
+  assert.match(html, /title: "Which profession suits you\?"/);
+  assert.equal([...html.matchAll(/\n\s*families: \{/g)].length, 2);
+  assert.match(html, /data-render="educationRoutes"/);
+  assert.match(html, /data-routes="\$\{routes\}"/);
+  assert.match(html, /<script src="public\/vendor\/gsap\/gsap\.min\.js"><\/script>\s*<script src="public\/vendor\/gsap\/ScrollTrigger\.min\.js"><\/script>/);
+  assert.match(html, /const motionEnabled = \(\) => Boolean\(window\.gsap && window\.ScrollTrigger\) && !reducedMotion\.matches;/);
+
+  for (const [file, name] of [["gsap.min.js", "GSAP"], ["ScrollTrigger.min.js", "ScrollTrigger"]]) {
+    const vendor = await readFile(new URL(`../public/vendor/gsap/${file}`, import.meta.url), "utf8");
+    assert.ok(vendor.startsWith(`/*!\n * ${name} 3.13.0\n`), file);
+    assert.match(vendor.slice(0, 300), /gsap\.com\/standard-license/);
   }
 });
